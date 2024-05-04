@@ -32,7 +32,7 @@ const Demo = () => {
     return (
         <>
             <div>
-                <div className='lg:min-h-screen w-[100%] hero-image bg-no-repeat lg:bg-cover bg-auto bg-center object-fill md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
+                <div className='hero-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
                     <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
                         <div className='flex flex-col gap-y-10 sm:-mt-8'>
                             <div className='flex items-center sm:mt-3'>
@@ -169,13 +169,13 @@ const Demo = () => {
 export default Demo;
 
 
-const Inc_Dec_Box = ({ min = 0, max, initialValue,name, setData }) => {
+const Inc_Dec_Box = ({ min = 0, max, initialValue, name, setData }) => {
     const handleIncrement = () => {
-        setData({...initialValue, [name] : initialValue[name]+1});
+        setData({ ...initialValue, [name]: initialValue[name] + 1 });
     }
     const handleDecrement = () => {
         if (initialValue[name] > min) {
-            setData({...initialValue, [name] : initialValue[name]-1});
+            setData({ ...initialValue, [name]: initialValue[name] - 1 });
         }
     }
     return (
