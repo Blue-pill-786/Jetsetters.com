@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poetsen+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.change-color {
+    color: #fff;
+}
+
+.dateRange {
+    color: #000;
+    display: flex;
+}
+
+.slick-slider button::before {
+    color: #000;
+}
+
+.slick-slider .slick-next {
+    top: 40%;
+}
+
+.slick-slider .slick-prev {
+    top: 40%;
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    ;
+}
+
+.logo-head {
+    font-family: "Poetsen One", sans-serif;
+}
