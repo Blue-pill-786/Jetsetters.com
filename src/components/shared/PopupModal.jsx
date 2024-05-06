@@ -3,6 +3,7 @@ import { ImCross } from "react-icons/im";
 import { IoCallSharp, IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import React from 'react'
+import { useHref } from 'react-router-dom';
 
 const style = {
     position: 'absolute',
@@ -44,14 +45,15 @@ const PopupModal = ({ open, setOpen }) => {
                             id="modal-modal-title"
                             variant="h6"
                             component="h2" c
-                            sx={{ fontWeight: "600", color: "#3380de", }}
+                            sx={{ fontWeight: "600", color: "#3380de" }}
+                            fontWeight={700}
                             className='logo-head'
                         >
-                            Jetsetterss
+                            JETSETTERSS
                         </Typography>
                         <Typography
                             id="modal-modal-description"
-                            sx={{ mt: 1, fontSize: "12px", lineHeight: "15px", color: "#8CABFF" }}
+                            sx={{ mt: 1, fontSize: "14px", lineHeight: "15px", color: "#8CABFF" }}
                         >
 
                             Skip the hassle and call us directly to book your flights
@@ -59,34 +61,38 @@ const PopupModal = ({ open, setOpen }) => {
                     </div>
 
 
-                    <div className='flex mt-8 gap-x-5 text-[] px-2 items-center justify-between'>
-
-                        <IconButton
-                            size='large'
-                            aria-label='Call'
-                            color='primary'
-                            className='group'
-                        >
-                            <IoCallSharp className='group-hover:scale-[1.1] transition-transform duration-300' />
-                        </IconButton>
-                        <IconButton
-                            size='large'
-                            aria-label='whatsapp'
-                            sx={{ color: "#47d94a" }}
-                            className='group'
-                        >
-                            <IoLogoWhatsapp className='group-hover:scale-[1.1] transition-transform duration-300' />
-                        </IconButton>
-                        <IconButton
-                            size='large'
-                            aria-label='mail'
-                            sx={{ color: "#eb4545" }}
-                            className='group'
-                        >
-                            <IoMail className='group-hover:scale-[1.1] transition-transform duration-300' />
-                        </IconButton>
+                    <div className='flex mt-8 gap-x-3 text-[] px-2 items-center justify-evenly'>
+                        {/* <a href="tel:+">
+                            <IconButton
+                                size='large'
+                                aria-label='Call'
+                                color='primary'
+                                className='group'
+                            >
+                                <IoCallSharp className='group-hover:scale-[1.1] md:text-[35px] transition-transform duration-300' />
+                            </IconButton>
+                        </a> */}
+                        <a href="https://wa.me/+14088999705" target="_blank" rel="noopener noreferrer">
+                            <IconButton
+                                size='large'
+                                aria-label='whatsapp'
+                                sx={{ color: "#47d94a" }}
+                                className='group'
+                            >
+                                <IoLogoWhatsapp className='group-hover:scale-[1.1] md:text-[35px] transition-transform duration-300' />
+                            </IconButton>
+                        </a>
+                        <a href="mailto:bookings@jetsetterss.com">
+                            <IconButton
+                                size='large'
+                                aria-label='mail'
+                                sx={{ color: "#eb4545" }}
+                                className='group'
+                            >
+                                <IoMail className='group-hover:scale-[1.1] md:text-[35px] transition-transform duration-300' />
+                            </IconButton>
+                        </a>
                     </div>
-
                 </Box>
             </Paper>
         </Modal>

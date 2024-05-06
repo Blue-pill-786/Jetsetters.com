@@ -5,13 +5,13 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { LuUser2 } from "react-icons/lu";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import PopupModal from '../components/shared/PopupModal';
-import Flights from './Flights';
+import Flights from '../components/shared/Flights';
 import { flightsData } from '../data';
 const initialData = {
     from: "",
     to: ""
 }
-const Demo = () => {
+const FlightsPage = () => {
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(initialData);
     const [openUserbox, setOpenUserbox] = useState(false)
@@ -51,7 +51,7 @@ const Demo = () => {
                             </div>
                         </div>
 
-                        <form onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[70%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
+                        <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[70%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
 
                             <div className='bg-white text-center font-bold sm:text-5xl text-2xl sm:w-[250px] mx-auto sm:rounded-b-[20px] rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5'>
@@ -166,7 +166,7 @@ const Demo = () => {
     )
 }
 
-export default Demo;
+export default FlightsPage;
 
 
 const Inc_Dec_Box = ({ min = 0, max, initialValue, name, setData }) => {

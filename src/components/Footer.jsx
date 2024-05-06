@@ -1,65 +1,48 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Logo from '../assets/logos/logo.png'
+import { useNavigate } from 'react-router-dom';
 
 const MainLink = [
     {
-        title: "Services",
-        to: "#"
-    },
-    {
         title: "Call us",
-        to: "#"
+        to: "#",
+        type: "tel"
     },
     {
         title: "Mail",
-        to: "#"
-    },
-    {
-        title: "Customer Service Help",
-        to: "#"
-    },
-    {
-        title: "Become an affiliate",
-        to: "#"
-    },
-    {
-        title: "Jetsetters.com for Business",
-        to: "#"
+        to: "#",
+        type: "mail"
     },
 ]
 
 const Footer = () => {
+    const navigate = useNavigate();
     return (
-        <footer>
-            <div className='bg-[#6589bd] w-full mt-10'>
-                <div className='w-[100%] flex items-center justify-center'>
-                    <button className='my-4 px-4 text-sm text-white border border-white py-1 rounded-md hover:bg-[#ffffff1b]'>
-                        Book your first flight
-                    </button>
+        <footer className='bg-[#6589bd] flex sm:justify-normal justify-evenly mt-10 pb-10 rounded-t-md relative overflow-hidden'>
+            <div className='self-start sm:absolute sm:top-[45%] sm:translate-y-[-50%] sm:left-[5%] sm:ml-0 sm:mt-0 ml-10 mt-8'>
+                <img
+                    src={Logo}
+                    alt="JETSETTERSS"
+                    className='w-[150px] -ml-7'
+                    onClick={() => navigate('/')}
+                />
+            </div>
+            <div className='w-[calc(100%-10%)] mx-auto mt-10 flex flex-col'>
+                <div className='flex sm:flex-row flex-col sm:justify-center sm:gap-5'>
+                    <a href="tel:+"
+                        className='text-[#fff] hover:underline sm:text-sm sm:font-medium text-[10px] font-thin'
+                    >
+                        Call Us
+                    </a>
+                    <a href="mailto: bookings@jetsetterss.com"
+                        className='text-[#fff] hover:underline sm:text-sm sm:font-medium text-[10px] font-thin'
+                    >
+                        Mail
+                    </a>
                 </div>
 
-                <div className='h-[0.5px] bg-white'></div>
-
-                <div className='w-[calc(100%-10%)] mx-auto'>
-                    <div className='flex sm:flex-row flex-col justify-center'>
-                        {
-                            MainLink.map((data, index) => (
-                                <Link
-                                    to={data.to}
-                                    key={index}
-                                >
-                                    <button className={`md:text-xs text-[10px] font-medium md:p-3 text-white underline
-                                                        border-[#487bbe] hover:bg-[#487bbe] transition duration-200
-                                                        ${index === 0 ? "border-l-[0.1px] " : "border-l-[0.05px]"}
-                                                        ${index === MainLink.length - 1 ? "border-r-[0.1px]" : "border-r-[0.05x]"}
-                                                        `}
-                                    >
-                                        {data.title}
-                                    </button>
-                                </Link>
-                            ))
-                        }
-                    </div>
+                <div className='sm:text-center sm:text-sm sm:font-medium text-[#ffffff] sm:w-full w-[30%] text-[10px] font-thin'>
+                    <span>Address : </span>513 W Bonaventure AveTracy, CA 95391
                 </div>
             </div>
         </footer>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { FaWhatsapp } from "react-icons/fa6";
-import { IoCallOutline, IoCallSharp, IoLogoWhatsapp } from "react-icons/io5";
+import { IoCallOutline, IoCallSharp, IoMail } from "react-icons/io5";
+import { IoLogoWhatsapp } from "react-icons/io";
 import { GiPathDistance } from "react-icons/gi";
 import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi"
 import Card from './Card';
@@ -45,22 +45,39 @@ const FlightsCard = ({ data }) => {
                     {/* Contact Button  */}
                     <div className='mx-auto md:mt-10 xs:mt-2 bg-[#344f7e2a] rounded-2xl'>
                         <div className=''>
-                            <IconButton
-                                size='large'
-                                aria-label='Call'
-                                color='primary'
-                                className='group'
-                            >
-                                <IoCallSharp className='group-hover:scale-[1.1] transition-transform duration-300' />
-                            </IconButton>
-                            <IconButton
-                                size='large'
-                                aria-label='whatsapp'
-                                sx={{ color: "#47d94a" }}
-                                className='group'
-                            >
-                                <IoLogoWhatsapp className='group-hover:scale-[1.1] transition-transform duration-300' />
-                            </IconButton>
+                            {/* <a href="tel:+">
+                                <IconButton
+                                    size='large'
+                                    aria-label='Call'
+                                    color='primary'
+                                    className='group'
+                                >
+                                    <IoCallSharp className='group-hover:scale-[1.1] transition-transform duration-300' />
+                                </IconButton>
+                            </a> */}
+                            <a href="mailto:bookings@jetsetterss.com">
+                                <IconButton
+                                    size='large'
+                                    aria-label='mail'
+                                    sx={{ color: "#eb4545" }}
+                                    className='group'
+                                >
+                                    <IoMail className='group-hover:scale-[1.1] transition-transform duration-300' />
+                                </IconButton>
+                            </a>
+                            <a
+                                href="https://wa.me/+14088999705"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <IconButton
+                                    size='large'
+                                    aria-label='whatsapp'
+                                    sx={{ color: "#47d94a" }}
+                                    className='group'
+                                >
+                                    <IoLogoWhatsapp className='group-hover:scale-[1.1] transition-transform duration-300' />
+                                </IconButton>
+                            </a>
                         </div>
                     </div>
 

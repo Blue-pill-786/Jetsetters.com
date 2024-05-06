@@ -1,6 +1,6 @@
 import React from 'react'
-import WrapperLayout from '../components/Layouts/WrapperLayout'
-import FlightsCard from '../components/shared/FlightsCard';
+import WrapperLayout from '../Layouts/WrapperLayout'
+import FlightsCard from './FlightsCard';
 
 const Flights = ({ flightsData }) => {
     return (
