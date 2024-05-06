@@ -56,7 +56,7 @@ const PopupModal = ({ open, setOpen }) => {
                             sx={{ mt: 1, fontSize: "14px", lineHeight: "15px", color: "#8CABFF" }}
                         >
 
-                            Skip the hassle and call us directly to book your flights
+                            Skip the hassle and contact directly to book your flights
                         </Typography>
                     </div>
 

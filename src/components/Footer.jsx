@@ -28,7 +28,7 @@ const Footer = () => {
                 />
             </div>
             <div className='w-[calc(100%-10%)] mx-auto mt-10 flex flex-col'>
-                <div className='flex sm:flex-row flex-col sm:justify-center sm:gap-5'>
+                <div className='flex sm:flex-row flex-col sm:justify-center sm:gap-x-3'>
                     <a href="tel:+"
                         className='text-[#fff] hover:underline sm:text-sm sm:font-medium text-[10px] font-thin'
                     >
