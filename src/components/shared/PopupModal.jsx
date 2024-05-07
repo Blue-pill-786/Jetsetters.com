@@ -3,7 +3,7 @@ import { ImCross } from "react-icons/im";
 import { IoCallSharp, IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import React from 'react'
-import { useHref } from 'react-router-dom';
+import SkyPlane from '../../assets/gif/trip.gif';
 
 const style = {
     position: 'absolute',
@@ -33,7 +33,7 @@ const PopupModal = ({ open, setOpen }) => {
             <Paper elevation={8}>
                 <Box
                     sx={style}
-                    className=" min-w-[200px] max-w-[400px]">
+                    className=" min-w-[200px] max-w-[400px] relative">
                     <button
                         className='absolute right-4 top-4 z-[1000]'
                         onClick={handleClose}
@@ -41,28 +41,37 @@ const PopupModal = ({ open, setOpen }) => {
                         <ImCross className='text-[20px] opacity-30 hover:opacity-50 transition-opacity duration-150 ' />
                     </button>
                     <div>
-                        <Typography
-                            id="modal-modal-title"
-                            variant="h6"
-                            component="h2" c
-                            sx={{ fontWeight: "600", color: "#3380de" }}
-                            fontWeight={700}
-                            className='logo-head'
-                        >
-                            JETSETTERSS
-                        </Typography>
+                        <div className='flex items-center gap-1'>
+                            <Typography
+                                id="modal-modal-title"
+                                variant="h6"
+                                component="h2"
+                                fontSize={24}
+                                fontWeight={600}
+                                color={"#10439F"}
+                                fontFamily={"Poetsen One"}
+                                className='opacity-85'
+                            >
+                                JETSETTERS
+                            </Typography>
+                            <img
+                                src={SkyPlane}
+                                className='w-[30px] h-[25px]'
+                                loading='lazy'
+                            />
+                        </div>
                         <Typography
                             id="modal-modal-description"
-                            sx={{ mt: 1, fontSize: "14px", lineHeight: "15px", color: "#8CABFF" }}
+                            sx={{ mt: 1, fontSize: "12px", width: "80%", fontWeight: "500", lineHeight: "15px", color: "#3652AD" }}
                         >
 
-                            Skip the hassle and contact directly to book your flights
+                            Skip the hassle and contact directly to book your flights.
                         </Typography>
                     </div>
 
 
-                    <div className='flex mt-8 gap-x-3 text-[] px-2 items-center justify-evenly'>
-                        {/* <a href="tel:+">
+                    <div className='flex mt-8 gap-x-3 px-2 items-center justify-between'>
+                        <a href="tel:+14088999705">
                             <IconButton
                                 size='large'
                                 aria-label='Call'
@@ -71,7 +80,7 @@ const PopupModal = ({ open, setOpen }) => {
                             >
                                 <IoCallSharp className='group-hover:scale-[1.1] md:text-[35px] transition-transform duration-300' />
                             </IconButton>
-                        </a> */}
+                        </a>
                         <a href="https://wa.me/+14088999705" target="_blank" rel="noopener noreferrer">
                             <IconButton
                                 size='large'

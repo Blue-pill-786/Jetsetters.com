@@ -35,14 +35,14 @@ const FlightsPage = () => {
                 <div className='hero-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
                     <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
                         <div className='flex flex-col gap-y-10 sm:-mt-8'>
-                            <div className='flex items-center sm:mt-3'>
+                            <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
                                 <img
                                     src={Logo}
                                     alt="logo"
                                     className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill'
                                 />
 
-                                <h1 className='logo-head font-bold lg:text-5xl text-4xl text-[#3ba7ff] lg:text-center lg:ml-0 md:-ml-6'>JETSETTERSS</h1>
+                                <h1 className='logo-head font-bold lg:text-6xl text-4xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>JETSETTERS</h1>
                             </div>
                             <div className='md:ml-14 sm:ml-7 ml-5'>
                                 <h2 className='text-[#302626] font-bold lg:text-6xl xl:text-7xl md:text-5xl text-5xl mt-5'>
@@ -63,9 +63,9 @@ const FlightsPage = () => {
                                     <input
                                         type="text"
                                         name='from'
-                                        id='from*'
+                                        id='from'
                                         value={data.from}
-                                        placeholder='From'
+                                        placeholder='From*'
                                         required
                                         onChange={onChangeHandler}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-fad border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383]'
@@ -91,7 +91,7 @@ const FlightsPage = () => {
                                         onClick={() => setOpenUserbox(!openUserbox)}
                                     >
                                         <span className='flex gap-2'>
-                                            <LuUser2 className='text-neutral-500 mb-1' size={22} />
+                                            <LuUser2 className='text-neutral-500 mb-1 sm:block hidden' size={22} />
                                             <span className='text-[#848383]'>{`${passengerData.adult} adults · ${passengerData.children} children `}</span>
                                         </span>
                                         <RiArrowDropDownLine className='text-neutral-900 self-end' size={36} />
@@ -100,7 +100,7 @@ const FlightsPage = () => {
                                     {
                                         openUserbox && (
                                             <div
-                                                className='w-[285px] absolute flex flex-col gap-y-2 px-6 py-2 top-[50%] left-[8%] xl:translate-x-[70%] lg:translate-x-[10%] md:translate-x-0 sm:-left-5
+                                                className='w-[285px] absolute flex flex-col gap-y-2 px-6 py-2 top-[50%] sm:translate-x-[80%] left-[-1%] translate-x-4 xl:translate-x-[40%] lg:translate-x-[35%] md:translate-x-[5%] md:translate-y-[20%]
                                                             translate-y-[18%] rounded-md p-1 transition-transform duration-150 z-[1000]
                                                             bg-[#ffffff] text-[#000] shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] 
                                                             '
@@ -142,13 +142,13 @@ const FlightsPage = () => {
                             <div className='mx-auto lg:mb-0 mb-10 z-[0] group'>
                                 <button
                                     type='submit'
-                                    className='relative text-white bg-[#2b79d9] group-hover:bg-[#176bd0] text-xl text-center font-semibold 
+                                    className='relative text-white bg-[#10439F] group-hover:bg-[#1e66ee] text-xl text-center font-semibold 
                                                 px-7 py-3 border-2 border-[#2b355d1b] rounded-l-[30px] transition-colors duration-[0.25s]'>
                                     <span className='mr-5'>
                                         BOOK NOW
                                     </span>
                                     <MdOutlineKeyboardArrowRight
-                                        className='absolute text-[#2b79d9] group-hover:text-[#176bd0] bg-white text-[53px] rounded-full 
+                                        className='absolute text-[#10439F] group-hover:text-[#1e66ee] bg-white text-[53px] rounded-full 
                                         top-[-0.5px] -right-[24px] transition-colors duration-[0.25s]'
                                     />
                                 </button>

@@ -45,7 +45,7 @@ const FlightsCard = ({ data }) => {
                     {/* Contact Button  */}
                     <div className='mx-auto md:mt-10 xs:mt-2 bg-[#344f7e2a] rounded-2xl'>
                         <div className=''>
-                            {/* <a href="tel:+">
+                            <a href="tel:+14088999705" target='_blank'>
                                 <IconButton
                                     size='large'
                                     aria-label='Call'
@@ -54,8 +54,8 @@ const FlightsCard = ({ data }) => {
                                 >
                                     <IoCallSharp className='group-hover:scale-[1.1] transition-transform duration-300' />
                                 </IconButton>
-                            </a> */}
-                            <a href="mailto:bookings@jetsetterss.com">
+                            </a>
+                            {/* <a href="mailto:bookings@jetsetterss.com">
                                 <IconButton
                                     size='large'
                                     aria-label='mail'
@@ -64,7 +64,7 @@ const FlightsCard = ({ data }) => {
                                 >
                                     <IoMail className='group-hover:scale-[1.1] transition-transform duration-300' />
                                 </IconButton>
-                            </a>
+                            </a> */}
                             <a
                                 href="https://wa.me/+14088999705"
                                 target="_blank"

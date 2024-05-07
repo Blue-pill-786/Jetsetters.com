@@ -295,7 +295,7 @@ export const flightsData = [
             img : dest5,
             // description: "Indira Gandhi International Airport (IATA: DEL, ICAO: VIDP) is the primary international airport serving Delhi, the capital of India, and the National Capital Region (NCR).",
         },
-        distance: "12385.21"
+        distance: "12352.48"
     },
     {
         source: {
@@ -325,7 +325,7 @@ export const flightsData = [
             img: dest4,
             // description: "Rajiv Gandhi International Airport (IATA: HYD, ICAO: VOHS)"
         },
-        distance: "13596"
+        distance: "13523"
     },
     {
         source: {
