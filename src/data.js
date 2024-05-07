@@ -279,7 +279,7 @@ export const flightsData = [
             img: "https://www.airport-technology.com/wp-content/uploads/sites/14/2020/06/Feature_Image-Kempegowda_International_Airport1.jpg",
             // description: "Kempegowda International Airport Bengaluru",
         },
-        distance: "14004"
+        distance: "14,014"
     },
 
     {
@@ -295,7 +295,7 @@ export const flightsData = [
             img : dest5,
             // description: "Indira Gandhi International Airport (IATA: DEL, ICAO: VIDP) is the primary international airport serving Delhi, the capital of India, and the National Capital Region (NCR).",
         },
-        distance: "12352.48"
+        distance: "12,368"
     },
     {
         source: {
@@ -310,7 +310,7 @@ export const flightsData = [
             img: dest1,
             // description: "Sardar Vallabhbhai Patel International Airport (IATA: AMD, ICAO: VAAH)",
         },
-        distance: "13119"
+        distance: "13,090"
     },
     {
         source: {
@@ -325,7 +325,7 @@ export const flightsData = [
             img: dest4,
             // description: "Rajiv Gandhi International Airport (IATA: HYD, ICAO: VOHS)"
         },
-        distance: "13523"
+        distance: "13,521"
     },
     {
         source: {
@@ -340,6 +340,6 @@ export const flightsData = [
             img : dest2,
             // description: "Chhatrapati Shivaji Maharaj International Airport (IATA: BOM, ICAO: VABB) is an international airport serving Mumbai and the Mumbai Metropolitan Region (MMR)"
         },
-        distance: "6750.51"
+        distance: "13,522"
     },
 ];

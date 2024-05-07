@@ -10,9 +10,9 @@ const FlightsCard = ({ data }) => {
     const [km, setKm] = useState(true);
     const [miles, setMiles] = useState(0);
     const kmToMilesConvetor = (distance) => {
-        console.log(km);
         if (km) {
-            let m = distance / 1.609344;
+            let d = distance.replace(',', '');
+            let m = d / 1.609344;
             setMiles(Math.floor(m));
         }
         setKm(!km);
@@ -91,4 +91,4 @@ const FlightsCard = ({ data }) => {
     )
 }
 
-export default FlightsCard
+export default FlightsCard;
