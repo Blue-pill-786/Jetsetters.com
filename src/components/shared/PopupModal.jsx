@@ -3,7 +3,8 @@ import { ImCross } from "react-icons/im";
 import { IoCallSharp, IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import React from 'react'
-import SkyPlane from '../../assets/gif/trip.gif';
+import TripPlane from '../../assets/gif/trip.gif';
+import SkyPlane from '../../assets/gif/plane.gif';
 
 const style = {
     position: 'absolute',
@@ -18,9 +19,12 @@ const style = {
 };
 
 
-const PopupModal = ({ open, setOpen }) => {
+const PopupModal = ({ open, setOpen, firstPop, setFirstPop }) => {
     const handleClose = () => {
         setOpen(false);
+        if (firstPop) {
+            setFirstPop(false);
+        }
     }
 
     return (
@@ -33,7 +37,7 @@ const PopupModal = ({ open, setOpen }) => {
             <Paper elevation={8}>
                 <Box
                     sx={style}
-                    className=" min-w-[200px] max-w-[400px] relative">
+                    className="min-w-[200px] w-[300px] sm:w-[350px] relative">
                     <button
                         className='absolute right-4 top-4 z-[1000]'
                         onClick={handleClose}
@@ -54,23 +58,25 @@ const PopupModal = ({ open, setOpen }) => {
                             >
                                 JETSETTERS
                             </Typography>
-                            <img
+                            {!firstPop && <img
+                                src={TripPlane}
+                                className='w-[30px] h-[25px]'
+                                loading='lazy'
+                            />}
+                            {firstPop && <img
                                 src={SkyPlane}
                                 className='w-[30px] h-[25px]'
                                 loading='lazy'
-                            />
+                            />}
                         </div>
                         <Typography
-                            id="modal-modal-description"
-                            sx={{ mt: 1, fontSize: "12px", width: "80%", fontWeight: "500", lineHeight: "15px", color: "#3652AD" }}
+                            variant='h7'
+                            className='text-neutral-600 text-base'
                         >
-
-                            Skip the hassle and contact directly to book your flights.
+                            Find Cheapest Flight
                         </Typography>
                     </div>
-
-
-                    <div className='flex mt-8 gap-x-3 px-2 items-center justify-between'>
+                    <div className='flex mt-5 gap-x-3 items-center justify-between'>
                         <a href="tel:+14088999705">
                             <IconButton
                                 size='large'
@@ -78,7 +84,7 @@ const PopupModal = ({ open, setOpen }) => {
                                 color='primary'
                                 className='group'
                             >
-                                <IoCallSharp className='group-hover:scale-[1.1] md:text-[35px] transition-transform duration-300' />
+                                <IoCallSharp className='group-hover:scale-[1.1] md:text-[40px] transition-transform duration-300' />
                             </IconButton>
                         </a>
                         <a href="https://wa.me/+14088999705" target="_blank" rel="noopener noreferrer">
@@ -88,7 +94,7 @@ const PopupModal = ({ open, setOpen }) => {
                                 sx={{ color: "#47d94a" }}
                                 className='group'
                             >
-                                <IoLogoWhatsapp className='group-hover:scale-[1.1] md:text-[35px] transition-transform duration-300' />
+                                <IoLogoWhatsapp className='group-hover:scale-[1.1] md:text-[40px] transition-transform duration-300' />
                             </IconButton>
                         </a>
                         <a href="mailto:bookings@jetsetterss.com">
@@ -98,9 +104,21 @@ const PopupModal = ({ open, setOpen }) => {
                                 sx={{ color: "#eb4545" }}
                                 className='group'
                             >
-                                <IoMail className='group-hover:scale-[1.1] md:text-[35px] transition-transform duration-300' />
+                                <IoMail className='group-hover:scale-[1.1] md:text-[40px] transition-transform duration-300' />
                             </IconButton>
                         </a>
+                    </div>
+                    <div className='flex flex-col mt-5 gap-y-1 items-start text-neutral-700'>
+                        <Typography variant='h7'>
+                            Call on : <a href="https://wa.me/+14088999705" className='font-medium sm:ml-2'>
+                                +1-408-899-9705
+                            </a>
+                        </Typography>
+                        <Typography variant='h7'>
+                            Mail on : <a href="mailto:bookings@jetsetterss.com" className='font-medium sm:ml-2'>
+                                bookings@jetsetterss.com
+                            </a>
+                        </Typography>
                     </div>
                 </Box>
             </Paper>

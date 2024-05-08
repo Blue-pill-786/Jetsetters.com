@@ -27,22 +27,26 @@ const Footer = () => {
                     onClick={() => navigate('/')}
                 />
             </div>
-            <div className='w-[calc(100%-10%)] mx-auto mt-10 flex flex-col'>
-                <div className='flex sm:flex-row flex-col sm:justify-center sm:gap-x-3'>
+            <div className='w-[calc(100%-10%)] mx-auto mt-10 flex flex-col items-center'>
+                <div className='flex flex-col justify-start gap-y-1'>
                     <a href="tel:+14088999705"
                         className='text-[#fff] hover:underline sm:text-sm sm:font-medium text-[10px] font-light'
                     >
-                        Call Us
+                        Call Us :
+                        <span className='ml-2 sm:text-base'>
+                            +14088999705
+                        </span>
                     </a>
                     <a href="mailto: bookings@jetsetterss.com"
                         className='text-[#fff] hover:underline sm:text-sm sm:font-medium text-[10px] font-light'
                     >
-                        Mail
+                        Mail : <span className='ml-2 sm:text-base'>bookings@jetsetterss.com</span>
                     </a>
-                </div>
 
-                <div className='sm:text-center sm:text-sm sm:font-medium text-[#ffffff] sm:w-full w-[50%] text-[10px] font-light'>
-                    <span>Address : </span>513 W Bonaventure AveTracy, CA 95391
+
+                    <div className='sm:text-center sm:text-sm sm:font-medium text-[#ffffff] sm:w-full w-[80%] text-[10px] font-light'>
+                        Address : <span className='ml-2 sm:text-base text-pretty'>513 W Bonaventure AveTracy, CA 95391</span>
+                    </div>
                 </div>
             </div>
         </footer>

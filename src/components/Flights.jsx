@@ -1,5 +1,5 @@
 import React from 'react'
-import WrapperLayout from '../Layouts/WrapperLayout'
+import WrapperLayout from './Layouts/WrapperLayout'
 import FlightsCard from './FlightsCard';
 
 const Flights = ({ flightsData }) => {
