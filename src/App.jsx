@@ -3,6 +3,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import FlightsPage from './pages/FlightsPage';
 import PopupModal from './components/shared/PopupModal';
+import CovidFAQ from './pages/CovidFAQ';
 
 const App = () => {
   const [firstPop, setFirstPop] = useState(false);
@@ -18,6 +19,7 @@ const App = () => {
     <>
       <Routes>
         <Route path='/' element={<FlightsPage />} />
+        <Route path='/covid-19' element={<CovidFAQ />} />
         <Route path='*' element={<div className='min-h-screen  flex justify-center items-center text-5xl font-bold'>404 Not Found</div>} />
       </Routes>
 

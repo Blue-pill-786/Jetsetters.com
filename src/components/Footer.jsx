@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../assets/logos/logo.png'
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Term_Conditions from '../assets/files/Jetsetters-terms.pdf';
 
 const MainLink = [
     {
@@ -17,17 +18,18 @@ const MainLink = [
 
 const Footer = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     return (
-        <footer className='bg-[#6589bd] flex sm:justify-normal mt-10 pb-10 rounded-t-md relative overflow-hidden'>
-            <div className='self-start sm:absolute sm:top-[45%] sm:translate-y-[-50%] sm:left-[5%] sm:ml-0 sm:mt-0 ml-10 mt-8'>
+        <footer className='bg-[#6589bd] flex sm:justify-normal mt-10 pb-10 rounded-t-md overflow-hidden'>
+            <div className=''>
                 <img
                     src={Logo}
                     alt="JETSETTERSS"
-                    className='w-[150px] -ml-7 sm:mt-0 -mt-4 sm:mr-0 mr-2'
+                    className='sm:w-[150px] w-[120px] mt-3'
                     onClick={() => navigate('/')}
                 />
             </div>
-            <div className='w-[calc(100%-10%)] mx-auto mt-10 flex flex-col items-center'>
+            <div className='w-[calc(100%-10%)] flex flex-row sm:justify-evenly items-center mt-4'>
                 <div className='flex flex-col justify-start gap-y-1'>
                     <a href="tel:+14088999705"
                         className='text-[#fff] hover:underline sm:text-sm sm:font-medium text-[10px] font-light'
@@ -44,9 +46,45 @@ const Footer = () => {
                     </a>
 
 
-                    <div className='sm:text-center sm:text-sm sm:font-medium text-[#ffffff] sm:w-full w-[80%] text-[10px] font-light'>
+                    <div className='sm:text-center sm:text-sm sm:font-medium text-[#ffffff] sm:w-full w-[70%] text-[10px] font-light'>
                         Address : <span className='ml-2 sm:text-base text-pretty'>513 W Bonaventure AveTracy, CA 95391</span>
                     </div>
+                </div>
+
+                <div className='flex flex-col gap-y-1 justify-start'>
+                    <Link
+                        to={Term_Conditions}
+                        target='_blank'
+                        className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
+                    >
+                        Term & conditions
+                    </Link>
+                    <Link
+                        to="/covid-19"
+                        className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
+                    >
+                        Coronavirus (COVID-19) FAQs
+                    </Link>
+                    {
+                        location.pathname == "/" && (
+                            <Link
+                                to={'./cruise'}
+                                className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
+                            >
+                                Cruise
+                            </Link>
+                        )
+                    }
+                    {
+                        location.pathname == "/cruise" && (
+                            <Link
+                                to={'/'}
+                                className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
+                            >
+                                Flights
+                            </Link>
+                        )
+                    }
                 </div>
             </div>
         </footer>
