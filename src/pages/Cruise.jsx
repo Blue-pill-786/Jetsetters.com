@@ -7,16 +7,19 @@ import { LuUser2 } from 'react-icons/lu'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import PopupModal from '../components/shared/PopupModal'
 import { FiLoader } from "react-icons/fi";
+import { cruiseCardData, cruiseServiceCardData } from '../data'
+import CruiseImgCard from '../components/CruiseImgCard'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Cruise = () => {
     const [open, setOpen] = useState(false);
-    const [openUserbox, setOpenUserbox] = useState(false)
-    const [passengerData, setPassengerData] = useState({ adult: 2, children: 0, });
+    const location = useLocation();
+    const navigate = useNavigate();
     const sumbitHandle = (e) => {
         e.preventDefault();
         setOpen(true);
     }
-    
+
     return (
         <>
             <div className='hero-cruise-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
@@ -38,113 +41,28 @@ const Cruise = () => {
                         </div>
                     </div>
 
-                    <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
+                    <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
 
-                        <div className='bg-white text-center font-bold sm:text-5xl text-2xl sm:w-[250px] mx-auto sm:rounded-b-[20px] rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5'>
-                            FLIGHTS
+                        <div className='flex justify-center gap-x-5 mb-10'>
+                            <button
+                                type='button'
+                                className={`${location.pathname === '/' ? "bg-[#fff]" : "bg-[#00000057] text-[#ffffffac] hover:bg-[#fff] hover:text-[#000]"}  text-center font-bold sm:text-3xl text-2xl sm:w-[150px]
+                                                sm:rounded-b-[20px] rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
+                                onClick={() => navigate('/')}
+                            >
+                                Flights
+                            </button>
+                            <button
+                                type='button'
+                                className={`${location.pathname === '/cruise' ? "bg-[#fff] text-[#000]" : "bg-[#00000057] text-[#ffffffac] hover:bg-[#fff] hover:text-[#000]"} text-center font-bold sm:text-3xl text-2xl sm:w-[150px] sm:rounded-b-[20px]
+                                            rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
+                                onClick={() => navigate('/cruise')}
+                            >
+                                Cruise
+                            </button>
                         </div>
-
-                        <div className='flex flex-col justify-between items-center'>
-                            <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] my-5 relative'>
-                                <input
-                                    type="search"
-                                    name='from'
-                                    id='from'
-                                    // value={data.from}
-                                    placeholder='From*'
-                                    required
-                                    // onChange={onChangeHandler}
-                                    className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383]'
-                                />
-                                {/* {fromList && fromList.length > 0 ?
-                                (<SearchAutoComplete
-                                    // searchList={fromList}
-                                    // name={'from'}
-                                    // handler={setData}
-                                />)
-                                :
-                                (<></>)
-                            } */}
-                            </div>
-                            <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] my-5 relative'>
-                                <input
-                                    type="search"
-                                    name='to'
-                                    id='to'
-                                    // value={data.to}
-                                    placeholder='To*'
-                                    required
-                                    // onChange={onChangeHandler}
-                                    className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383]'
-                                />
-                                {/* {toList && toList.length > 0 ?
-                                (<SearchAutoComplete
-                                    searchList={toList}
-                                    name={'to'}
-                                    handler={setData}
-                                />)
-                                :
-                                (<></>)
-                            } */}
-                            </div>
-                            <div className='w-3/4 p-1 z-[10] relative rounded-[30px] bg-[#ffffff] my-5'>
-                                <div
-                                    className='w-full flex flex-row gap-2 justify-between items-center px-3 py-2 
-                                                    border-[2px] rounded-[30px] border-[#bbab8cad] cursor-pointer 
-                                                    outline-none text-xl text-[#BBAB8C]'
-                                    onClick={() => setOpenUserbox(!openUserbox)}
-                                >
-                                    <span className='flex gap-2'>
-                                        <LuUser2 className='text-neutral-500 mb-1 sm:block hidden' size={22} />
-                                        <span className='text-[#848383]'>{`${passengerData.adult} adults · ${passengerData.children} children `}</span>
-                                    </span>
-                                    <RiArrowDropDownLine className='text-neutral-900 self-end' size={36} />
-                                </div>
-
-                                {
-                                    openUserbox && (
-                                        <div
-                                            className='w-[285px] absolute flex flex-col gap-y-2 px-6 py-2 top-[50%] sm:translate-x-[80%] left-[-1%] translate-x-4 xl:translate-x-[40%] lg:translate-x-[35%] md:translate-x-[5%] md:translate-y-[20%]
-                                                            translate-y-[18%] rounded-md p-1 transition-transform duration-150 z-[1000]
-                                                            bg-[#ffffff] text-[#000] shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] 
-                                                            '
-                                        >
-                                            <div className='w-full flex items-center mt-5 justify-between'>
-                                                <span className='text-base font-medium'>Adults</span>
-                                                <Inc_Dec_Box
-                                                    min={1}
-                                                    initialValue={passengerData}
-                                                    setData={setPassengerData}
-                                                    name={"adult"}
-                                                />
-                                            </div>
-                                            <div className='w-full flex items-center justify-between'>
-                                                <span className='text-base font-medium'>Children</span>
-                                                <Inc_Dec_Box
-                                                    min={0}
-                                                    initialValue={passengerData}
-                                                    setData={setPassengerData}
-                                                    name={"children"}
-                                                />
-                                            </div>
-
-                                            <button
-                                                className='w-full my-3 text-base text-center px-2 py-1 text-[#006CE4] border border-[#006ae4df] 
-                                                rounded-[4px] hover:bg-[#006ae40d] font-medium'
-                                                onClick={() => setOpenUserbox(false)}
-                                            >
-                                                Done
-                                            </button>
-                                        </div>
-                                    )
-                                }
-                            </div>
-
-
-                        </div>
-
-                        <div className='mx-auto lg:mb-0 mb-10 z-[0] group'>
+                        <div className='mx-auto lg:mb-0 mb-10 z-[0] group self-end'>
                             <button
                                 type='submit'
                                 className='relative text-white bg-[#10439F] group-hover:bg-[#1e66ee] text-xl text-center font-semibold 
@@ -161,14 +79,61 @@ const Cruise = () => {
                     </form>
                 </div>
             </div>
-            {
-                open && <PopupModal open={open} setOpen={setOpen} title={"Cruise"} />
-            }
 
+            <div className='sm:w-[calc(100%-10%)] sm:mx-auto my-10'>
+                <div className='my-10'>
+                    <h1 className='text-6xl font-medium mt-10 pt-10 pb-5 text-neutral-700'>Explore by Departure Port</h1>
+                    <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-10 gap-5'>
+                        {
+                            cruiseCardData.map((data, index) => (
+                                <CruiseImgCard
+                                    key={index}
+                                    data={data}
+                                />
+                            ))
+                        }
+                    </div>
+                </div>
 
-            <div className='mt-5 w-full mx-auto justify-center gap-x-5 text-xl font-bold text-center flex items-center '>
-                Under Process <FiLoader className='text-2xl animate-spin text-heading-text' />
+                <div className='my-10'>
+                    <h1 className='text-6xl font-medium mt-10 pt-10 pb-5 text-neutral-700'>
+                        Explore by Cruise Line
+                    </h1>
+                    <div className='grid grid-cols-3 lg:gap-10 gap-5'>
+                        {
+                            cruiseServiceCardData.map((data, index) => (
+                                <div
+                                    key={index}
+                                    className='w-full h-[300px] shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]
+                                            overflow-hidden group cursor-pointer relative'
+                                >
+                                    <img
+                                        src={data.img}
+                                        alt={data.title}
+                                        className='w-full h-full object-cover rounded-sm group-hover:border-[5px] border-[#1f3d4759]'
+                                    />
+
+                                    <div className='text-white absolute top-[5px] -left-[100%] text-lg z-[100] px-4 py-4 bg-[#1f3d4738] group-hover:left-[5px] transition-all 
+                                            duration-[0.5s] backdrop-blur-[5px] rounded-r-sm font-medium
+                                    ' onClick={() => setOpen(true)}
+                                    >
+                                        Book your choice Cruise Line
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
+
+
+            {
+                open && <PopupModal
+                    title={"Cruise"}
+                    open={open}
+                    setOpen={setOpen}
+                />
+            }
         </>
     )
 }

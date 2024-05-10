@@ -8,6 +8,7 @@ import PopupModal from '../components/shared/PopupModal';
 import Flights from '../components/Flights';
 import { flightsData } from '../data';
 import SearchAutoComplete from '../components/shared/SearchAutoComplete';
+import { useLocation, useNavigate } from 'react-router-dom';
 const initialData = {
     from: "",
     to: ""
@@ -51,6 +52,8 @@ const FlightsPage = () => {
     const [openUserbox, setOpenUserbox] = useState(false)
     const [fromList, setFromList] = useState([]);
     const [toList, setToList] = useState([]);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const searchHandler = (code) => {
         let searchArr = [];
@@ -88,7 +91,7 @@ const FlightsPage = () => {
 
     const sumbitHandle = (e) => {
         e.preventDefault();
-        console.log({data, passengerData});
+        console.log({ data, passengerData });
         setOpen(true)
         setData(initialData);
     }
@@ -117,8 +120,23 @@ const FlightsPage = () => {
                         <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
 
-                            <div className='bg-white text-center font-bold sm:text-5xl text-2xl sm:w-[250px] mx-auto sm:rounded-b-[20px] rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5'>
-                                FLIGHTS
+                            <div className='flex justify-center gap-x-2'>
+                                <button
+                                    type='button'
+                                    className={`${location.pathname === '/' ? "bg-white" : "bg-[#00000057] text-[#ffffffac] hover:bg-white hover:text-[#000]"}  text-center font-bold sm:text-3xl text-2xl sm:w-[150px]
+                                                sm:rounded-b-[20px] rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
+                                    onClick={() => navigate('/')}
+                                >
+                                    Flights
+                                </button>
+                                <button
+                                    type='button'
+                                    className={`${location.pathname === '/cruise' ? "bg-white text-[#000]" : "bg-[#00000057] text-[#ffffffac] hover:bg-white hover:text-[#000]"} text-center font-bold sm:text-3xl text-2xl sm:w-[150px] sm:rounded-b-[20px]
+                                            rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
+                                    onClick={() => navigate('/cruise')}
+                                >
+                                    Cruise
+                                </button>
                             </div>
 
                             <div className='flex flex-col justify-between items-center'>

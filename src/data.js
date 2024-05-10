@@ -14,6 +14,22 @@ import {
     san5
 } from './assets/flights';
 
+import {
+    CardImg1,
+    CardImg2,
+    CardImg3,
+    CardImg4,
+    CardImg5,
+    CardImg6,
+    Service1,
+    Service2,
+    Service3,
+    Service4,
+    Service5,
+    Service6,
+    Service7,
+} from './assets/cruise';
+
 export const explore_India = [
     {
         src: "https://r-xx.bstatic.com/xdata/images/city/170x136/684919.jpg?k=0a73fce29109503c055e288c413d9a1c5bd66fdb26f01c1438e8017b0b64b42f&o=",
@@ -343,3 +359,68 @@ export const flightsData = [
         distance: "13,522"
     },
 ];
+
+
+export const cruiseCardData = [
+    {
+        title: "Vancouver BC",
+        description: "",
+        img : CardImg1
+    },
+    {
+        title: "Texas Usa",
+        description: "",
+        img : CardImg2
+    },
+    {
+        title: "Florida",
+        description: "",
+        img : CardImg3
+    },
+    {
+        title: "San Diego",
+        description: "",
+        img : CardImg4
+    },
+    {
+        title: "Newyork",
+        description: "",
+        img : CardImg5
+    },
+    {
+        title: "Los angeles",
+        description: "",
+        img : CardImg6
+    },
+]
+
+export const cruiseServiceCardData = [
+    {
+        img: Service1,
+        title : "",
+    },
+    {
+        img: Service2,
+        title : "",
+    },
+    {
+        img: Service3,
+        title : "",
+    },
+    {
+        img: Service4,
+        title : "",
+    },
+    {
+        img: Service5,
+        title : "",
+    },
+    {
+        img: Service6,
+        title : "",
+    },
+    {
+        img: Service7,
+        title : "",
+    },
+]
