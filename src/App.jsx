@@ -18,7 +18,7 @@ const App = () => {
       setFirstPop(true);
     }
     sessionStorage.setItem('popModal', 'true');
-    // window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
   }, [pathname]);
   return (
     <div className='App'>
@@ -39,6 +39,7 @@ const App = () => {
             open={open}
             firstPop={firstPop}
             setFirstPop={setFirstPop}
+            title={pathname === '/' ? "Flights" : "Cruise"}
           />
         )}
       </Suspense>

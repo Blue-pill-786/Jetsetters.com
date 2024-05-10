@@ -6,6 +6,7 @@ import WrapperLayout from '../components/Layouts/WrapperLayout'
 import { LuUser2 } from 'react-icons/lu'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import PopupModal from '../components/shared/PopupModal'
+import { FiLoader } from "react-icons/fi";
 
 const Cruise = () => {
     const [open, setOpen] = useState(false);
@@ -163,6 +164,11 @@ const Cruise = () => {
             {
                 open && <PopupModal open={open} setOpen={setOpen} title={"Cruise"} />
             }
+
+
+            <div className='mt-5 w-full mx-auto justify-center gap-x-5 text-xl font-bold text-center flex items-center '>
+                Under Process <FiLoader className='text-2xl animate-spin text-heading-text' />
+            </div>
         </>
     )
 }

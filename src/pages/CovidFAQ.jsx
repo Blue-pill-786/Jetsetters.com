@@ -11,9 +11,9 @@ const CovidFAQ = () => {
                     src={"https://www.cde.ual.es/wp-content/uploads/2021/06/cover-Covid19-1536x674.png"}
                     alt="covid-19"
                     className='w-full h-[530px] object-center'
-                    loading='lazy'
+                    loading='eager'
                 />
-                <p className='absolute sm:text-5xl text-4xl font-bold top-[40%] left-[10%] w-[60%] bg-gradient-to-b bg-clip-text text-transparent to-heading-text from-[#7ea6f7ea]'>
+                <p className='absolute sm:text-5xl text-4xl font-bold md:top-[40%] top-[20%] left-[10%] lg:w-[60%] w-[50%] bg-gradient-to-b bg-clip-text text-transparent sm:to-heading-text to-[#4289d4]  from-[#7ea6f7ea]'>
                     Corona virus restrictions and requirements
                 </p>
             </div>
