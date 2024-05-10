@@ -3,8 +3,7 @@ import { ImCross } from "react-icons/im";
 import { IoCallSharp, IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import React from 'react'
-import TripPlane from '../../assets/gif/trip.gif';
-import SkyPlane from '../../assets/gif/plane.gif';
+
 
 const style = {
     position: 'absolute',
@@ -19,7 +18,7 @@ const style = {
 };
 
 
-const PopupModal = ({ open, setOpen, firstPop, setFirstPop,title }) => {
+const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
     const handleClose = () => {
         setOpen(false);
         if (firstPop) {
@@ -58,16 +57,11 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop,title }) => {
                             >
                                 JETSETTERS
                             </Typography>
-                            {!firstPop && <img
-                                src={TripPlane}
+                            <img
+                                src={img}
                                 className='w-[30px] h-[25px]'
                                 loading='lazy'
-                            />}
-                            {firstPop && <img
-                                src={SkyPlane}
-                                className='w-[30px] h-[25px]'
-                                loading='lazy'
-                            />}
+                            />
                         </div>
                         <Typography
                             variant='h7'

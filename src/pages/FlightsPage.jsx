@@ -9,6 +9,8 @@ import Flights from '../components/Flights';
 import { flightsData } from '../data';
 import SearchAutoComplete from '../components/shared/SearchAutoComplete';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Plane from '../../assets/gif/plane.gif';
+
 const initialData = {
     from: "",
     to: ""
@@ -256,7 +258,7 @@ const FlightsPage = () => {
                     </div>
                 </div>
                 {
-                    open && <PopupModal open={open} setOpen={setOpen} title={"Flights"} />
+                    open && <PopupModal open={open} setOpen={setOpen} title={"Flights"} img={Plane} />
                 }
             </div>
 

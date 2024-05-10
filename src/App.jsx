@@ -3,6 +3,8 @@ import './App.css'
 import { Routes, Route, useLocation } from 'react-router-dom';
 import PopupModal from './components/shared/PopupModal';
 import Loader from './components/shared/Loader';
+import Plane from './assets/gif/trip.gif';
+import Ship from './assets/gif/ship2.gif';
 
 const FlightsPage = lazy(() => import('./pages/FlightsPage'));
 const Cruise = lazy(() => import('../src/pages/Cruise'));
@@ -40,6 +42,7 @@ const App = () => {
             firstPop={firstPop}
             setFirstPop={setFirstPop}
             title={pathname === '/' ? "Flights" : "Cruise"}
+            img={pathname === '/' ? Plane : Ship}
           />
         )}
       </Suspense>
