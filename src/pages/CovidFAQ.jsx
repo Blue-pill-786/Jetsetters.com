@@ -1,17 +1,24 @@
 import React from 'react'
-import CovidImg from '../../public/covid.png';
 import WrapperLayout from '../components/Layouts/WrapperLayout';
+import Header from '../components/Header';
 
 const CovidFAQ = () => {
     return (
         <div className='bg-[#FFFFFF]'>
-            <img
-                src={CovidImg}
-                alt="covid-19"
-                className='w-full h-[350px] object-center'
-            />
-            <div className='bg-[#afd19841] mt-0 sm:p-0 p-3'>
-                <div className='sm:w-[calc(100%-20%)] mx-auto md:py-10 sm:py-5'>
+            <Header />
+            <div className='relative border-t-[#3ba2da] border-[0.5px]'>
+                <img
+                    src={"https://www.cde.ual.es/wp-content/uploads/2021/06/cover-Covid19-1536x674.png"}
+                    alt="covid-19"
+                    className='w-full h-[530px] object-center'
+                    loading='lazy'
+                />
+                <p className='absolute sm:text-5xl text-4xl font-bold top-[40%] left-[10%] w-[60%] bg-gradient-to-b bg-clip-text text-transparent to-heading-text from-[#7ea6f7ea]'>
+                    Corona virus restrictions and requirements
+                </p>
+            </div>
+            <div className='bg-[#79afcf41] mt-0 sm:p-0 p-3'>
+                <div className='sm:w-[calc(100%-10%)] mx-auto md:py-10 sm:py-5'>
                     <div className='mt-3 sm:mt-0 sm:mb-1'>
                         <h1 className='font-bold lg:text-4xl text-xl text-[#10439F]'>Jetsetters</h1>
                         <p className='font-semibold text-2xl md:text-3xl text-neutral-900 md:mt-3'>We're here to help</p>
@@ -22,8 +29,8 @@ const CovidFAQ = () => {
                     </p>
                 </div>
             </div>
-            <div className='sm:w-[calc(100%-20%)] mx-auto my-5 sm:p-0 p-3'>
-                <div className='mt-10 '>
+            <div className='sm:w-[calc(100%-10%)] mx-auto my-5 sm:p-0 p-3'>
+                <div className='mt-10'>
                     <h2 className='text-xl md:text-3xl leading-5 font-semibold text-neutral-950 mb-3'>Government travel restrictions and advisories</h2>
                     <p className='text-sm sm:text-base md:text-lg md:leading-[1.3rem] leading-[0.9rem] text-neutral-900'>
                         Be sure to check for travel restrictions before booking and traveling to an accommodation. Touristic travel
@@ -143,4 +150,4 @@ const CovidFAQ = () => {
     )
 }
 
-export default WrapperLayout()(CovidFAQ);
+export default WrapperLayout("Covid-19 | FAQs","")(CovidFAQ);

@@ -19,7 +19,7 @@ const style = {
 };
 
 
-const PopupModal = ({ open, setOpen, firstPop, setFirstPop }) => {
+const PopupModal = ({ open, setOpen, firstPop, setFirstPop,title }) => {
     const handleClose = () => {
         setOpen(false);
         if (firstPop) {
@@ -73,7 +73,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop }) => {
                             variant='h7'
                             className='text-neutral-600 text-base'
                         >
-                            Find Cheapest Flight
+                            Find Cheapest {title}
                         </Typography>
                     </div>
                     <div className='flex mt-5 gap-x-3 items-center justify-between'>

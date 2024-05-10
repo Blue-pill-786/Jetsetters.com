@@ -25,7 +25,7 @@ const Footer = () => {
                 <img
                     src={Logo}
                     alt="JETSETTERSS"
-                    className='sm:w-[150px] w-[120px] mt-3'
+                    className='sm:w-[150px] w-[120px] mt-3 md:ml-5'
                     onClick={() => navigate('/')}
                 />
             </div>
@@ -53,11 +53,10 @@ const Footer = () => {
 
                 <div className='flex flex-col gap-y-1 justify-start'>
                     <Link
-                        to={Term_Conditions}
-                        target='_blank'
+                        to='/terms-conditions'
                         className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
                     >
-                        Term & conditions
+                        Terms & conditions
                     </Link>
                     <Link
                         to="/covid-19"
@@ -66,24 +65,17 @@ const Footer = () => {
                         Coronavirus (COVID-19) FAQs
                     </Link>
                     {
-                        location.pathname == "/" && (
-                            <Link
-                                to={'./cruise'}
-                                className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
-                            >
-                                Cruise
-                            </Link>
-                        )
+                        location.pathname === "/" ? <FooterLink title={"Cruise"} to={'/cruise'} />
+                            : location.pathname === '/covid-19' ? <FooterLink title={"Cruise"} to={'/cruise'} />
+                                : location.pathname === '/terms-conditions' ? <FooterLink title={"Cruise"} to={'/cruise'} />
+                                    : ""
                     }
                     {
-                        location.pathname == "/cruise" && (
-                            <Link
-                                to={'/'}
-                                className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
-                            >
-                                Flights
-                            </Link>
-                        )
+                        location.pathname === "/cruise" ? <FooterLink title={"Flights"} to={'/'} />
+                            : location.pathname === '/covid-19' ? <FooterLink title={"Flights"} to={'/'} />
+                                : location.pathname === "/terms-conditions" ? <FooterLink title={"Flights"} to={'/'} />
+                                    : ""
+
                     }
                 </div>
             </div>
@@ -92,6 +84,18 @@ const Footer = () => {
 }
 
 export default Footer;
+
+
+const FooterLink = ({ title, to }) => {
+    return (
+        <Link
+            to={to}
+            className='text-[#fff] hover:underline sm:text-base sm:font-medium text-[10px] font-light'
+        >
+            {title}
+        </Link>
+    )
+}
 
 
 

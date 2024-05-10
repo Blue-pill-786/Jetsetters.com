@@ -21,4 +21,4 @@ const Flights = ({ flightsData }) => {
     )
 }
 
-export default WrapperLayout()(Flights);
+export default WrapperLayout("Flights | Jetsetters","Book your first flight in wallet friendly budget")(Flights);

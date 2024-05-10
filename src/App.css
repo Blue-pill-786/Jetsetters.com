@@ -43,11 +43,16 @@ body {
 }
 
 
-.hero-image {
+.hero-flight-image {
     background-image: url('./assets//flights/heroImg.png');
     background-repeat: no-repeat no-repeat;
     background-position: center;
     background-size: 100% 100%;
     background-position-x: center;
-
+}
+.hero-cruise-image {
+    background-image: url('./assets/cruise/hero-img.png');
+    background-repeat: no-repeat no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
 }

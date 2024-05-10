@@ -95,7 +95,7 @@ const FlightsPage = () => {
     return (
         <>
             <div>
-                <div className='hero-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
+                <div className='hero-flight-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
                     <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
                         <div className='flex flex-col gap-y-10 sm:-mt-8'>
                             <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
@@ -238,7 +238,7 @@ const FlightsPage = () => {
                     </div>
                 </div>
                 {
-                    open && <PopupModal open={open} setOpen={setOpen} />
+                    open && <PopupModal open={open} setOpen={setOpen} title={"Flights"} />
                 }
             </div>
 
