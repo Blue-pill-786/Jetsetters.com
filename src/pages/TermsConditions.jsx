@@ -173,7 +173,20 @@ const TermsConditions = () => {
                     </h2>
                     <p className='text-sm sm:text-base md:text-lg md:leading-[1.5rem] leading-[1rem] text-neutral-900 pl-5 ml-1'>
                         Should you have any inquiries or concerns regarding these Terms or our services, please do not
-                        hesitate to reach out to us at [contact email or phone number].
+                        hesitate to reach out to us at
+                        <a
+                            href="tel:+14088999705"
+                            className='mx-1 text-heading-text hover:underline'
+                        >
+                            +14088999705
+                        </a>
+                        or
+                        <a
+                            href="mailto:bookings@jetsetterss.com"
+                            className='ml-1 text-heading-text hover:underline'
+                        >
+                            bookings@jetsetterss.com.
+                        </a>
                     </p>
                     <p className='text-sm sm:text-base md:text-lg md:leading-[1.5rem] leading-[1rem] text-neutral-900 pl-5 ml-1 mt-3'>
                         By accessing or utilizing our services, you acknowledge that you have carefully read,
