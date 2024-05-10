@@ -80,7 +80,7 @@ const Cruise = () => {
                 </div>
             </div>
 
-            <div className='sm:w-[calc(100%-10%)] sm:mx-auto my-10'>
+            <div className='sm:w-[calc(100%-10%)] sm:mx-auto my-10 sm:p-0 p-4'>
                 <div className='my-10'>
                     <h1 className='text-6xl font-medium mt-10 pt-10 pb-5 text-neutral-700'>Explore by Departure Port</h1>
                     <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-10 gap-5'>
@@ -99,7 +99,7 @@ const Cruise = () => {
                     <h1 className='text-6xl font-medium mt-10 pt-10 pb-5 text-neutral-700'>
                         Explore by Cruise Line
                     </h1>
-                    <div className='grid grid-cols-3 lg:gap-10 gap-5'>
+                    <div className='grid md:grid-cols-3 sm:grid-cols-2 lg:gap-10 gap-5 px-2'>
                         {
                             cruiseServiceCardData.map((data, index) => (
                                 <div
