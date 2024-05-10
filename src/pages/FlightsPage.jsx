@@ -9,7 +9,7 @@ import Flights from '../components/Flights';
 import { flightsData } from '../data';
 import SearchAutoComplete from '../components/shared/SearchAutoComplete';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Plane from '../../assets/gif/plane.gif';
+import Plane from '../assets/gif/plane.gif';
 
 const initialData = {
     from: "",
