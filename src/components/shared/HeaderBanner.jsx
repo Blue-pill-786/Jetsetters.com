@@ -7,7 +7,7 @@ const HeaderBanner = () => {
                 <span className='cursor-pointer font-semibold hover:text-white transition'>(ARC # 05511704)</span>
             </p>
             <p className='text-xs sm:text-lg lg:text-2xl text-[#fff] font-medium cursor-pointer'>
-                <a href="tel:+14088999705">Call on : <span className='animate-ping hover:animate-none'>+14088999705</span></a>
+                <a href="tel:+14088999705">Call on : <span className='animate-ping hover:animate-none text-heading-text font-bold'>+14088999705</span></a>
             </p>
         </div>
     )
