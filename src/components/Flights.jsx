@@ -1,5 +1,4 @@
 import React from 'react'
-import WrapperLayout from './Layouts/WrapperLayout'
 import FlightsCard from './FlightsCard';
 
 const Flights = ({ flightsData }) => {
@@ -21,4 +20,4 @@ const Flights = ({ flightsData }) => {
     )
 }
 
-export default WrapperLayout("Flights | Jetsetters","Book your first flight in wallet friendly budget")(Flights);
+export default Flights;

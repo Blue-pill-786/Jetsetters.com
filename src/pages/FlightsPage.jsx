@@ -10,6 +10,7 @@ import { flightsData } from '../data';
 import SearchAutoComplete from '../components/shared/SearchAutoComplete';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Plane from '../assets/gif/plane.gif';
+import WrapperLayout from '../components/Layouts/WrapperLayout';
 
 const initialData = {
     from: "",
@@ -267,7 +268,6 @@ const FlightsPage = () => {
     )
 }
 
-export default FlightsPage;
 
 
 const Inc_Dec_Box = ({ min = 0, max, initialValue, name, setData }) => {
@@ -295,3 +295,7 @@ const Inc_Dec_Box = ({ min = 0, max, initialValue, name, setData }) => {
         </div>
     )
 }
+
+
+
+export default WrapperLayout("Flights | Jetsetters","Book your first flight in wallet friendly budget")(FlightsPage);

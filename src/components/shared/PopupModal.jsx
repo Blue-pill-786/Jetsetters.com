@@ -36,7 +36,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
             <Paper elevation={8}>
                 <Box
                     sx={style}
-                    className="min-w-[200px] w-[300px] sm:w-[350px] relative">
+                    className="min-w-[200px] w-[350px] sm:w-[500px] relative">
                     <button
                         className='absolute right-4 top-4 z-[1000]'
                         onClick={handleClose}
@@ -63,12 +63,11 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                                 loading='lazy'
                             />
                         </div>
-                        <Typography
-                            variant='h7'
-                            className='text-neutral-600 text-base'
+                        <div
+                            className='text-neutral-600 sm:text-2xl text-base sm:mt-5 '
                         >
                             Find Cheapest {title}
-                        </Typography>
+                        </div>
                     </div>
                     <div className='flex mt-5 gap-x-3 items-center justify-between'>
                         <a href="tel:+14088999705">
@@ -78,7 +77,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                                 color='primary'
                                 className='group'
                             >
-                                <IoCallSharp className='group-hover:scale-[1.1] md:text-[40px] transition-transform duration-300' />
+                                <IoCallSharp className='group-hover:scale-[1.1] md:text-[50px] transition-transform duration-300' />
                             </IconButton>
                         </a>
                         <a href="https://wa.me/+14088999705" target="_blank" rel="noopener noreferrer">
@@ -88,7 +87,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                                 sx={{ color: "#47d94a" }}
                                 className='group'
                             >
-                                <IoLogoWhatsapp className='group-hover:scale-[1.1] md:text-[40px] transition-transform duration-300' />
+                                <IoLogoWhatsapp className='group-hover:scale-[1.1] md:text-[50px] transition-transform duration-300' />
                             </IconButton>
                         </a>
                         <a href="mailto:bookings@jetsetterss.com">
@@ -98,18 +97,18 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                                 sx={{ color: "#eb4545" }}
                                 className='group'
                             >
-                                <IoMail className='group-hover:scale-[1.1] md:text-[40px] transition-transform duration-300' />
+                                <IoMail className='group-hover:scale-[1.1] md:text-[50px] transition-transform duration-300' />
                             </IconButton>
                         </a>
                     </div>
                     <div className='flex flex-col mt-5 gap-y-1 items-start text-neutral-700'>
-                        <Typography variant='h7'>
-                            Call on : <a href="https://wa.me/+14088999705" className='font-medium sm:ml-2'>
+                        <Typography variant='h6'>
+                            <span className='text-base'>Call on : </span><a href="https://wa.me/+14088999705" className='font-medium sm:text-3xl text-xl sm:ml-2'>
                                 +1-408-899-9705
                             </a>
                         </Typography>
-                        <Typography variant='h7'>
-                            Mail on : <a href="mailto:bookings@jetsetterss.com" className='font-medium sm:ml-2'>
+                        <Typography variant='h6'>
+                            <span className='text-base'>Mail : </span><a href="mailto:bookings@jetsetterss.com" className='font-medium sm:text-3xl text-xl sm:ml-2'>
                                 bookings@jetsetterss.com
                             </a>
                         </Typography>

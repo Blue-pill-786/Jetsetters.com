@@ -47,7 +47,7 @@ const Footer = () => {
 
 
                     <div className='sm:text-center sm:text-sm sm:font-medium text-[#ffffff] sm:w-full w-[70%] text-[10px] font-light'>
-                        Address : <span className='ml-2 sm:text-base text-pretty'>513 W Bonaventure AveTracy, CA 95391</span>
+                        Address : <span className='ml-2 sm:text-base text-pretty'>513 W Bonaventure Ave Tracy, CA 95391</span>
                     </div>
                 </div>
 
