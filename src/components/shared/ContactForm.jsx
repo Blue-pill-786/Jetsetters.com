@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-const ContactForm = () => {
+const ContactForm = ({title, description}) => {
     const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+    const [phone, setPhone] = useState("+1");
 
     const handlePhoneInput = (value) => {
         setPhone(value);
@@ -14,8 +14,8 @@ const ContactForm = () => {
         <div className='bg-[#279bee20]'>
             <div className='sm:w-[calc(100%-10%)] mx-2 sm:mx-auto mt-10 pb-5 p-4'>
                 <div className='my-[2rem] flex justify-center items-center flex-col gap-2'>
-                    <h1 className='text-center md:text-2xl font-semibold text-neutral-900'>Fly For Less – Subscribe Now for Amazing Flight Deals!</h1>
-                    <p className='text-center md:text-lg text-neutral-700'>Join 2.5 million travelers with insider access to our Exclusive Flight Offers and Save Big on your next flight!</p>
+                    <h1 className='text-center md:text-2xl font-semibold text-neutral-900'>{title}</h1>
+                    <p className='text-center md:text-lg text-neutral-700'>{description}</p>
                 </div>
                 <form className='flex flex-col bg-[#fff] p-6 md:w-[70%] mx-auto'>
                     <div className='flex md:flex-row flex-col gap-x-8 gap-y-5'>

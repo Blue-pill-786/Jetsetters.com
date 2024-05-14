@@ -10,6 +10,7 @@ import {
     JcbIcon,
     MasterCardIcon,
     VisaIcon,
+    ArcIcon
 } from '../assets/footer';
 
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from "react-icons/fa";
@@ -38,8 +39,7 @@ const Footer = () => {
                     <img
                         src={Logo}
                         alt="JETSETTERSS"
-                        className='w-[75px] md:w-[90px] -mt-7 -ml-5'
-                        onClick={() => navigate('/')}
+                        className='w-[75px] md:w-[90px] -mt-7 -ml-5 cursor-pointer'
                     />
                     <div className='text-[10px] sm:text-sm md:text-base font-normal md:font-medium leading-[12px] text-[#daf0fa] md:mt-1'>
                         Jetsetters® is a brand of International Travel Network LLC, major international consolidator for travel and related services.
@@ -57,7 +57,7 @@ const Footer = () => {
                         />
                     </Link>
                     <Link
-                        to={'https://www.facebook.com/'}
+                        to={'https://www.instagram.com/'}
                         target='_blank'
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
@@ -65,7 +65,7 @@ const Footer = () => {
                             className='text-[#fff] text-center text-[18px] md:text-xl group-hover:text-[#318acf] transition-all duration-200'
                         />
                     </Link>
-                    <Link
+                    {/* <Link
                         to={'https://www.facebook.com/'}
                         target='_blank'
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
@@ -73,10 +73,9 @@ const Footer = () => {
                         <FaYoutube
                             className='text-[#fff] text-center text-[18px] md:text-xl group-hover:text-[#318acf] transition-all duration-200'
                         />
-                    </Link>
+                    </Link> */}
                     <Link
-                        to={'https://www.facebook.com/'}
-                        target='_blank'
+                        to={"#"}
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
                         <RiTwitterXFill
@@ -84,8 +83,7 @@ const Footer = () => {
                         />
                     </Link>
                     <Link
-                        to={'https://www.facebook.com/'}
-                        target='_blank'
+                        to={'#'}
                         className='border border-[#fff] px-1 md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
                         <FaLinkedinIn
@@ -111,6 +109,11 @@ const Footer = () => {
                 />
                 <img
                     src={DiscoverIcon}
+                    alt=""
+                    className='w-[75px] h-[50px] md:w-[100px] md:h-[75px]'
+                />
+                <img
+                    src={ArcIcon}
                     alt=""
                     className='w-[75px] h-[50px] md:w-[100px] md:h-[75px]'
                 />
@@ -192,7 +195,7 @@ const Footer = () => {
                 </div>
 
                 <div className='flex flex-col self-start gap-y-[4px] text-neutral-100 text-xs px-2'>
-                    <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>About Us</p>
+                    {/* <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>About Us</p> */}
                     <Link
                         to="/about"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'

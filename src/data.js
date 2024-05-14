@@ -296,7 +296,7 @@ export const flightsData = [
             // description: "Kempegowda International Airport Bengaluru",
         },
         distance: "14,014",
-        price : "700"
+        price : "699"
     },
 
     {
@@ -313,7 +313,7 @@ export const flightsData = [
             // description: "Indira Gandhi International Airport (IATA: DEL, ICAO: VIDP) is the primary international airport serving Delhi, the capital of India, and the National Capital Region (NCR).",
         },
         distance: "12,368",
-        price : "600"
+        price : "599"
     },
     {
         source: {
@@ -329,7 +329,7 @@ export const flightsData = [
             // description: "Sardar Vallabhbhai Patel International Airport (IATA: AMD, ICAO: VAAH)",
         },
         distance: "13,090",
-        price : "635"
+        price : "629"
     },
     {
         source: {
@@ -345,7 +345,7 @@ export const flightsData = [
             // description: "Rajiv Gandhi International Airport (IATA: HYD, ICAO: VOHS)"
         },
         distance: "13,521",
-        price : "650"
+        price : "649"
     },
     {
         source: {
@@ -361,7 +361,7 @@ export const flightsData = [
             // description: "Chhatrapati Shivaji Maharaj International Airport (IATA: BOM, ICAO: VABB) is an international airport serving Mumbai and the Mumbai Metropolitan Region (MMR)"
         },
         distance: "13,522",
-        price : "670"
+        price : "669"
     },
 ];
 
@@ -369,32 +369,38 @@ export const cruiseCardData = [
     {
         title: "Vancouver BC",
         description: "",
-        img : CardImg1
+        img: CardImg1,
+        price : "64"
     },
     {
         title: "Texas Usa",
         description: "",
-        img : CardImg2
+        img : CardImg2,
+        price : "72"
     },
     {
         title: "Florida",
         description: "",
-        img : CardImg3
+        img : CardImg3,
+        price : "85"
     },
     {
         title: "San Diego",
         description: "",
-        img : CardImg4
+        img : CardImg4,
+        price : "77"
     },
     {
         title: "Newyork",
         description: "",
-        img : CardImg5
+        img : CardImg5,
+        price : "96"
     },
     {
         title: "Los angeles",
         description: "",
-        img : CardImg6
+        img : CardImg6,
+        price : "89"
     },
 ]
 

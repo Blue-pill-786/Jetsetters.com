@@ -5,16 +5,17 @@ import WrapperLayout from '../components/Layouts/WrapperLayout'
 import PopupModal from '../components/shared/PopupModal'
 import { cruiseCardData, cruiseServiceCardData } from '../data'
 import CruiseImgCard from '../components/CruiseImgCard'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
 import GridTemplate from '../components/shared/GridTemplate'
-import {cruisePriceData} from '../data';
+import { cruisePriceData } from '../data';
+import ContactForm from '../components/shared/ContactForm'
 
 const initialData = {
     from: "",
     to: "",
-    phone: "",
+    phone: "+1",
     email: "",
 }
 
@@ -44,13 +45,14 @@ const Cruise = () => {
                 <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
                     <div className='flex flex-col sm:gap-y-[5rem] sm:-mt-8'>
                         <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
-                            <img
-                                src={Logo}
-                                alt="logo"
-                                className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill'
-                            />
-
-                            <h1 className='logo-head font-bold lg:text-6xl text-4xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>JETSETTERS</h1>
+                            <Link to={'/'} className='cursor-pointer'>
+                                <img
+                                    src={Logo}
+                                    alt="logo"
+                                    className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill'
+                                />
+                            </Link>
+                            <h1 className='logo-head sm:hidden block font-bold lg:text-6xl text-4xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>JETSETTERS</h1>
                         </div>
                         <div className='md:ml-14 sm:ml-7 ml-5 md:mt-[150px] '>
                             <h2 className='text-[#f1f8fc] font-bold lg:text-6xl xl:text-7xl md:text-5xl text-5xl mt-5 drop-shadow-xl shadow-[#000]'>
@@ -60,7 +62,7 @@ const Cruise = () => {
                     </div>
 
                     <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r lg:mb-0 mb-10 
-                                    md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
+                                    md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1] sm:mt-0 mt-[5rem]'>
                         <div className='flex justify-center gap-x-5 mb-5 overflow-hidden'>
                             <button
                                 type='button'
@@ -142,6 +144,11 @@ const Cruise = () => {
                 </div>
             </div>
 
+            <ContactForm
+                title={"Subscribe Now for Amazing Cruise Deals!"}
+                description={"Join 2.5 million travelers with insider access to our Exclusive Cruise Offers and Save Big on your next Cruise!"}
+            />
+
             <div className='sm:w-[calc(100%-10%)] sm:mx-auto my-10 sm:p-0 p-4'>
                 <div className='my-10'>
                     <h1 className='text-6xl font-medium mt-10 pt-10 pb-5 text-neutral-700'>Explore by Departure Port</h1>
@@ -188,9 +195,9 @@ const Cruise = () => {
                 </div>
             </div>
 
-            <div className='bg-[#3060a90c] my-20'>
+            {/* <div className='bg-[#3060a90c] my-20'>
                 <GridTemplate data={cruisePriceData} />
-            </div>
+            </div> */}
 
 
             {

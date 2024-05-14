@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className='flex flex-row justify-between items-center bg-main-bg'>
             <div className='flex items-center lg:w-[80%] md:w-[70%]  justify-between'>
-                <Link to={'/'}>
+                <Link to={'/'} className='cursor-pointer'>
                     <img
                         src={Logo}
                         alt="logo"

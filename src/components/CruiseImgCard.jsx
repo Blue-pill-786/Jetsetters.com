@@ -15,10 +15,12 @@ const CruiseImgCard = ({ data }) => {
                             sm:bg-[#1f3d4738] sm:backdrop-blur-[5px] rounded-[15px] sm:group-hover:right-0 transition-all duration-[1.5s] sm:bg-bg-image-none bg-gradient-to-b
                             to-[#000] via-[#151c1fc4] from-[#ffffff0e]'
             >
-                <h1 className='uppercase sm:text-[50px] text-4xl font-medium leading-[3rem]'>{data.title}</h1>
-                <p className='capitalize text-[14px] font-light'>{data.description}</p>
+                <div>
+                    <h1 className='uppercase sm:text-[50px] text-4xl font-medium leading-[3rem]'>{data.title}</h1>
+                    <p className='capitalize text-base font-medium md:text-lg md:font-semibold'>$ {data.price}</p>
+                </div>
                 <button className='w-[120px] text-[#1f3d47] bg-[#8fabba] rounded-[5px] capitalize border-none outline-none 
-                                font-medium cursor-pointer p-2 hover:bg-[#378dbc] transition'
+                                font-medium cursor-pointer p-2 hover:bg-[#378dbc] transition md:self-auto self-end'
                     onClick={() => setOpen(true)}
                 >
                     Book now

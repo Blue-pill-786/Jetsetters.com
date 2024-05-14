@@ -8,7 +8,7 @@ import PopupModal from '../components/shared/PopupModal';
 import Flights from '../components/Flights';
 import { flightsData } from '../data';
 import SearchAutoComplete from '../components/shared/SearchAutoComplete';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Plane from '../assets/gif/plane.gif';
 import WrapperLayout from '../components/Layouts/WrapperLayout';
 import PhoneInput from 'react-phone-input-2';
@@ -18,7 +18,7 @@ import ContactForm from '../components/shared/ContactForm';
 const initialData = {
     from: "",
     to: "",
-    phone: "",
+    phone: "+1",
     email: "",
 }
 const airportSearchData = [
@@ -105,7 +105,7 @@ const FlightsPage = () => {
         e.preventDefault();
         console.log({ data, passengerData });
         setOpen(true)
-        setData(initialData);
+        // setData(initialData);
     }
     return (
         <>
@@ -114,13 +114,17 @@ const FlightsPage = () => {
                     <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
                         <div className='flex flex-col gap-y-10 sm:-mt-8'>
                             <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
-                                <img
-                                    src={Logo}
-                                    alt="logo"
-                                    className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill'
-                                />
-
-                                <h1 className='logo-head font-bold lg:text-6xl text-4xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>JETSETTERS</h1>
+                                <Link to="/" className="cursor-pointer">
+                                    <img
+                                        src={Logo}
+                                        alt="logo"
+                                        className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill'
+                                    />
+                                </Link>
+                                <h1 className='logo-head font-bold lg:text-6xl text-4xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>
+                                    JETSETTERS
+                                    <p className='text-2xl'>Jet, Set, Go</p>
+                                </h1>
                             </div>
                             <div className='md:ml-14 sm:ml-7 ml-5'>
                                 <h2 className='text-[#302626] font-bold lg:text-6xl xl:text-7xl md:text-5xl text-5xl mt-5'>
@@ -272,7 +276,7 @@ const FlightsPage = () => {
                                             paddingLeft: "4rem",
                                             border: "2px solid #bbab8cad",
                                             fontSize: "18px",
-                                            color:"#000000b4"
+                                            color: "#000000b4"
                                         }}
                                         buttonStyle={{
                                             width: "15%",
@@ -313,7 +317,10 @@ const FlightsPage = () => {
                 }
             </div>
 
-            <ContactForm />
+            <ContactForm
+                title={"Fly For Less – Subscribe Now for Amazing Flight Deals!"}
+                description={"Join 2.5 million travelers with insider access to our Exclusive Flight Offers and Save Big on your next flight!"}
+            />
 
             <Flights flightsData={flightsData} />
         </>

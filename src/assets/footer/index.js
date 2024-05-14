@@ -5,6 +5,7 @@ import MasterCardIcon from './mastercard.svg';
 import VisaIcon from './visa.svg'
 import DinerClubIcon from './diners-club-international.svg'
 import TempIcon from './1000057043.svg'
+import ArcIcon from './aarc.svg'
 
 
 export {
@@ -15,4 +16,5 @@ export {
     VisaIcon,
     DinerClubIcon,
     TempIcon,
+    ArcIcon
 };

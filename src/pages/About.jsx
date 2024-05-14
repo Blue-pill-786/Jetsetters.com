@@ -2,7 +2,7 @@ import React from 'react'
 import WrapperLayout from '../components/Layouts/WrapperLayout'
 import ARC from '../assets/files/arc.jpeg'
 import TracyCity from '../assets/files/city.jpeg'
-import Seller from '../assets/files/sellers.jpeg'
+import Seller from '../assets/files/seller.jpeg'
 import Uplift from '../assets/files/uplift.jpeg'
 import ARCFile from '../assets/files/ARC.pdf'
 import TracyCityFile from '../assets/files/Tracy.pdf'
@@ -10,11 +10,21 @@ import SellerFile from '../assets/files/seller.pdf'
 import UpliftFile from '../assets/files/Uplift.pdf'
 import { BiSolidShow } from "react-icons/bi";
 import { Link } from 'react-router-dom'
+import Logo from '../assets/logos/logo.png'
+// import  Header from '../components/Header'
 
 const About = () => {
     return (
-        <div>
+        <div className=''>
+            {/* <Header /> */}
             <div className='about-hero min-h-[calc(100vh-60px)] w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
+                <Link to="/" className="cursor-pointer">
+                    <img
+                        src={Logo}
+                        alt="logo"
+                        className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill -ml-6 mt-2'
+                    />
+                </Link>
             </div>
             <div className='sm:w-[calc(100%-18%)] sm:mx-auto mt-[3rem] sm:px-0 px-5'>
                 <h2 className='sm:text-7xl text-3xl text-neutral-900 font-semibold drop-shadow-md shadow-[#000]'>What is Jetsetters ?</h2>
@@ -86,7 +96,7 @@ const About = () => {
 export default WrapperLayout("", "")(About);
 
 
-const ImageLayout = ({ image, title,to }) => {
+const ImageLayout = ({ image, title, to }) => {
     return (
         <div className='relative z-[1] shadow-xl shadow-[#00000049] lg:w-[550px] md:w-[350px] sm:w-[270px] w-full h-[350px] rounded-lg sm:mt-0 mt-5 cursor-pointer'>
             <img
