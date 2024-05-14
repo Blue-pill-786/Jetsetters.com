@@ -37,7 +37,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
             <Paper elevation={8}>
                 <Box
                     sx={style}
-                    className="min-w-[200px] w-[350px] md:h-[450px] sm:w-[500px] relative">
+                    className="min-w-[200px] w-[350px] md:h-[480px] sm:w-[500px] relative">
                     <button
                         className='absolute right-4 top-4 z-[1000]'
                         onClick={handleClose}
@@ -108,17 +108,22 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                             </IconButton>
                         </a>
                     </div>
-                    <div className='flex flex-col mt-10 gap-y-1 items-start text-heading-text sm:pl-5'>
+                    <div className='flex flex-col mt-10 gap-y-1 items-center text-heading-text sm:pl-5'>
+                        <div className='mb-5'>
+                            <p className='sm:text-sm md:text-base font-medium text-[#3c5598cd] text-center'>PHONE SPECIAL SUPER DEALS</p>
+                            <p className='text-sm text-[10px] font-medium text-[#3c5598cb] text-center'>We have many unpublished deals for offline sales only</p>
+                        </div>
                         <Typography variant='h6'>
-                            <span className='text-base'>Call on : </span><a href="tel:+14088999705" className='font-medium sm:text-3xl text-xl sm:ml-2'>
+                            <a href="tel:+14088999705" className='font-medium sm:text-3xl text-xl sm:ml-2'>
                                 +1-408-899-9705
                             </a>
                         </Typography>
                         <Typography variant='h6'>
-                            <span className='text-base'>Mail : </span><a href="mailto:bookings@jetsetterss.com" className='font-medium sm:text-3xl text-xl sm:ml-2'>
+                            <a href="mailto:bookings@jetsetterss.com" className='font-medium sm:text-3xl text-xl sm:ml-2'>
                                 bookings@jetsetterss.com
                             </a>
                         </Typography>
+
                     </div>
                 </Box>
             </Paper>

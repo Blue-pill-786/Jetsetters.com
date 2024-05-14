@@ -10,11 +10,6 @@ const About = () => {
     return (
         <div>
             <div className='about-hero min-h-[calc(100vh-60px)] w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <img
-                    src={Logo}
-                    alt="logo"
-                    className='md:w-[150px] w-[85px] md:ml-0 -ml-[1.2rem]  md:-mt-[1.2rem] mt-2'
-                />
             </div>
             <div className='sm:w-[calc(100%-18%)] sm:mx-auto mt-[3rem] sm:px-0 px-5'>
                 <h2 className='sm:text-7xl text-3xl text-neutral-900 font-semibold drop-shadow-md shadow-[#000]'>What is Jetsetters ?</h2>
