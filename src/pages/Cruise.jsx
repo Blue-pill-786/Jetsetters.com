@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
 import GridTemplate from '../components/shared/GridTemplate'
-import {countinentsPricedata} from '../data';
+import {cruisePriceData} from '../data';
 
 const initialData = {
     from: "",
@@ -189,7 +189,7 @@ const Cruise = () => {
             </div>
 
             <div className='bg-[#3060a90c] my-20'>
-                <GridTemplate data={countinentsPricedata} />
+                <GridTemplate data={cruisePriceData} />
             </div>
 
 

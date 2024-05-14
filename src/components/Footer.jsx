@@ -33,7 +33,7 @@ const Footer = () => {
     const location = useLocation();
     return (
         <footer className='bg-[#6589bd] flex flex-col sm:justify-normal mt-10 pb-10 sm:p-0 px-4 rounded-t-md overflow-hidden'>
-            <div className='sm:w-[calc(100%-10%)] sm:mx-auto flex flex-col md:flex-row items-center gap-y-5 mb-3'>
+            <div className='sm:w-[calc(100%-10%)] sm:mx-auto flex flex-col md:flex-row items-center gap-5 mb-3'>
                 <div className='flex item mt-[1.2rem] md:mt-8 md:w-[70%] w-full'>
                     <img
                         src={Logo}

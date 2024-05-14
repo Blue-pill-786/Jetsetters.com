@@ -13,6 +13,7 @@ import Plane from '../assets/gif/plane.gif';
 import WrapperLayout from '../components/Layouts/WrapperLayout';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
+import ContactForm from '../components/shared/ContactForm';
 
 const initialData = {
     from: "",
@@ -311,6 +312,8 @@ const FlightsPage = () => {
                     open && <PopupModal open={open} setOpen={setOpen} title={"Flights"} img={Plane} />
                 }
             </div>
+
+            <ContactForm />
 
             <Flights flightsData={flightsData} />
         </>

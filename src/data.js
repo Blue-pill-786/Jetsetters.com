@@ -479,3 +479,54 @@ export const countinentsPricedata = [
         price: "635",
     }
 ];
+
+export const cruisePriceData = [
+    {
+        region: "US starting from",
+        price : "64"
+    },
+    {
+        region: "Europe starting from",
+        price : "98"
+    },
+    {
+        region: "Middle East starting from",
+        price : "150"
+    },
+    {
+        region: "Latin America starting from",
+        price : "80"
+    },
+    {
+        region: "UK starting from",
+        price : "130"
+    },
+    {
+        region: "Asia starting from",
+        price : "165"
+    },
+    {
+        region: "Canada starting from",
+        price : "99"
+    },
+    {
+        region: "Oceania starting from",
+        price : "155"
+    },
+    {
+        region: "India and ISC starting from",
+        price : "196"
+    },
+    {
+        region: "Mexico starting from",
+        price : "105"
+    },
+    {
+        region: "Africa starting from",
+        price : "187"
+    },
+    {
+        region: "Philippines starting from",
+        price : "199"
+    },
+]
