@@ -1,20 +1,38 @@
 import React, { useState } from 'react'
 import Logo from '../assets/logos/logo.png'
-import SearchAutoComplete from '../components/shared/SearchAutoComplete'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import WrapperLayout from '../components/Layouts/WrapperLayout'
-import { LuUser2 } from 'react-icons/lu'
-import { RiArrowDropDownLine } from 'react-icons/ri'
 import PopupModal from '../components/shared/PopupModal'
-import { FiLoader } from "react-icons/fi";
 import { cruiseCardData, cruiseServiceCardData } from '../data'
 import CruiseImgCard from '../components/CruiseImgCard'
 import { useLocation, useNavigate } from 'react-router-dom'
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css'
+import GridTemplate from '../components/shared/GridTemplate'
+import {countinentsPricedata} from '../data';
+
+const initialData = {
+    from: "",
+    to: "",
+    phone: "",
+    email: "",
+}
 
 const Cruise = () => {
     const [open, setOpen] = useState(false);
+    const [data, setData] = useState(initialData);
     const location = useLocation();
     const navigate = useNavigate();
+
+    const onChangeHandler = (e) => {
+        const { name, value } = e.target;
+        setData((prev) => ({ ...prev, [name]: value }));
+    }
+
+    const handlePhoneInput = (value) => {
+        setData((prev) => ({ ...prev, ['phone']: value }));
+    }
+
     const sumbitHandle = (e) => {
         e.preventDefault();
         setOpen(true);
@@ -43,8 +61,7 @@ const Cruise = () => {
 
                     <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
-
-                        <div className='flex justify-center gap-x-5 mb-10'>
+                        <div className='flex justify-center gap-x-5 mb-5 overflow-hidden'>
                             <button
                                 type='button'
                                 className={`${location.pathname === '/' ? "bg-[#fff]" : "bg-[#00000057] text-[#ffffffac] hover:bg-[#fff] hover:text-[#000]"}  text-center font-bold sm:text-3xl text-2xl sm:w-[150px]
@@ -61,6 +78,51 @@ const Cruise = () => {
                             >
                                 Cruise
                             </button>
+                        </div>
+                        <div className='flex flex-col justify-between gap-7 items-center'>
+                            <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
+                                <input
+                                    type="email"
+                                    name='email'
+                                    id='email'
+                                    value={data.email}
+                                    placeholder='Email*'
+                                    required
+                                    onChange={onChangeHandler}
+                                    className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383] placeholder:font-normal'
+                                />
+                            </div>
+                            <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative '>
+                                <PhoneInput
+                                    country={'us'}
+                                    value={data.phone}
+                                    onChange={handlePhoneInput}
+                                    inputProps={{ required: true }}
+                                    placeholder='Phone*'
+                                    inputStyle={{
+                                        width: '100%',
+                                        borderRadius: "30px",
+                                        padding: "22px 0px",
+                                        paddingLeft: "4rem",
+                                        border: "2px solid #bbab8cad",
+                                        fontSize: "18px",
+                                        color: "#000000b4"
+                                    }}
+                                    buttonStyle={{
+                                        width: "15%",
+                                        height: "40px",
+                                        border: "none",
+                                        borderRight: "1px solid #bbab8cad",
+                                        marginTop: "3px", paddingLeft: "0.7rem",
+                                        borderRadius: "30px 0px 0px 30px",
+                                        background: "none"
+                                    }}
+                                    dropdownStyle={{
+                                        borderRadius: "30px 30px 0px 0px",
+                                        padding: "10px",
+                                    }}
+                                />
+                            </div>
                         </div>
                         <div className='mx-auto lg:mb-0 mb-10 z-[0] group self-end'>
                             <button
@@ -124,6 +186,10 @@ const Cruise = () => {
                         }
                     </div>
                 </div>
+            </div>
+
+            <div className='bg-[#3060a90c] my-20'>
+                <GridTemplate data={countinentsPricedata} />
             </div>
 
 

@@ -11,10 +11,14 @@ import SearchAutoComplete from '../components/shared/SearchAutoComplete';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Plane from '../assets/gif/plane.gif';
 import WrapperLayout from '../components/Layouts/WrapperLayout';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css'
 
 const initialData = {
     from: "",
-    to: ""
+    to: "",
+    phone: "",
+    email: "",
 }
 const airportSearchData = [
     {
@@ -57,6 +61,10 @@ const FlightsPage = () => {
     const [toList, setToList] = useState([]);
     const location = useLocation();
     const navigate = useNavigate();
+
+    const handlePhoneInput = (value) => {
+        setData((prev) => ({ ...prev, ['phone']: value }));
+    }
 
     const searchHandler = (code) => {
         let searchArr = [];
@@ -120,7 +128,7 @@ const FlightsPage = () => {
                             </div>
                         </div>
 
-                        <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
+                        <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-10 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
 
                             <div className='flex justify-center gap-x-2'>
@@ -142,8 +150,8 @@ const FlightsPage = () => {
                                 </button>
                             </div>
 
-                            <div className='flex flex-col justify-between items-center'>
-                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] my-5 relative'>
+                            <div className='flex flex-col justify-between gap-4 sm:gap-5 lg:gap-7 items-center'>
+                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
                                     <input
                                         type="search"
                                         name='from'
@@ -164,7 +172,7 @@ const FlightsPage = () => {
                                         (<></>)
                                     }
                                 </div>
-                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] my-5 relative'>
+                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
                                     <input
                                         type="search"
                                         name='to'
@@ -185,9 +193,9 @@ const FlightsPage = () => {
                                         (<></>)
                                     }
                                 </div>
-                                <div className='w-3/4 p-1 z-[10] relative rounded-[30px] bg-[#ffffff] my-5'>
+                                <div className='w-3/4 p-1 z-[10] relative rounded-[30px] bg-[#ffffff]'>
                                     <div
-                                        className='w-full flex flex-row gap-2 justify-between items-center px-3 py-2 
+                                        className='w-full flex flex-row gap-2 justify-between items-center px-3 py-1 
                                                     border-[2px] rounded-[30px] border-[#bbab8cad] cursor-pointer 
                                                     outline-none text-xl text-[#BBAB8C]'
                                         onClick={() => setOpenUserbox(!openUserbox)}
@@ -237,8 +245,49 @@ const FlightsPage = () => {
                                         )
                                     }
                                 </div>
-
-
+                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
+                                    <input
+                                        type="email"
+                                        name='email'
+                                        id='email'
+                                        value={data.email}
+                                        placeholder='Email*'
+                                        required
+                                        onChange={onChangeHandler}
+                                        className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383] placeholder:font-normal'
+                                    />
+                                </div>
+                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative '>
+                                    <PhoneInput
+                                        country={'us'}
+                                        value={data.phone}
+                                        onChange={handlePhoneInput}
+                                        inputProps={{ required: true }}
+                                        placeholder='Phone*'
+                                        inputStyle={{
+                                            width: '100%',
+                                            borderRadius: "30px",
+                                            padding: "22px 0px",
+                                            paddingLeft: "4rem",
+                                            border: "2px solid #bbab8cad",
+                                            fontSize: "18px",
+                                            color:"#000000b4"
+                                        }}
+                                        buttonStyle={{
+                                            width: "15%",
+                                            height: "40px",
+                                            border: "none",
+                                            borderRight: "1px solid #bbab8cad",
+                                            marginTop: "3px", paddingLeft: "0.7rem",
+                                            borderRadius: "30px 0px 0px 30px",
+                                            background: "none"
+                                        }}
+                                        dropdownStyle={{
+                                            borderRadius: "30px 30px 0px 0px",
+                                            padding: "10px",
+                                        }}
+                                    />
+                                </div>
                             </div>
 
                             <div className='mx-auto lg:mb-0 mb-10 z-[0] group'>
@@ -298,4 +347,4 @@ const Inc_Dec_Box = ({ min = 0, max, initialValue, name, setData }) => {
 
 
 
-export default WrapperLayout("Flights | Jetsetters","Book your first flight in wallet friendly budget")(FlightsPage);
+export default WrapperLayout("Flights | Jetsetters", "Book your first flight in wallet friendly budget")(FlightsPage);

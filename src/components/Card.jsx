@@ -3,7 +3,7 @@ import { FaLocationDot } from 'react-icons/fa6';
 
 const Card = ({ data }) => {
     return (
-        <div className='relative flex flex-col max-w-[680px] w-[560px] sm:h-[250px] rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] overflow-hidden group'>
+        <div className='relative flex flex-col max-w-[680px] w-[560px] sm:h-[250px] h-[200px] rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] overflow-hidden group'>
             <img
                 src={data.img}
                 alt={data.title}

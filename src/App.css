@@ -38,8 +38,8 @@ body {
     margin: 40px auto;
     letter-spacing: 5px;
     color: #10439F;
-    text-shadow: 3px 2px 1px #59a3e9bb, 
-                1px 1px 15px #eef5ff;
+    text-shadow: 3px 2px 1px #59a3e9bb,
+        1px 1px 15px #eef5ff;
 }
 
 
@@ -50,6 +50,7 @@ body {
     background-size: 100% 100%;
     background-position-x: center;
 }
+
 .hero-cruise-image {
     background-image: url('./assets/cruise/hero-img.png');
     background-repeat: no-repeat no-repeat;
@@ -57,3 +58,9 @@ body {
     background-size: 100% 100%;
 }
 
+.about-hero {
+    background-image: url('./assets/images/about-hero-bg.png');
+    background-repeat: no-repeat no-repeat;
+    background-position: left;
+    background-size: 100% 100%;
+}

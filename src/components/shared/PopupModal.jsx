@@ -2,6 +2,7 @@ import { Box, Button, ButtonGroup, IconButton, Modal, Paper, Popover, Typography
 import { ImCross } from "react-icons/im";
 import { IoCallSharp, IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
+import Logo from '../../assets/logos/logo.png';
 import React from 'react'
 
 
@@ -36,7 +37,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
             <Paper elevation={8}>
                 <Box
                     sx={style}
-                    className="min-w-[200px] w-[350px] sm:w-[500px] relative">
+                    className="min-w-[200px] w-[350px] md:h-[400px] sm:w-[500px] relative">
                     <button
                         className='absolute right-4 top-4 z-[1000]'
                         onClick={handleClose}
@@ -45,6 +46,11 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                     </button>
                     <div>
                         <div className='flex items-center gap-1'>
+                            <img
+                                src={Logo}
+                                alt="logo"
+                                className='w-[50px] h-[50px] -mt-3'
+                            />
                             <Typography
                                 id="modal-modal-title"
                                 variant="h6"
@@ -64,12 +70,12 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                             />
                         </div>
                         <div
-                            className='text-neutral-600 sm:text-2xl text-base sm:mt-5 '
+                            className='text-neutral-600 sm:text-2xl text-base sm:mt-5 sm:pl-5'
                         >
                             Find Cheapest {title}
                         </div>
                     </div>
-                    <div className='flex mt-5 gap-x-3 items-center justify-between'>
+                    <div className='flex mt-5 gap-x-3 items-center justify-between sm:pl-5'>
                         <a href="tel:+14088999705">
                             <IconButton
                                 size='large'
@@ -101,9 +107,9 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                             </IconButton>
                         </a>
                     </div>
-                    <div className='flex flex-col mt-5 gap-y-1 items-start text-neutral-700'>
+                    <div className='flex flex-col mt-10 gap-y-1 items-start text-neutral-700 sm:pl-5'>
                         <Typography variant='h6'>
-                            <span className='text-base'>Call on : </span><a href="https://wa.me/+14088999705" className='font-medium sm:text-3xl text-xl sm:ml-2'>
+                            <span className='text-base'>Call on : </span><a href="tel:+14088999705" className='font-medium sm:text-3xl text-xl sm:ml-2'>
                                 +1-408-899-9705
                             </a>
                         </Typography>

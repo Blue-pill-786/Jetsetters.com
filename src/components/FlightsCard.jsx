@@ -18,7 +18,7 @@ const FlightsCard = ({ data }) => {
         setKm(!km);
     }
     return (
-        <div>
+        <div className='flex flex-col gap-y-3 mt-2'>
             <div className='flex justify-between'>
 
                 {/* Source Card  */}
@@ -28,7 +28,7 @@ const FlightsCard = ({ data }) => {
                 <div className='flex flex-col mx-1'>
 
                     {/* to card  */}
-                    <div className='w-full my-auto flex flex-col gap-0 items-center justify-center'>
+                    <div className='w-full my-auto flex flex-col gap-5 items-center justify-center'>
                         <div className=''>
                             <HiOutlineArrowNarrowRight className='text-[40px]' />
                             <HiOutlineArrowNarrowLeft className='text-[40px]' />
@@ -40,53 +40,57 @@ const FlightsCard = ({ data }) => {
                             />
                             <span className='tracking-wider font-bold lg:text-xs text-[8px]'>{km ? data.distance + " km" : miles + " miles"}</span>
                         </p>
-                    </div>
 
-                    {/* Contact Button  */}
-                    <div className='mx-auto md:mt-10 xs:mt-2 bg-[#344f7e2a] rounded-2xl'>
-                        <div className=''>
-                            <a href="tel:+14088999705" target='_blank'>
-                                <IconButton
-                                    size='large'
-                                    aria-label='Call'
-                                    color='primary'
-                                    className='group'
-                                >
-                                    <IoCallSharp className='group-hover:scale-[1.1] transition-transform duration-300' />
-                                </IconButton>
-                            </a>
-                            {/* <a href="mailto:bookings@jetsetterss.com">
-                                <IconButton
-                                    size='large'
-                                    aria-label='mail'
-                                    sx={{ color: "#eb4545" }}
-                                    className='group'
-                                >
-                                    <IoMail className='group-hover:scale-[1.1] transition-transform duration-300' />
-                                </IconButton>
-                            </a> */}
-                            <a
-                                href="https://wa.me/+14088999705"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                <IconButton
-                                    size='large'
-                                    aria-label='whatsapp'
-                                    sx={{ color: "#47d94a" }}
-                                    className='group'
-                                >
-                                    <IoLogoWhatsapp className='group-hover:scale-[1.1] transition-transform duration-300' />
-                                </IconButton>
-                            </a>
+                        <div className='text-base sm:text-lg md:text-3xl text-heading-text font-semibold sm:font-bold'>
+                            {`$${data.price}`}
                         </div>
                     </div>
-
                 </div>
 
 
                 {/* Destination Card  */}
                 <Card data={data.destination} />
             </div>
+
+            {/* Contact Button  */}
+            <div className='mx-auto md:mt-10 xs:mt-2 bg-[#344f7e2a] rounded-2xl'>
+                <div className=''>
+                    <a href="tel:+14088999705" target='_blank'>
+                        <IconButton
+                            size='large'
+                            aria-label='Call'
+                            color='primary'
+                            className='group'
+                        >
+                            <IoCallSharp className='group-hover:scale-[1.1] transition-transform duration-300' />
+                        </IconButton>
+                    </a>
+                    <a href="mailto:bookings@jetsetterss.com">
+                        <IconButton
+                            size='large'
+                            aria-label='mail'
+                            sx={{ color: "#eb4545" }}
+                            className='group'
+                        >
+                            <IoMail className='group-hover:scale-[1.1] transition-transform duration-300' />
+                        </IconButton>
+                    </a>
+                    <a
+                        href="https://wa.me/+14088999705"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <IconButton
+                            size='large'
+                            aria-label='whatsapp'
+                            sx={{ color: "#47d94a" }}
+                            className='group'
+                        >
+                            <IoLogoWhatsapp className='group-hover:scale-[1.1] transition-transform duration-300' />
+                        </IconButton>
+                    </a>
+                </div>
+            </div>
+            
         </div>
     )
 }

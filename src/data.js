@@ -295,7 +295,8 @@ export const flightsData = [
             img: "https://www.airport-technology.com/wp-content/uploads/sites/14/2020/06/Feature_Image-Kempegowda_International_Airport1.jpg",
             // description: "Kempegowda International Airport Bengaluru",
         },
-        distance: "14,014"
+        distance: "14,014",
+        price : "700"
     },
 
     {
@@ -311,7 +312,8 @@ export const flightsData = [
             img : dest5,
             // description: "Indira Gandhi International Airport (IATA: DEL, ICAO: VIDP) is the primary international airport serving Delhi, the capital of India, and the National Capital Region (NCR).",
         },
-        distance: "12,368"
+        distance: "12,368",
+        price : "600"
     },
     {
         source: {
@@ -326,7 +328,8 @@ export const flightsData = [
             img: dest1,
             // description: "Sardar Vallabhbhai Patel International Airport (IATA: AMD, ICAO: VAAH)",
         },
-        distance: "13,090"
+        distance: "13,090",
+        price : "635"
     },
     {
         source: {
@@ -341,7 +344,8 @@ export const flightsData = [
             img: dest4,
             // description: "Rajiv Gandhi International Airport (IATA: HYD, ICAO: VOHS)"
         },
-        distance: "13,521"
+        distance: "13,521",
+        price : "650"
     },
     {
         source: {
@@ -356,10 +360,10 @@ export const flightsData = [
             img : dest2,
             // description: "Chhatrapati Shivaji Maharaj International Airport (IATA: BOM, ICAO: VABB) is an international airport serving Mumbai and the Mumbai Metropolitan Region (MMR)"
         },
-        distance: "13,522"
+        distance: "13,522",
+        price : "670"
     },
 ];
-
 
 export const cruiseCardData = [
     {
@@ -424,3 +428,54 @@ export const cruiseServiceCardData = [
         title : "",
     },
 ]
+
+export const countinentsPricedata = [
+    {
+        region: "US Domestic",
+        price: "110",
+    },
+    {
+        region: "Europe",
+        price: "245"
+    },
+    {
+        region: "Middle East",
+        price: "445"
+    },
+    {
+        region: "Latin America",
+        price: "120"
+    },
+    {
+        region: "UK",
+        price: "395"
+    },
+    {
+        region: "Asia",
+        price: "525"
+    },
+    {
+        region: "Canada",
+        price: "205"
+    },
+    {
+        region: "Oceania",
+        price: "305"
+    },
+    {
+        region: "India and ISC",
+        price: "525"
+    },
+    {
+        region: "Mexico",
+        price: "189",
+    },
+    {
+        region: "Africa",
+        price: "515",
+    },
+    {
+        region: "Philippines",
+        price: "635",
+    }
+];

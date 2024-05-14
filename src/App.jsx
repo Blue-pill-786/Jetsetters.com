@@ -10,6 +10,7 @@ const FlightsPage = lazy(() => import('./pages/FlightsPage'));
 const Cruise = lazy(() => import('../src/pages/Cruise'));
 const CovidFAQ = lazy(() => import('./pages/CovidFAQ'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
+const About = lazy(() => import('./pages/About'));
 
 const App = () => {
   const [firstPop, setFirstPop] = useState(false);
@@ -20,7 +21,7 @@ const App = () => {
       setFirstPop(true);
     }
     sessionStorage.setItem('popModal', 'true');
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
   }, [pathname]);
   return (
     <div className='App'>
@@ -28,6 +29,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<FlightsPage />} />
           <Route path='/cruise' element={<Cruise />} />
+          <Route path='/about' element={<About />} />
           <Route path='/covid-19' element={<CovidFAQ />} />
           <Route path='/terms-conditions' element={<TermsConditions />} />
           <Route path='*' element={<div className='min-h-screen flex justify-center items-center text-5xl font-bold'>404 Not Found</div>} />
