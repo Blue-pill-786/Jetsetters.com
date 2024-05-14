@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../assets/logos/logo.png'
+import Logo from '../assets/logos/logolol.png'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import WrapperLayout from '../components/Layouts/WrapperLayout'
 import PopupModal from '../components/shared/PopupModal'

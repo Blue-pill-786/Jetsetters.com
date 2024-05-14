@@ -57,7 +57,7 @@ const Footer = () => {
                         />
                     </Link>
                     <Link
-                        to={'https://www.instagram.com/'}
+                        to={'https://www.facebook.com/'}
                         target='_blank'
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
