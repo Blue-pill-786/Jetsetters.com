@@ -25,6 +25,7 @@ const ContactForm = () => {
                             id="email"
                             placeholder='Enter your email'
                             value={email}
+                            required
                             onChange={e => setEmail(e.target.value)}
                             className='border-[#bbbbbbd4] border outline-none hover:outline-[#4154bb] hover:border-none px-5 md:w-[40%] w-full h-[50px]'
                         />
@@ -40,6 +41,7 @@ const ContactForm = () => {
                                 onChange={handlePhoneInput}
                                 inputProps={{ required: true }}
                                 placeholder='Phone*'
+                                required
                                 inputStyle={{
                                     width: '100%',
                                     padding: "22px 0px",
@@ -66,10 +68,10 @@ const ContactForm = () => {
                         <div className='flex gap-5 mb-5'>
                             <input
                                 type="checkbox"
-                                name=""
-                                id=""
+                                name="agree"
+                                id="agree"
                                 required
-                                className='w-[40px] h-[40px] rounded-lg self-start'
+                                className='w-[40px] h-[40px] rounded-lg self-start checked:bg-heading-text'
                             />
                             <p className='hover:text-heading-text sm:text-sm text-xs cursor-pointer mt-2'>
                                 I agree to receive promotional SMS texts via an autodialer, and this agreement isn’t a condition of purchase. I also agree to T&Cs and Privacy Policy. Up to 5 Msgs/month. Msg & Data rates may apply.

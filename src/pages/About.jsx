@@ -4,7 +4,12 @@ import ARC from '../assets/files/arc.jpeg'
 import TracyCity from '../assets/files/city.jpeg'
 import Seller from '../assets/files/sellers.jpeg'
 import Uplift from '../assets/files/uplift.jpeg'
-import Logo from '../assets/logos/logo.png'
+import ARCFile from '../assets/files/ARC.pdf'
+import TracyCityFile from '../assets/files/Tracy.pdf'
+import SellerFile from '../assets/files/seller.pdf'
+import UpliftFile from '../assets/files/Uplift.pdf'
+import { BiSolidShow } from "react-icons/bi";
+import { Link } from 'react-router-dom'
 
 const About = () => {
     return (
@@ -48,24 +53,28 @@ const About = () => {
             <div className='bg-[#00000005]'>
                 <div className='sm:w-[calc(100%-18%)] sm:mx-auto mt-[3rem] sm:px-0 px-5'>
                     <h2 className='sm:text-5xl text-3xl text-neutral-900 font-semibold drop-shadow-md shadow-[#000] pt-5'>
-                        Our Ceritificates
+                        Our Ceritificates & License
                     </h2>
                     <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-10 ms:mt-[2rem] mt-[1rem]'>
                         <ImageLayout
                             image={ARC}
                             title={"ARC"}
+                            to={ARCFile}
                         />
                         <ImageLayout
                             image={TracyCity}
                             title={"Tracy City"}
+                            to={TracyCityFile}
                         />
                         <ImageLayout
                             image={Seller}
                             title={"Seller"}
+                            to={SellerFile}
                         />
                         <ImageLayout
                             image={Uplift}
                             title={"Uplift"}
+                            to={UpliftFile}
                         />
                     </div>
                 </div>
@@ -77,14 +86,24 @@ const About = () => {
 export default WrapperLayout("", "")(About);
 
 
-const ImageLayout = ({ image, title }) => {
+const ImageLayout = ({ image, title,to }) => {
     return (
-        <div className='shadow-xl shadow-[#00000049] lg:w-[550px] md:w-[350px] sm:w-[270px] w-full h-[350px] rounded-lg sm:mt-0 mt-5'>
+        <div className='relative z-[1] shadow-xl shadow-[#00000049] lg:w-[550px] md:w-[350px] sm:w-[270px] w-full h-[350px] rounded-lg sm:mt-0 mt-5 cursor-pointer'>
             <img
                 src={image}
                 alt={title}
-                className='w-full h-[95%] object-fill rounded-t-lg'
+                className='w-full h-[95%] object-fill rounded-t-lg z-[10]'
             />
+
+            <Link
+                to={to}
+                target="_blank"
+                className="absolute z-[100] top-2 right-1 shadow-sm shadow-[#4c6cb145] bg-[#1e242c18] rounded-[50px] p-[2px] hover:bg-[#4d88d650] transition duration-200 group"
+            >
+                <BiSolidShow
+                    className='text-[35px] text-[#515d704b] group-hover:text-[#3a7be2] transition duration-200'
+                />
+            </Link>
             {/* <h2 className='text-xl font-semibold mt-5'>{title}</h2> */}
         </div>
     )
