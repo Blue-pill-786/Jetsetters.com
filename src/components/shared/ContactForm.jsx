@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import sendEmailHandler from '../../utils/EmailSend';
+import toast from "react-hot-toast";
 
 const ContactForm = ({title, description}) => {
     const [email, setEmail] = useState("");
@@ -10,9 +11,10 @@ const ContactForm = ({title, description}) => {
     const handlePhoneInput = (value) => {
         setPhone(value);
     }
-    const sumbitHandle = (e) => {
+    const sumbitHandle = async (e) => {
         e.preventDefault();
-        sendEmailHandler("",{ email, phone });
+        await sendEmailHandler("",{ email, phone });
+        toast.success("Thanks for subscribe Jetsetters");
     }
     
     return (

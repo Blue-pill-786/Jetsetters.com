@@ -98,7 +98,7 @@ const FlightsPage = () => {
     }
 
     const hideOnEscape = (e) => {
-        console.log(e.key);
+        // console.log(e.key);
         if (e.key === 'Escape') {
             setOpenCalendar(false);
         }
@@ -133,10 +133,19 @@ const FlightsPage = () => {
         setData((prev) => ({ ...prev, [name]: value }));
     }
 
-    const sumbitHandle = async(e) => {
+    const sumbitHandle = async (e) => {
         e.preventDefault();
         // console.log({ data, passengerData });
-        await sendEmailHandler("Send from the flight user",{ data, passengerData,date });
+        await sendEmailHandler(
+            "Send from the flight user",
+            {
+                data,
+                passengerData,
+                date: {
+                    "From Date": format(date[0].startDate, 'MM/dd/yyyy'),
+                    "To Date": format(date[0].endDate, 'MM/dd/yyyy')
+                }
+            });
         setOpen(true)
         // setData(initialData);
     }
@@ -241,7 +250,7 @@ const FlightsPage = () => {
                                         </span> */}
                                         <span className='text-sm sm:text-base py-1'>{format(date[0].startDate, 'MM/dd/yyyy',)} to {format(date[0].endDate, 'MM/dd/yyyy',)}</span>
                                     </div>
-                                    {openCalendar && <div ref={ref} className='absolute flex top-[50%] translate-y-8 -translate-x-[10%] -left-2 rounded-md p-1 bg-[#ffffff] 
+                                    {openCalendar && <div ref={ref} className='absolute flex flex-col top-[50%] lg:translate-x-[10%] translate-y-8 -translate-x-[10%] -left-2 rounded-md p-1 bg-[#ffffff] 
                                             shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] transition-transform duration-150 z-[500]'>
                                         <DateRange
                                             className='dateRange'
@@ -254,6 +263,14 @@ const FlightsPage = () => {
                                             scroll={{ enabled: false }}
                                             ariaLabels={{ prevButton: "prev" }}
                                         />
+
+                                        <button
+                                            className='w-full text-center py-1 text-[#006CE4] border border-[#006ae4df] 
+                                                        rounded-md text-lg hover:bg-[#006ae40d] font-medium'
+                                            onClick={() => setOpenCalendar(false)}
+                                        >
+                                            Done
+                                        </button>
                                     </div>
                                     }
                                 </div>

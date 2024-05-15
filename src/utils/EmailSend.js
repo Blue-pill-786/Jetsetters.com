@@ -1,9 +1,6 @@
-import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser"
 
 const sendEmailHandler = async(subject, data) => {
-    console.log(data);
-    const toastId = toast.loading("Email Sending...");
     await emailjs.send(
         'service_l74xhul',
         'template_y0nv6mi',
@@ -13,15 +10,12 @@ const sendEmailHandler = async(subject, data) => {
         }
     )
         .then((res) => {
-            console.log(res.text);
+            // console.log(res.text);
             // console.log("Email send");
-            toast.dismiss(toastId)
-            toast.success("Email Send.")
+            // toast.success("Email Send.")
         })
         .catch((error) => {
-            // console.log(error);
-            toast.dismiss(toastId)
-            toast.error("Email sent failed")
+            console.log(error);
             // console.log("Email sent failed");
         })
 
