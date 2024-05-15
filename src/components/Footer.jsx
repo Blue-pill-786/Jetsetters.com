@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
                 <div className='flex justify-between md:w-[28%] w-full'>
                     <Link
-                        to={'https://www.facebook.com/'}
+                        to={'https://www.facebook.com/profile.php?id=61557536332731'}
                         target='_blank'
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
@@ -56,7 +56,7 @@ const Footer = () => {
                         />
                     </Link>
                     <Link
-                        to={'https://www.facebook.com/'}
+                        to={'https://www.instagram.com/jetsetters2024?igsh=MTc4MmM1YmI2Ng%3D%3D'}
                         target='_blank'
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
@@ -74,7 +74,8 @@ const Footer = () => {
                         />
                     </Link> */}
                     <Link
-                        to={"#"}
+                        to={"https://twitter.com/Jetsetterscorp"}
+                        target='_blank'
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
                         <RiTwitterXFill
@@ -82,7 +83,8 @@ const Footer = () => {
                         />
                     </Link>
                     <Link
-                        to={'#'}
+                        to={'https://www.linkedin.com/in/jetsetters-corporation-b97847309/'}
+                        target='_blank'
                         className='border border-[#fff] px-1 md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
                         <FaLinkedinIn

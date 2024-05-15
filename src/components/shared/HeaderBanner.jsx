@@ -1,13 +1,14 @@
 import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { IoMdArrowBack } from "react-icons/io";
+import { ArcIcon } from '../../assets/footer/index'
 
 const HeaderBanner = () => {
     const navigate = useNavigate();
-    const {pathname} = useLocation()
+    const { pathname } = useLocation()
     return (
         <div className='bg-main-bg h-[60px] w-full p-2 flex gap-x-3 lg:justify-evenly justify-between items-center fixed shadow-2xl shadow-[#0000007d] z-[1000] top-0 left-0'>
-            {pathname === "/"  ? ("") : <button
+            {pathname === "/" ? ("") : <button
                 className='relative md:p-2 p-1 rounded-full bg-gradient-to-r first:to-[#f5892a] from-[#f99f18] group'
                 onClick={() => navigate(-1)}
             >
@@ -18,6 +19,13 @@ const HeaderBanner = () => {
                     className='sm:text-[20px] text-[#fff]'
                 />
             </button>}
+            <Link to="/about">
+                <img
+                    src={ArcIcon}
+                    alt="arc"
+                    className='h-[35px] lg:h-[45px] w-[35px] lg:w-[45px] object-fill cursor-pointer -mt-2'
+                />
+            </Link>
             <p className='text-[#dde5f1] text-[10px] lg:text-xl sm:text-base overflow-hidden font-medium'>ARC Certified Ticketing Agent for 250+ Airlines and leading Cruise Lines
                 <span
                     className='cursor-pointer md:text-lg font-semibold hover:text-[#FFC100] transition ml-1'
@@ -26,11 +34,15 @@ const HeaderBanner = () => {
                     (ARC # 05511704)
                 </span>
             </p>
-            <p className='text-sm lg:text-xl text-center text-[#fff] font-medium cursor-pointer'>
-                <a href="tel:+14088999705">Call on <span className='animate-ping hover:animate-none text-[#FFC100] font-bold lg:text-4xl md:text-3xl sm:text-2xl text-lg drop-shadow-md shadow-[#c97156]'>+14088999705</span></a>
+            <p className='text-[#fff]cursor-pointer'>
+                <a href="tel:+14088999705">
+                    <span className='animate-ping hover:animate-none text-[#FFC100] font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg drop-shadow-md shadow-[#c97156]'>
+                        +14088999705
+                    </span>
+                </a>
             </p>
         </div>
     )
 }
 
-export default HeaderBanner
+export default HeaderBanner;
