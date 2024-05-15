@@ -20,6 +20,7 @@ import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns/format'
 import addDays from 'date-fns/addDays';
 import sendEmailHandler from '../utils/EmailSend';
+import getAiportList from '../utils/GetAirport';
 
 const initialData = {
     from: "",
@@ -65,7 +66,7 @@ const FlightsPage = () => {
     const [data, setData] = useState(initialData);
     const [openUserbox, setOpenUserbox] = useState(false)
     const [openCalendar, setOpenCalendar] = useState(false);
-    const [fromList, setFromList] = useState([]);
+    const [fromList, setFromList] = useState();
     const [toList, setToList] = useState([]);
     const location = useLocation();
     const navigate = useNavigate();
@@ -79,16 +80,6 @@ const FlightsPage = () => {
 
     const handlePhoneInput = (value) => {
         setData((prev) => ({ ...prev, ['phone']: value }));
-    }
-
-    const searchHandler = (code) => {
-        let searchArr = [];
-        if (code !== "") {
-            searchArr = airportSearchData.filter((data) => data.code.includes(code.toUpperCase()));
-            // console.log(searchArr);
-            return searchArr;
-        }
-        return searchArr;
     }
 
     const hideOnClickOutside = (e) => {
@@ -109,17 +100,25 @@ const FlightsPage = () => {
         document.addEventListener('click', hideOnClickOutside, true);
     }, [])
 
+    const getSearchDataFrom = async (iata) => {
+        const aiportList = await getAiportList(iata);
+        setFromList(aiportList);
+    }
+    const getSearchDataTo = async (iata) => {
+        const aiportList = await getAiportList(iata);
+        setToList(aiportList);
+    }
+
     useEffect(() => {
-        if (data.from !== "" || data.from !== " ") {
-            const searchList = searchHandler(data.from);
-            setFromList(searchList);
+        if (data.from.length === 3) {
+            getSearchDataFrom(data.from)
         }
     }, [data.from]);
 
     useEffect(() => {
-        if (data.to !== "" || data.to !== " ") {
-            const searchList = searchHandler(data.to);
-            setToList(searchList);
+        if (data.to.length === 3) {
+            console.log(data.to);
+            getSearchDataTo(data.to)
         }
     }, [data.to]);
 
@@ -175,7 +174,7 @@ const FlightsPage = () => {
                             </div>
                         </div>
 
-                        <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-10 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
+                        <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-5 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
 
                             <div className='flex justify-center gap-x-2'>
@@ -197,7 +196,7 @@ const FlightsPage = () => {
                                 </button>
                             </div>
 
-                            <div className='flex flex-col justify-between gap-4 sm:gap-5 lg:gap-7 items-center'>
+                            <div className='flex flex-col justify-between gap-4 sm:gap-5 items-center'>
                                 <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
                                     <input
                                         type="search"
@@ -209,14 +208,13 @@ const FlightsPage = () => {
                                         onChange={onChangeHandler}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
-                                    {fromList && fromList.length > 0 ?
+                                    {fromList && data.from &&
                                         (<SearchAutoComplete
-                                            searchList={fromList}
+                                            data={fromList}
                                             name={'from'}
                                             handler={setData}
+                                            setList={setFromList}
                                         />)
-                                        :
-                                        (<></>)
                                     }
                                 </div>
                                 <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
@@ -230,14 +228,13 @@ const FlightsPage = () => {
                                         onChange={onChangeHandler}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
-                                    {toList && toList.length > 0 ?
+                                    {toList && data.to &&
                                         (<SearchAutoComplete
-                                            searchList={toList}
+                                            data={toList}
                                             name={'to'}
                                             handler={setData}
+                                            setList={setToList}
                                         />)
-                                        :
-                                        (<></>)
                                     }
                                 </div>
                                 <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative cursor-pointer'>
@@ -358,7 +355,6 @@ const FlightsPage = () => {
                                             width: "15%",
                                             height: "40px",
                                             border: "none",
-                                            borderRight: "1px solid #bbab8cad",
                                             marginTop: "3px", paddingLeft: "0.7rem",
                                             borderRadius: "30px 0px 0px 30px",
                                             background: "none"
@@ -369,9 +365,21 @@ const FlightsPage = () => {
                                         }}
                                     />
                                 </div>
+
+                                <div className='flex gap-5 px-8'>
+                                    <input
+                                        type="checkbox"
+                                        name="agree"
+                                        id="agree"
+                                        required
+                                        className='w-[40px] h-[40px] rounded-xl self-start checked:bg-heading-text'
+                                    />
+                                    <p className='hover:text-heading-text text-[#fff] sm:text-base text-xs cursor-pointer mt-2'>
+                                        Disclaimer: By submitting your information, you agree to receive future travel deal notifications. We respect your privacy and won't share your data. You can opt out anytime.                                    </p>
+                                </div>
                             </div>
 
-                            <div className='mx-auto lg:mb-0 mb-10 z-[0] group'>
+                            <div className='mx-auto lg:mb-5 mb-10 z-[0] group'>
                                 <button
                                     type='submit'
                                     className='relative text-white bg-[#10439F] group-hover:bg-[#1e66ee] text-xl text-center font-semibold 

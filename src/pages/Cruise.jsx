@@ -128,6 +128,17 @@ const Cruise = () => {
                                     }}
                                 />
                             </div>
+                            <div className='flex gap-5 px-8'>
+                                <input
+                                    type="checkbox"
+                                    name="agree"
+                                    id="agree"
+                                    required
+                                    className='w-[40px] h-[40px] rounded-xl self-start checked:bg-heading-text'
+                                />
+                                <p className='hover:text-heading-text text-[#fff] sm:text-base text-xs cursor-pointer mt-2'>
+                                    Disclaimer: By submitting your information, you agree to receive future travel deal notifications. We respect your privacy and won't share your data. You can opt out anytime.                                </p>
+                            </div>
                         </div>
                         <div className='mx-auto lg:mb-0 mb-10 z-[0] group self-end'>
                             <button
