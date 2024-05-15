@@ -17,7 +17,7 @@ const CruiseImgCard = ({ data }) => {
             >
                 <div>
                     <h1 className='uppercase sm:text-[50px] text-4xl font-medium leading-[3rem]'>{data.title}</h1>
-                    <p className='capitalize text-base font-medium md:text-lg md:font-semibold'>$ {data.price}</p>
+                    <p className='capitalize text-base font-medium md:text-lg md:font-semibold'>Start from $ {data.price}/p.p </p>
                 </div>
                 <button className='w-[120px] text-[#1f3d47] bg-[#8fabba] rounded-[5px] capitalize border-none outline-none 
                                 font-medium cursor-pointer p-2 hover:bg-[#378dbc] transition md:self-auto self-end'
