@@ -42,8 +42,7 @@ const Footer = () => {
                         className='w-[75px] md:w-[90px] -mt-7 -ml-5 cursor-pointer'
                     />
                     <div className='text-[10px] sm:text-sm md:text-base font-normal md:font-medium leading-[12px] text-[#daf0fa] md:mt-1'>
-                        Jetsetters® is a brand of International Travel Network LLC, major international consolidator for travel and related services.
-                        © 2024 International Travel Network LLC. All rights reserved.
+                        Jetsetters : Your gateway to exceptional travel. Specializing in flights, cruises, and hotels, our ARC certification ensures unparalleled service and tailored experiences. All rights reserved. Copyright Jetsetters.
                     </div>
                 </div>
                 <div className='flex justify-between md:w-[28%] w-full'>

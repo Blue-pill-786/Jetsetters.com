@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../assets/logos/logolol.png'
+import Logo from '../assets/logos/logo2.png';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import WrapperLayout from '../components/Layouts/WrapperLayout'
 import PopupModal from '../components/shared/PopupModal'
@@ -8,9 +8,9 @@ import CruiseImgCard from '../components/CruiseImgCard'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
-import GridTemplate from '../components/shared/GridTemplate'
-import { cruisePriceData } from '../data';
 import ContactForm from '../components/shared/ContactForm'
+import sendEmailHandler from '../utils/EmailSend';
+
 
 const initialData = {
     from: "",
@@ -36,6 +36,7 @@ const Cruise = () => {
 
     const sumbitHandle = (e) => {
         e.preventDefault();
+        sendEmailHandler("send from the cruise user", data);
         setOpen(true);
     }
 
@@ -44,17 +45,19 @@ const Cruise = () => {
             <div className='hero-cruise-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
                 <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
                     <div className='flex flex-col sm:gap-y-[5rem] sm:-mt-8'>
-                        <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
-                            <Link to={'/'} className='cursor-pointer'>
-                                <img
-                                    src={Logo}
-                                    alt="logo"
-                                    className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill'
-                                />
-                            </Link>
-                            <h1 className='logo-head sm:hidden block font-bold lg:text-6xl text-4xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>JETSETTERS</h1>
+                        <div className='flex items-center lg:gap-x-[7rem] sm:mt-0 -mt-8'>
+                            <img
+                                src={Logo}
+                                alt="logo"
+                                onClick={() => navigate('/')}
+                                className='md:w-[200px] md:h-[250px] w-[200px] object-cover cursor-pointer sm:-ml-[2.5rem] -ml-[3.2rem] sm:-mt-8 -mt-5'
+                            />
+                            <h1 className='logo-head block font-bold lg:text-6xl text-3xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>
+                                JETSETTERS
+                                <p className='sm:text-2xl text-xl leading-4'>Jet, Set, Go</p>
+                            </h1>
                         </div>
-                        <div className='md:ml-14 sm:ml-7 ml-5 md:mt-[150px] '>
+                        <div className='md:ml-14 sm:ml-7 ml-5 md:mt-[50px] lg:mt-[150] '>
                             <h2 className='text-[#f1f8fc] font-bold lg:text-6xl xl:text-7xl md:text-5xl text-5xl mt-5 drop-shadow-xl shadow-[#000]'>
                                 Explore Our Cheapest Cruise Search
                             </h2>
@@ -147,6 +150,7 @@ const Cruise = () => {
             <ContactForm
                 title={"Subscribe Now for Amazing Cruise Deals!"}
                 description={"Join 2.5 million travelers with insider access to our Exclusive Cruise Offers and Save Big on your next Cruise!"}
+                subject={"send from the cruise user for subcribe jetsetters updates"}
             />
 
             <div className='sm:w-[calc(100%-10%)] sm:mx-auto my-10 sm:p-0 p-4'>

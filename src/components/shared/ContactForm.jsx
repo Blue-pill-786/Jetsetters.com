@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import sendEmailHandler from '../../utils/EmailSend';
 
 const ContactForm = ({title, description}) => {
     const [email, setEmail] = useState("");
@@ -8,6 +9,10 @@ const ContactForm = ({title, description}) => {
 
     const handlePhoneInput = (value) => {
         setPhone(value);
+    }
+    const sumbitHandle = (e) => {
+        e.preventDefault();
+        sendEmailHandler("",{ email, phone });
     }
     
     return (
@@ -17,7 +22,7 @@ const ContactForm = ({title, description}) => {
                     <h1 className='text-center md:text-2xl font-semibold text-neutral-900'>{title}</h1>
                     <p className='text-center md:text-lg text-neutral-700'>{description}</p>
                 </div>
-                <form className='flex flex-col bg-[#fff] p-6 md:w-[70%] mx-auto'>
+                <form onSubmit={sumbitHandle} className='flex flex-col bg-[#fff] p-6 md:w-[70%] mx-auto'>
                     <div className='flex md:flex-row flex-col gap-x-8 gap-y-5'>
                         <input
                             type="email"

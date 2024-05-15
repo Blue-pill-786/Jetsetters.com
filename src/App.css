@@ -52,29 +52,38 @@ body {
 }
 
 .hero-cruise-image {
-    background-image: url('./assets/images/cruise-hero-bg.png');
+    background-image: url('./assets/images/cruise-hero-bg.jpeg');
     /* background-repeat: ; */
     background-position: center;
     background-size: 100% 100%;
 }
 
 .about-hero {
-    background-image: url('./assets/images/about-hero-bg.png');
-    background-repeat: no-repeat no-repeat;
+    background-image: url('./assets/images/about-hero-bg.jpeg');
+    /* background-repeat: no-repeat no-repeat; */
     background-position: center;
     background-size: 100% 100%;
 }
 
 @media only screen and (max-width: 600px) {
     .about-hero {
-        background-image: url('./assets/images/about-hero-bg-mobile.png');
-        background-repeat: no-repeat no-repeat;
+        background-image: url('./assets/images/about-hero-bg-mobile.jpeg');
+        /* background-repeat: no-repeat no-repeat; */
         background-position: center;
         background-size: 100% 100%;
     }
-    .hero-cruise-image {
+    /* .hero-cruise-image {
         background-image: url('./assets/images/cruise-hero-bg-mobile.jpeg');
-        /* background-repeat: no-repeat no-repeat; */
+        background-repeat: no-repeat no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+    } */
+}
+
+@media only screen and (max-width: 760px) {
+    .hero-cruise-image{
+        background-image: url('./assets/images/cruise-hero-bg-mobile.jpeg');
+        background-repeat: no-repeat no-repeat;
         background-position: center;
         background-size: 100% 100%;
     }

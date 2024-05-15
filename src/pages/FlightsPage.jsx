@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Logo from '../assets/logos/logo.png'
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight, MdOutlineLuggage, MdOutlineCalendarMonth } from "react-icons/md";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { LuUser2 } from "react-icons/lu";
 import { FiPlus, FiMinus } from "react-icons/fi";
@@ -14,6 +14,12 @@ import WrapperLayout from '../components/Layouts/WrapperLayout';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
 import ContactForm from '../components/shared/ContactForm';
+import { DateRange } from 'react-date-range'
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
+import { format } from 'date-fns/format'
+import addDays from 'date-fns/addDays';
+import sendEmailHandler from '../utils/EmailSend';
 
 const initialData = {
     from: "",
@@ -58,10 +64,18 @@ const FlightsPage = () => {
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(initialData);
     const [openUserbox, setOpenUserbox] = useState(false)
+    const [openCalendar, setOpenCalendar] = useState(false);
     const [fromList, setFromList] = useState([]);
     const [toList, setToList] = useState([]);
     const location = useLocation();
     const navigate = useNavigate();
+    const ref = useRef();
+
+    const [date, setDate] = useState([{
+        startDate: new Date(),
+        endDate: addDays(new Date(), 7),
+        key: "selection"
+    }]);
 
     const handlePhoneInput = (value) => {
         setData((prev) => ({ ...prev, ['phone']: value }));
@@ -76,6 +90,24 @@ const FlightsPage = () => {
         }
         return searchArr;
     }
+
+    const hideOnClickOutside = (e) => {
+        if (ref.current && !ref.current.contains(e.target)) {
+            setOpenCalendar(false);
+        }
+    }
+
+    const hideOnEscape = (e) => {
+        console.log(e.key);
+        if (e.key === 'Escape') {
+            setOpenCalendar(false);
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('keydown', hideOnEscape, true);
+        document.addEventListener('click', hideOnClickOutside, true);
+    }, [])
 
     useEffect(() => {
         if (data.from !== "" || data.from !== " ") {
@@ -101,16 +133,17 @@ const FlightsPage = () => {
         setData((prev) => ({ ...prev, [name]: value }));
     }
 
-    const sumbitHandle = (e) => {
+    const sumbitHandle = async(e) => {
         e.preventDefault();
-        console.log({ data, passengerData });
+        // console.log({ data, passengerData });
+        await sendEmailHandler("Send from the flight user",{ data, passengerData,date });
         setOpen(true)
         // setData(initialData);
     }
     return (
         <>
             <div>
-                <div className='hero-flight-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
+                <div className='hero-flight-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3'>
                     <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
                         <div className='flex flex-col gap-y-10 sm:-mt-8'>
                             <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
@@ -123,7 +156,7 @@ const FlightsPage = () => {
                                 </Link>
                                 <h1 className='logo-head font-bold lg:text-6xl text-4xl text-[#10439F] lg:text-center lg:ml-0 md:-ml-6'>
                                     JETSETTERS
-                                    <p className='text-2xl'>Jet, Set, Go</p>
+                                    <p className='sm:text-2xl text-xl leading-4'>Jet, Set, Go</p>
                                 </h1>
                             </div>
                             <div className='md:ml-14 sm:ml-7 ml-5'>
@@ -196,6 +229,32 @@ const FlightsPage = () => {
                                         />)
                                         :
                                         (<></>)
+                                    }
+                                </div>
+                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative cursor-pointer'>
+                                    <div className='w-full flex gap-x-5 px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] text-xl font-medium text-[#848383]'
+                                        onClick={() => setOpenCalendar(!openCalendar)}
+                                    >
+                                        <MdOutlineCalendarMonth className='text-[#848383] md:text-[22px] text-[18px] mt-1' />
+                                        {/* <span className='text-[#848383] md:text-base text-sm'>
+                                            Check-in Date — Check-out Date
+                                        </span> */}
+                                        <span className='text-sm sm:text-base py-1'>{format(date[0].startDate, 'MM/dd/yyyy',)} to {format(date[0].endDate, 'MM/dd/yyyy',)}</span>
+                                    </div>
+                                    {openCalendar && <div ref={ref} className='absolute flex top-[50%] translate-y-8 -translate-x-[10%] -left-2 rounded-md p-1 bg-[#ffffff] 
+                                            shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] transition-transform duration-150 z-[500]'>
+                                        <DateRange
+                                            className='dateRange'
+                                            ranges={date}
+                                            onChange={item => setDate([item.selection])}
+                                            editableDateInputs={true}
+                                            // months={2}
+                                            minDate={new Date()}
+                                            showMonthAndYearPickers={false}
+                                            scroll={{ enabled: false }}
+                                            ariaLabels={{ prevButton: "prev" }}
+                                        />
+                                    </div>
                                     }
                                 </div>
                                 <div className='w-3/4 p-1 z-[10] relative rounded-[30px] bg-[#ffffff]'>
@@ -320,6 +379,7 @@ const FlightsPage = () => {
             <ContactForm
                 title={"Fly For Less – Subscribe Now for Amazing Flight Deals!"}
                 description={"Join 2.5 million travelers with insider access to our Exclusive Flight Offers and Save Big on your next flight!"}
+                subject={"send from the cruise user for subcribe jetsetters updates"}
             />
 
             <Flights flightsData={flightsData} />

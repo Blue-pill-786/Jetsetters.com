@@ -20,14 +20,14 @@ const HeaderBanner = () => {
             </button>}
             <p className='text-[#dde5f1] text-[10px] lg:text-xl sm:text-base overflow-hidden font-medium'>ARC Certified Ticketing Agent for 250+ Airlines and leading Cruise Lines
                 <span
-                    className='cursor-pointer md:text-lg font-semibold hover:text-yellow-300 transition ml-1'
+                    className='cursor-pointer md:text-lg font-semibold hover:text-[#FFC100] transition ml-1'
                     onClick={() => navigate('/about')}
                 >
                     (ARC # 05511704)
                 </span>
             </p>
             <p className='text-sm lg:text-xl text-center text-[#fff] font-medium cursor-pointer'>
-                <a href="tel:+14088999705">Call on <span className='animate-ping hover:animate-none text-yellow-300 font-bold lg:text-4xl md:text-3xl sm:text-2xl text-lg drop-shadow-md shadow-[#c97156]'>+14088999705</span></a>
+                <a href="tel:+14088999705">Call on <span className='animate-ping hover:animate-none text-[#FFC100] font-bold lg:text-4xl md:text-3xl sm:text-2xl text-lg drop-shadow-md shadow-[#c97156]'>+14088999705</span></a>
             </p>
         </div>
     )

@@ -9,22 +9,32 @@ import TracyCityFile from '../assets/files/Tracy.pdf'
 import SellerFile from '../assets/files/seller.pdf'
 import UpliftFile from '../assets/files/Uplift.pdf'
 import { BiSolidShow } from "react-icons/bi";
-import { Link } from 'react-router-dom'
-import Logo from '../assets/logos/logo.png'
+import { Link, useNavigate } from 'react-router-dom'
+import Logo from '../assets/logos/logo2.png'
 // import  Header from '../components/Header'
 
 const About = () => {
+    const navigate = useNavigate();
     return (
         <div className=''>
             {/* <Header /> */}
             <div className='about-hero min-h-[calc(100vh-60px)] w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <Link to="/" className="cursor-pointer">
+                <div className='flex items-center lg:gap-x-[20rem] sm:-mt-8 -mt-8 w-full'>
+                    {/* <Link to={'/'} */}
+
                     <img
                         src={Logo}
                         alt="logo"
-                        className='md:w-[200px] md:h-[200px] sm:w-[150px] w-[120px] object-fill -ml-6 mt-2'
+                        // className='w-full h-full'
+                        onClick={() => navigate('/')}
+                        className='md:w-[200px] md:h-[250px] w-[200px] object-cover cursor-pointer sm:-ml-[2.5rem] -ml-[3.2rem] sm:-mt-8 -mt-5'
                     />
-                </Link>
+                    {/* </Link> */}
+                    <h1 className='logo-head block font-bold lg:text-6xl text-3xl text-[#10439F] lg:text-center lg:ml-0'>
+                        JETSETTERS
+                        <p className='sm:text-2xl text-xl leading-4'>Jet, Set, Go</p>
+                    </h1>
+                </div>
             </div>
             <div className='sm:w-[calc(100%-18%)] sm:mx-auto mt-[3rem] sm:px-0 px-5'>
                 <h2 className='sm:text-7xl text-3xl text-neutral-900 font-semibold drop-shadow-md shadow-[#000]'>What is Jetsetters ?</h2>
