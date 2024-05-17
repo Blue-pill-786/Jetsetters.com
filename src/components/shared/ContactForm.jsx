@@ -28,8 +28,8 @@ const ContactForm = ({ title, description }) => {
     const sumbitHandle = async (e) => {
         e.preventDefault();
         await sendEmailHandler("", { email, phone });
-        await createSheetData(url, { email, phone })
         toast.success("Thanks for subscribe Jetsetters");
+        await createSheetData(url, { email, phone })
     }
 
     return (

@@ -49,6 +49,7 @@ const Cruise = () => {
 
     const sumbitHandle = async (e) => {
         e.preventDefault();
+        setOpen(true);
         await sendEmailHandler("send from the cruise user", data);
 
         const userData = {
@@ -56,7 +57,6 @@ const Cruise = () => {
             "query for": "Cruise"
         }
         await createSheetData(url, userData);
-        setOpen(true);
     }
 
     return (

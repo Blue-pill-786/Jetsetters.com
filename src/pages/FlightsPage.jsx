@@ -121,6 +121,7 @@ const FlightsPage = () => {
 
     const sumbitHandle = async (e) => {
         e.preventDefault();
+        setOpen(true);
         await sendEmailHandler(
             "Send from the flight user",
             {
@@ -143,7 +144,6 @@ const FlightsPage = () => {
         }
 
         await createSheetData(url,userData);
-        setOpen(true)
         // setData(initialData);
     }
     
