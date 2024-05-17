@@ -101,9 +101,6 @@ const FlightsPage = () => {
         }
     }, [data.to]);
 
-    console.log(check);
-
-
     const [passengerData, setPassengerData] = useState({
         adult: 2,
         children: 0,
