@@ -43,6 +43,8 @@ const FlightsPage = () => {
     const navigate = useNavigate();
     const ref = useRef();
     const form = useRef(null);
+    const checkRef = useRef();
+    const [check, setChecked] = useState(false);
 
     const [date, setDate] = useState([{
         startDate: new Date(),
@@ -99,11 +101,21 @@ const FlightsPage = () => {
         }
     }, [data.to]);
 
+    console.log(check);
+
 
     const [passengerData, setPassengerData] = useState({
         adult: 2,
         children: 0,
     });
+
+    const handleCheck = () => {
+        if (checkRef.current.checked === true) {
+            checkRef.current.checked = false;
+        } else {
+            checkRef.current.checked = true;
+        }
+    }
 
     const onChangeHandler = (e) => {
         const { name, value } = e.target;
@@ -139,6 +151,7 @@ const FlightsPage = () => {
         setOpen(true)
         // setData(initialData);
     }
+    
     return (
         <>
             <div>
@@ -367,10 +380,14 @@ const FlightsPage = () => {
                                         type="checkbox"
                                         name="agree"
                                         id="agree"
+                                        value={check}
                                         required
-                                        className='w-[40px] h-[40px] rounded-xl self-start checked:bg-heading-text'
+                                        ref={checkRef}
+                                        onChange={e => setChecked(!check)}
+                                        className='w-[60px] h-[60px] cursor-pointer rounded-[15px] self-start checked:bg-heading-text aria-checked:text-heading-text'
                                     />
-                                    <p className='hover:text-heading-text text-[#fff] sm:text-base text-xs cursor-pointer mt-2'>
+                                    <p  onClick={() => handleCheck()}
+                                        className='hover:text-heading-text text-[#fff] sm:text-base text-xs cursor-pointer mt-2'>
                                         Disclaimer: By submitting your information, you agree to receive future travel deal notifications. We respect your privacy and won't share your data. You can opt out anytime.                                    </p>
                                 </div>
                             </div>

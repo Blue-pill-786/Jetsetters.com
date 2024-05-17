@@ -1,26 +1,37 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import sendEmailHandler from '../../utils/EmailSend';
 import toast from "react-hot-toast";
-import {createSheetData} from '../../utils/SheetDatabaseServices'
+import { createSheetData } from '../../utils/SheetDatabaseServices'
 
 const url = import.meta.env.VITE_SUBSCRIBE_URL;
 
 const ContactForm = ({ title, description }) => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("+1");
-
+    const checkRef = useRef();
+    const [check, setChecked] = useState(false);
+    
     const handlePhoneInput = (value) => {
         setPhone(value);
     }
+
+    const handleCheck = () => {
+        if (checkRef.current.checked === true) {
+            checkRef.current.checked = false;
+        } else {
+            checkRef.current.checked = true;
+        }
+    }
+
     const sumbitHandle = async (e) => {
         e.preventDefault();
         await sendEmailHandler("", { email, phone });
-        await createSheetData(url,{email,phone})
+        await createSheetData(url, { email, phone })
         toast.success("Thanks for subscribe Jetsetters");
     }
-    
+
     return (
         <div className='bg-[#279bee20]'>
             <div className='sm:w-[calc(100%-10%)] mx-2 sm:mx-auto mt-10 pb-5 p-4'>
@@ -81,10 +92,15 @@ const ContactForm = ({ title, description }) => {
                                 type="checkbox"
                                 name="agree"
                                 id="agree"
+                                value={check}
                                 required
-                                className='w-[40px] h-[40px] rounded-lg self-start checked:bg-heading-text'
+                                ref={checkRef}
+                                onChange={e => setChecked(!check)}
+                                className='w-[40px] h-[40px] cursor-pointer rounded-lg self-start checked:bg-heading-text aria-checked:text-heading-text'
                             />
-                            <p className='hover:text-heading-text sm:text-sm text-xs cursor-pointer mt-2'>
+                            <p
+                                onClick={() => handleCheck()}
+                                className='hover:text-heading-text sm:text-sm text-xs cursor-pointer mt-2'>
                                 I agree to receive promotional SMS texts via an autodialer, and this agreement isn’t a condition of purchase. I also agree to T&Cs and Privacy Policy. Up to 5 Msgs/month. Msg & Data rates may apply.
                             </p>
                         </div>
