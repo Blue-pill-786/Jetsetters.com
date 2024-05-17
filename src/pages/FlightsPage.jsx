@@ -20,7 +20,8 @@ import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns/format'
 import addDays from 'date-fns/addDays';
 import sendEmailHandler from '../utils/EmailSend';
-import getAiportList from '../utils/GetAirport';
+import {getAirportListIataAndCIty} from '../utils/GetAirport';
+import {createSheetData} from '../utils/SheetDatabaseServices';
 
 const initialData = {
     from: "",
@@ -28,49 +29,20 @@ const initialData = {
     phone: "+1",
     email: "",
 }
-const airportSearchData = [
-    {
-        code: "DEL",
-        name: "Delhi",
-        description: "Indira Gandhi International Airport"
-    },
-    {
-        code: "SFO",
-        name: "San Francisco",
-        description: "San Francisco, California, United States (US)"
-    },
-    {
-        code: "HYD",
-        name: "Hyderabad",
-        description: "Rajiv Gandhi International Airport"
-    },
-    {
-        code: "AMD",
-        name: "Ahmedabad",
-        description: "Sardar Vallabhbhai Patel International Airport",
-    },
-    {
-        code: "BLR",
-        name: "Bengaluru",
-        description: "Kempegowda International Airport Bengaluru"
-    },
-    {
-        code: "BOM",
-        name: "Mumbai",
-        description: "Chhatrapati Shivaji Maharaj International Airport"
-    },
-]
+
+const url = import.meta.env.VITE_SHEET_URL;
 
 const FlightsPage = () => {
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(initialData);
     const [openUserbox, setOpenUserbox] = useState(false)
     const [openCalendar, setOpenCalendar] = useState(false);
-    const [fromList, setFromList] = useState();
+    const [fromList, setFromList] = useState([]);
     const [toList, setToList] = useState([]);
     const location = useLocation();
     const navigate = useNavigate();
     const ref = useRef();
+    const form = useRef(null);
 
     const [date, setDate] = useState([{
         startDate: new Date(),
@@ -100,25 +72,30 @@ const FlightsPage = () => {
         document.addEventListener('click', hideOnClickOutside, true);
     }, [])
 
-    const getSearchDataFrom = async (iata) => {
-        const aiportList = await getAiportList(iata);
+    const getSearchDataFrom = async (iata,city) => {
+        const aiportList = await getAirportListIataAndCIty(iata,city);
         setFromList(aiportList);
     }
-    const getSearchDataTo = async (iata) => {
-        const aiportList = await getAiportList(iata);
+    const getSearchDataTo = async (iata,city) => {
+        const aiportList = await getAirportListIataAndCIty(iata,city);
         setToList(aiportList);
     }
 
     useEffect(() => {
         if (data.from.length === 3) {
-            getSearchDataFrom(data.from)
+            getSearchDataFrom(data.from,"")
+        } else {
+            if(data.from !== "")
+                getSearchDataFrom("", data.from)
         }
     }, [data.from]);
 
     useEffect(() => {
         if (data.to.length === 3) {
-            console.log(data.to);
-            getSearchDataTo(data.to)
+            getSearchDataTo(data.to, "");
+        } else {
+            if(data.to !== "")
+                getSearchDataTo("", data.to);
         }
     }, [data.to]);
 
@@ -127,6 +104,7 @@ const FlightsPage = () => {
         adult: 2,
         children: 0,
     });
+
     const onChangeHandler = (e) => {
         const { name, value } = e.target;
         setData((prev) => ({ ...prev, [name]: value }));
@@ -134,7 +112,6 @@ const FlightsPage = () => {
 
     const sumbitHandle = async (e) => {
         e.preventDefault();
-        // console.log({ data, passengerData });
         await sendEmailHandler(
             "Send from the flight user",
             {
@@ -145,6 +122,20 @@ const FlightsPage = () => {
                     "To Date": format(date[0].endDate, 'MM/dd/yyyy')
                 }
             });
+        
+        SendDataTosheet(data,form);
+        
+        const userData = {
+            email: data.email,
+            phone: data.phone,
+            from: data.from,
+            to: data.to,
+            passenger : `adult ${passengerData.adult}, children ${passengerData.children}`,
+            date : `${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`,
+            "query for" : "Flight"
+        }
+
+        await createSheetData(url,userData);
         setOpen(true)
         // setData(initialData);
     }
@@ -174,7 +165,7 @@ const FlightsPage = () => {
                             </div>
                         </div>
 
-                        <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-5 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
+                        <form ref={form} id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-5 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
 
                             <div className='flex justify-center gap-x-2'>
@@ -206,15 +197,17 @@ const FlightsPage = () => {
                                         placeholder='From*'
                                         required
                                         onChange={onChangeHandler}
-                                        className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383]'
+                                        className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-lg text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
-                                    {fromList && data.from &&
+                                    {fromList && fromList.length > 0 ?
                                         (<SearchAutoComplete
                                             data={fromList}
                                             name={'from'}
                                             handler={setData}
                                             setList={setFromList}
                                         />)
+                                        :
+                                        ("")
                                     }
                                 </div>
                                 <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
@@ -226,15 +219,17 @@ const FlightsPage = () => {
                                         placeholder='To*'
                                         required
                                         onChange={onChangeHandler}
-                                        className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383]'
+                                        className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-lg text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
-                                    {toList && data.to &&
+                                    {toList && toList.length > 0 ?
                                         (<SearchAutoComplete
                                             data={toList}
                                             name={'to'}
                                             handler={setData}
                                             setList={setToList}
                                         />)
+                                        :
+                                        ("")
                                     }
                                 </div>
                                 <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative cursor-pointer'>
@@ -342,6 +337,7 @@ const FlightsPage = () => {
                                         onChange={handlePhoneInput}
                                         inputProps={{ required: true }}
                                         placeholder='Phone*'
+                                        name="phone"
                                         inputStyle={{
                                             width: '100%',
                                             borderRadius: "30px",

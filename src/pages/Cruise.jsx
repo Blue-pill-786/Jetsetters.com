@@ -10,6 +10,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
 import ContactForm from '../components/shared/ContactForm'
 import sendEmailHandler from '../utils/EmailSend';
+import { createSheetData } from '../utils/SheetDatabaseServices';
 
 
 const initialData = {
@@ -18,6 +19,8 @@ const initialData = {
     phone: "+1",
     email: "",
 }
+
+const url = import.meta.env.VITE_SHEET_URL
 
 const Cruise = () => {
     const [open, setOpen] = useState(false);
@@ -34,9 +37,15 @@ const Cruise = () => {
         setData((prev) => ({ ...prev, ['phone']: value }));
     }
 
-    const sumbitHandle = (e) => {
+    const sumbitHandle = async (e) => {
         e.preventDefault();
-        sendEmailHandler("send from the cruise user", data);
+        await sendEmailHandler("send from the cruise user", data);
+
+        const userData = {
+            ...data,
+            "query for" : "Cruise"
+        }
+        await createSheetData(url, userData);
         setOpen(true);
     }
 

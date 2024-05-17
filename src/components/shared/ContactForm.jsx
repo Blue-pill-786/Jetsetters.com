@@ -3,8 +3,11 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import sendEmailHandler from '../../utils/EmailSend';
 import toast from "react-hot-toast";
+import {createSheetData} from '../../utils/SheetDatabaseServices'
 
-const ContactForm = ({title, description}) => {
+const url = import.meta.env.VITE_SUBSCRIBE_URL;
+
+const ContactForm = ({ title, description }) => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("+1");
 
@@ -13,7 +16,8 @@ const ContactForm = ({title, description}) => {
     }
     const sumbitHandle = async (e) => {
         e.preventDefault();
-        await sendEmailHandler("",{ email, phone });
+        await sendEmailHandler("", { email, phone });
+        await createSheetData(url,{email,phone})
         toast.success("Thanks for subscribe Jetsetters");
     }
     
