@@ -132,8 +132,6 @@ const FlightsPage = () => {
                 }
             });
         
-        SendDataTosheet(data,form);
-        
         const userData = {
             email: data.email,
             phone: data.phone,
