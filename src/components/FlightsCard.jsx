@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { IoCallOutline, IoCallSharp, IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { GiPathDistance } from "react-icons/gi";
-import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi"
 import Card from './Card';
 import { IconButton } from '@mui/material';
+import { plan } from '../assets/flights/index'
+import { IoAirplane } from "react-icons/io5";
 
 const FlightsCard = ({ data }) => {
     const [km, setKm] = useState(true);
@@ -21,35 +22,31 @@ const FlightsCard = ({ data }) => {
         <div className='flex flex-col gap-y-3 mt-2'>
             <div className='flex justify-between'>
 
-                {/* Source Card  */}
-
+                {/* Source Card */}
                 <Card data={data.source} />
 
                 <div className='flex flex-col mx-1'>
-
                     {/* to card  */}
-                    <div className='w-full my-auto flex flex-col gap-5 items-center justify-center'>
-                        <div className=''>
-                            <HiOutlineArrowNarrowRight className='text-[40px]' />
-                            <HiOutlineArrowNarrowLeft className='text-[40px]' />
+                    <div className='w-full my-auto flex flex-col md:gap-y-5 items-center justify-center'>
+                        <div className='relative group z-[100]'>
+                            <span className='text-[8px] z-[101] absolute -top-[100%] hidden group-hover:block text-blue-400 w-full'>😛hey! welcome {data.destination.title}</span>
+                            <IoAirplane
+                                className='lg:text-[40px] z-[1000] text-[30px] text-[#2c68ea] cursor-pointer sm:group-hover:translate-x-[100%] mt-1 group-hover:scale-[1.1] transition-all duration-1000 ease-in'
+                            />
                         </div>
                         <p className='tracking-wider font-bold flex gap-x-2 items-center'>
                             <GiPathDistance
-                                className='lg:text-[25px] md:text-[20px] sm:block hidden text-blue-600 cursor-pointer hover:text-blue-300'
+                                className='lg:text-[25px] md:text-[20px] text-nowrap sm:block hidden text-blue-600 cursor-pointer hover:text-blue-300'
                                 onClick={() => kmToMilesConvetor(data?.distance)}
                             />
                             <span className='tracking-wider font-bold lg:text-xs text-[8px]'>{km ? data.distance + " km" : miles + " miles"}</span>
                         </p>
-
-                        <div className='text-base sm:text-lg md:text-3xl text-heading-text font-semibold sm:font-bold'>
-                            {`$${data.price}`}
-                        </div>
                     </div>
                 </div>
 
 
                 {/* Destination Card  */}
-                <Card data={data.destination} />
+                <Card data={data.destination} price={data.price} />
             </div>
 
             {/* Contact Button  */}
@@ -90,7 +87,7 @@ const FlightsCard = ({ data }) => {
                     </a>
                 </div>
             </div>
-            
+
         </div>
     )
 }

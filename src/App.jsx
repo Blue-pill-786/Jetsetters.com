@@ -36,7 +36,7 @@ const App = () => {
         </Routes>
       </Suspense>
 
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />} >
         {firstPop && (
           <PopupModal
             setOpen={setOpen}

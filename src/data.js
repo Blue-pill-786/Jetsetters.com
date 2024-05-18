@@ -287,13 +287,13 @@ export const flightsData = [
             title: "San Francisco",
             mapLink: "https://www.google.com/maps/place/San+Francisco+International+Airport/@37.6185784,-122.3837807,17.12z/data=!3m1!5s0x808f779197052741:0x1a364760272e3021!4m6!3m5!1s0x808f778c55555555:0xa4f25c571acded3f!8m2!3d37.6192526!4d-122.3815739!16zL20vMDFsNHhr?entry=ttu",
             img: san1,
-            // description: "San Francisco International Airport (SFO)",
+            description: "Where Innovation Soars Above the Golden Horizon",
         },
         destination: {
             title: "Banglore",
             mapLink: "https://www.google.com/maps/place/Kempegowda+International+Airport+Bengaluru/@13.198909,77.7043177,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae1cfe75446265:0x296c70e9a129418e!8m2!3d13.198909!4d77.7068926!16zL20vMGJmNm15?entry=ttu",
             img: "https://www.airport-technology.com/wp-content/uploads/sites/14/2020/06/Feature_Image-Kempegowda_International_Airport1.jpg",
-            // description: "Kempegowda International Airport Bengaluru",
+            description: "Where Tradition Blossoms in Tech's Garden",
         },
         distance: "14,014",
         price : "699"
@@ -304,13 +304,13 @@ export const flightsData = [
             title: "San Francisco",
             mapLink: "https://www.google.com/maps/place/San+Francisco+International+Airport/@37.6185784,-122.3837807,17.12z/data=!3m1!5s0x808f779197052741:0x1a364760272e3021!4m6!3m5!1s0x808f778c55555555:0xa4f25c571acded3f!8m2!3d37.6192526!4d-122.3815739!16zL20vMDFsNHhr?entry=ttu",
             img: san2,
-            // description: "San Francisco International Airport (SFO)",
+            description: "Where Innovation Soars Above the Golden Horizon",
         },
         destination: {
             title: "Delhi",
             mapLink: "https://www.google.com/maps/place/Indira+Gandhi+International+Airport/@28.5565949,77.0824278,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1b85fc2a2d89:0xbef376182c43ed9d!8m2!3d28.5565949!4d77.0850027!16zL20vMDEyNDQ0?entry=ttu",
             img : dest5,
-            // description: "Indira Gandhi International Airport (IATA: DEL, ICAO: VIDP) is the primary international airport serving Delhi, the capital of India, and the National Capital Region (NCR).",
+            description: "Dilwalon Ki Dilli, Heartbeat of the Nation",
         },
         distance: "12,368",
         price : "599"
@@ -320,13 +320,13 @@ export const flightsData = [
             title: "San Francisco",
             mapLink: "https://www.google.com/maps/place/San+Francisco+International+Airport/@37.6185784,-122.3837807,17.12z/data=!3m1!5s0x808f779197052741:0x1a364760272e3021!4m6!3m5!1s0x808f778c55555555:0xa4f25c571acded3f!8m2!3d37.6192526!4d-122.3815739!16zL20vMDFsNHhr?entry=ttu",
             img : san3,
-            // description: "San Francisco International Airport (SFO)"
+            description: "Where Innovation Soars Above the Golden Horizon",
         },
         destination: {
             title: "Ahmadabad",
             mapLink: "https://www.google.com/maps/place/Sardar+Vallabhbhai+Patel+International+Airport/@23.0744987,72.6214606,17z/data=!3m1!4b1!4m6!3m5!1s0x395e814e9704ec85:0x90dd00e5a99ba47a!8m2!3d23.0744987!4d72.6240355!16zL20vMDNfdDB4?entry=ttu",
             img: dest1,
-            // description: "Sardar Vallabhbhai Patel International Airport (IATA: AMD, ICAO: VAAH)",
+            description: "Gujarat's Gem, Where Tradition and Modernity Shine",
         },
         distance: "13,090",
         price : "629"
@@ -336,13 +336,13 @@ export const flightsData = [
             title: "San Francisco",
             mapLink: "https://www.google.com/maps/place/San+Francisco+International+Airport/@37.6185784,-122.3837807,17.12z/data=!3m1!5s0x808f779197052741:0x1a364760272e3021!4m6!3m5!1s0x808f778c55555555:0xa4f25c571acded3f!8m2!3d37.6192526!4d-122.3815739!16zL20vMDFsNHhr?entry=ttu",
             img: san4,
-            // description: "San Francisco International Airport (SFO)"
+            description: "Where Innovation Soars Above the Golden Horizon",
         },
         destination: {
             title: "Hyderabad",
             mapLink: "https://www.google.com/maps/place/Rajiv+Gandhi+International+Airport/@17.2402633,78.4268102,17z/data=!4m14!1m7!3m6!1s0x3bcbbb7fb1d91b45:0x532029ec33eaa851!2sRajiv+Gandhi+International+Airport!8m2!3d17.2402633!4d78.4293851!16s%2Fm%2F03nml4n!3m5!1s0x3bcbbb7fb1d91b45:0x532029ec33eaa851!8m2!3d17.2402633!4d78.4293851!16s%2Fm%2F03nml4n?entry=ttu",
             img: dest4,
-            // description: "Rajiv Gandhi International Airport (IATA: HYD, ICAO: VOHS)"
+            description: "Nizam's Legacy, Tech Hub of Tomorrow"
         },
         distance: "13,521",
         price : "649"
@@ -352,13 +352,13 @@ export const flightsData = [
             title: "San Francisco",
             mapLink: "https://www.google.com/maps/place/San+Francisco+International+Airport/@37.6185784,-122.3837807,17.12z/data=!3m1!5s0x808f779197052741:0x1a364760272e3021!4m6!3m5!1s0x808f778c55555555:0xa4f25c571acded3f!8m2!3d37.6192526!4d-122.3815739!16zL20vMDFsNHhr?entry=ttu",
             img : san5,
-            // description: "San Francisco International Airport (SFO)"
+            description: "Where Innovation Soars Above the Golden Horizon",
         },
         destination: {
             title: "Mumbai",
             mapLink: "https://www.google.com/maps/place/Chhatrapati+Shivaji+Maharaj+International+Airport,+Mumbai/@19.0900222,67.9847717,7z/data=!4m10!1m2!2m1!1sMumbai+International+Airport!3m6!1s0x3be7c85099bd2947:0x1ecc1a60c474a8ae!8m2!3d19.0902179!4d72.8628087!15sChxNdW1iYWkgSW50ZXJuYXRpb25hbCBBaXJwb3J0Wh4iHG11bWJhaSBpbnRlcm5hdGlvbmFsIGFpcnBvcnSSARVpbnRlcm5hdGlvbmFsX2FpcnBvcnSaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUm9jR1l0T1Y5M1JSQULgAQA!16zL20vMDFxNWsz?entry=ttu",
             img : dest2,
-            // description: "Chhatrapati Shivaji Maharaj International Airport (IATA: BOM, ICAO: VABB) is an international airport serving Mumbai and the Mumbai Metropolitan Region (MMR)"
+            description: "Gateway to India, Gateway to Dreams"
         },
         distance: "13,522",
         price : "669"

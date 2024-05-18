@@ -8,6 +8,7 @@ import san2 from './san2.jpeg'
 import san3 from './san3.jpeg'
 import san4 from './san4.jpeg'
 import san5 from './san5.jpeg'
+import plan from './plan.png'
 
 export {
     dest1,
@@ -19,5 +20,6 @@ export {
     san2,
     san3,
     san4,
-    san5
+    san5,
+    plan
 };
