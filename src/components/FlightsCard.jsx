@@ -27,11 +27,12 @@ const FlightsCard = ({ data }) => {
 
                 <div className='flex flex-col mx-1'>
                     {/* to card  */}
-                    <div className='w-full my-auto flex flex-col md:gap-y-5 items-center justify-center'>
-                        <div className='relative group z-[100]'>
+                    <div className='w-full my-auto flex flex-col md:gap-y-5 '>
+                        <div className='relative group z-[100] self-start'>
                             <span className='text-[8px] z-[101] absolute -top-[100%] hidden group-hover:block text-blue-400 w-full'>😛hey! welcome to {data.destination.title}</span>
                             <IoAirplane
-                                className='lg:text-[40px] z-[1000] text-[30px] text-[#2c68ea] cursor-pointer sm:group-hover:translate-x-[100%] sm:group-hover:translate-y-[-20%] rotate-[-30deg] mt-1 group-hover:scale-[1.1] transition-all duration-1000 ease-in'
+                                className='lg:text-[40px] z-[1000] text-[30px] text-[#2c68ea] cursor-pointer 
+                                            mt-1 plan-animate'
                             />
                         </div>
                         <p className='tracking-wider font-bold flex gap-x-2 items-center'>

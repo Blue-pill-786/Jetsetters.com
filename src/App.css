@@ -65,6 +65,24 @@ body {
     background-size: 100% 100%;
 }
 
+.plan-animate{
+    animation: plan 2.5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+}
+
+@keyframes plan{
+    100%{
+        transform: translateX(0%) translateY(0px) rotate(0deg) scale(1);
+        /* opacity: 0; */
+    }
+    30%{
+        transform: translateX(0%) translateY(0px) rotate(-2deg) scale(1);
+        /* opacity: 100; */
+    }
+    100%{
+        transform: translateX(100px) translateY(-20px) rotate(-20deg) scale(1.3);
+        /* opacity: 0; */
+    }
+}
 
 
 @media only screen and (max-width: 600px) {
