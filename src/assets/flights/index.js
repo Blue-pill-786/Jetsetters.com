@@ -1,6 +1,7 @@
 import dest1 from './dest1.jpeg'
 import dest2 from './dest2.jpeg'
 import dest3 from './dest3.jpeg'
+import dest31 from './dest3.1.jpeg'
 import dest4 from './dest4.jpeg'
 import dest5 from './dest5.jpeg'
 import san1 from './san1.jpeg'
@@ -14,6 +15,7 @@ export {
     dest1,
     dest2,
     dest3,
+    dest31,
     dest4,
     dest5,
     san1,

@@ -5,6 +5,7 @@ import {
     dest1,
     dest2,
     dest3,
+    dest31,
     dest4,
     dest5,
     san1,
@@ -292,7 +293,7 @@ export const flightsData = [
         destination: {
             title: "Banglore",
             mapLink: "https://www.google.com/maps/place/Kempegowda+International+Airport+Bengaluru/@13.198909,77.7043177,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae1cfe75446265:0x296c70e9a129418e!8m2!3d13.198909!4d77.7068926!16zL20vMGJmNm15?entry=ttu",
-            img: "https://www.airport-technology.com/wp-content/uploads/sites/14/2020/06/Feature_Image-Kempegowda_International_Airport1.jpg",
+            img: dest31,
             description: "Where Tradition Blossoms in Tech's Garden",
         },
         distance: "14,014",
