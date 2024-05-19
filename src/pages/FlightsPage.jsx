@@ -20,8 +20,8 @@ import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns/format'
 import addDays from 'date-fns/addDays';
 import sendEmailHandler from '../utils/EmailSend';
-import {getAirportListIataAndCIty} from '../utils/GetAirport';
-import {createSheetData} from '../utils/SheetDatabaseServices';
+import { getAirportListIataAndCIty } from '../utils/GetAirport';
+import { createSheetData } from '../utils/SheetDatabaseServices';
 
 const initialData = {
     from: "",
@@ -45,6 +45,8 @@ const FlightsPage = () => {
     const form = useRef(null);
     const checkRef = useRef();
     const [check, setChecked] = useState(false);
+    const token = sessionStorage.getItem('token') ? sessionStorage.getItem('token') : null;
+    // console.log(token)
 
     const [date, setDate] = useState([{
         startDate: new Date(),
@@ -74,30 +76,28 @@ const FlightsPage = () => {
         document.addEventListener('click', hideOnClickOutside, true);
     }, [])
 
-    const getSearchDataFrom = async (iata,city) => {
-        const aiportList = await getAirportListIataAndCIty(iata,city);
+    const getSearchDataFrom = async (city) => {
+        const aiportList = await getAirportListIataAndCIty(city,token);
         setFromList(aiportList);
     }
-    const getSearchDataTo = async (iata,city) => {
-        const aiportList = await getAirportListIataAndCIty(iata,city);
+    const getSearchDataTo = async (city) => {
+        const aiportList = await getAirportListIataAndCIty(city,token);
         setToList(aiportList);
     }
 
     useEffect(() => {
-        if (data.from.length === 3) {
-            getSearchDataFrom(data.from,"")
+        if (data.from !== "") {
+            getSearchDataFrom(data.from)
         } else {
-            if(data.from !== "")
-                getSearchDataFrom("", data.from)
+            setFromList(null);
         }
-    }, [data.from]);
+    }, [data.from])
 
     useEffect(() => {
-        if (data.to.length === 3) {
-            getSearchDataTo(data.to, "");
-        } else {
-            if(data.to !== "")
-                getSearchDataTo("", data.to);
+        if (data.to !== "") {
+            getSearchDataTo(data.to);
+        }else {
+            setToList(null);
         }
     }, [data.to]);
 
@@ -132,21 +132,21 @@ const FlightsPage = () => {
                     "To Date": format(date[0].endDate, 'MM/dd/yyyy')
                 }
             });
-        
+
         const userData = {
             email: data.email,
             phone: data.phone,
             from: data.from,
             to: data.to,
-            passenger : `adult ${passengerData.adult}, children ${passengerData.children}`,
-            date : `${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`,
-            "query for" : "Flight"
+            passenger: `adult ${passengerData.adult}, children ${passengerData.children}`,
+            date: `${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`,
+            "query for": "Flight"
         }
 
-        await createSheetData(url,userData);
+        await createSheetData(url, userData);
         // setData(initialData);
     }
-    
+
     return (
         <>
             <div>
@@ -381,7 +381,7 @@ const FlightsPage = () => {
                                         onChange={e => setChecked(!check)}
                                         className='w-[60px] h-[60px] cursor-pointer rounded-[15px] self-start checked:bg-heading-text aria-checked:text-heading-text'
                                     />
-                                    <p  onClick={() => handleCheck()}
+                                    <p onClick={() => handleCheck()}
                                         className='hover:text-heading-text text-[#fff] sm:text-base text-xs cursor-pointer mt-2'>
                                         Disclaimer: By submitting your information, you agree to receive future travel deal notifications. We respect your privacy and won't share your data. You can opt out anytime.                                    </p>
                                 </div>

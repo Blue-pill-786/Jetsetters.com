@@ -5,12 +5,19 @@ import PopupModal from './components/shared/PopupModal';
 import Loader from './components/shared/Loader';
 import Plane from './assets/gif/trip.gif';
 import Ship from './assets/gif/ship2.gif';
+import { getSearchAirportToken } from './utils/GetAirport';
 
 const FlightsPage = lazy(() => import('./pages/FlightsPage'));
 const Cruise = lazy(() => import('../src/pages/Cruise'));
 const CovidFAQ = lazy(() => import('./pages/CovidFAQ'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const About = lazy(() => import('./pages/About'));
+
+const setTokenToSession = async () => {
+  const token = await getSearchAirportToken();
+  sessionStorage.setItem('token', token);
+}
+// console.log(sessionStorage.getItem('token'))
 
 const App = () => {
   const [firstPop, setFirstPop] = useState(false);
@@ -21,6 +28,9 @@ const App = () => {
       setFirstPop(true);
     }
     sessionStorage.setItem('popModal', 'true');
+    if (!sessionStorage.getItem('token')) {
+      setTokenToSession();
+    }
     window.scrollTo(0, 0)
   }, [pathname]);
   return (

@@ -58,6 +58,15 @@ body {
     background-size: 100% 100%;
 }
 
+
+.auto-search::-webkit-scrollbar{
+    display: none;
+}
+
+::-webkit-scrollbar{
+    /* display: none; */
+}
+
 .about-hero {
     background-image: url('./assets/images/about-hero-bg.jpeg');
     /* background-repeat: no-repeat no-repeat; */
