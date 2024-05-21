@@ -4,6 +4,7 @@ import Footer from '../Footer'
 import HeaderBanner from '../shared/HeaderBanner'
 import HomePhoneIcon from '../shared/HomePhoneIcon'
 import Header2_0 from '../Header2_0'
+import Headroom from 'react-headroom'
 
 const WrapperLayout = (title, description) => (WrapperComponent) => {
     // console.log(title)
@@ -12,8 +13,10 @@ const WrapperLayout = (title, description) => (WrapperComponent) => {
             <>
                 <Title title={title} description={description} />
                 {/* <HeaderBanner /> */}
-                <Header2_0 />
-                <div className='md:mt-[140px] mt-[120px]'>
+                <Headroom style={{zIndex:5000}}>
+                    <Header2_0 />
+                </Headroom>
+                <div className='-mt-[2px]'>
                     <HomePhoneIcon />
                     <WrapperComponent {...props} />
                     <Footer />

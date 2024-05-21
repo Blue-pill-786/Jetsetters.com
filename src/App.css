@@ -5,8 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .change-color {
     color: #fff;
 }
@@ -32,7 +30,7 @@ body {
     font-family: "League Spartan", sans-serif;
 }
 
-.nav-menu{
+.nav-menu {
     width: 200px;
     height: 250px;
     position: absolute;
@@ -41,7 +39,7 @@ body {
     align-items: center;
     top: 100%;
     right: 1.5px;
-    overflow:hidden;
+    overflow: hidden;
     z-index: 2000;
     border-radius: 15px 0px 0px 15px;
     box-shadow: 5px 10px 10px #365a8895;
@@ -51,7 +49,7 @@ body {
     transform: translateX(100%);
 }
 
-.active{
+.active {
     visibility: visible;
     opacity: 100;
     transform: none;
@@ -83,11 +81,11 @@ body {
 }
 
 
-.auto-search::-webkit-scrollbar{
+.auto-search::-webkit-scrollbar {
     display: none;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     /* display: none; */
 }
 
@@ -98,20 +96,22 @@ body {
     background-size: 100% 100%;
 }
 
-.plan-animate{
+.plan-animate {
     animation: plan 2.5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
 }
 
-@keyframes plan{
-    100%{
+@keyframes plan {
+    100% {
         transform: translateX(0%) translateY(0px) rotate(0deg) scale(1);
         /* opacity: 0; */
     }
-    30%{
+
+    30% {
         transform: translateX(0%) translateY(0px) rotate(-2deg) scale(1);
         /* opacity: 100; */
     }
-    100%{
+
+    100% {
         transform: translateX(100px) translateY(-20px) rotate(-20deg) scale(1.3);
         /* opacity: 0; */
     }
@@ -125,6 +125,7 @@ body {
         background-position: center;
         background-size: 100% 100%;
     }
+
     /* .hero-cruise-image {
         background-image: url('./assets/images/cruise-hero-bg-mobile.jpeg');
         background-repeat: no-repeat no-repeat;
@@ -134,7 +135,7 @@ body {
 }
 
 @media only screen and (max-width: 760px) {
-    .hero-cruise-image{
+    .hero-cruise-image {
         background-image: url('./assets/images/cruise-hero-bg-mobile.jpeg');
         background-repeat: no-repeat no-repeat;
         background-position: center;
@@ -142,6 +143,6 @@ body {
     }
 }
 
-.policy-box:checked{
+/* .policy-box:checked{
     background-color: red;
-}
+} */

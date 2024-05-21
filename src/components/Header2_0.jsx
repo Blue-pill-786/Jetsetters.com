@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Logo from '../assets/logos/logo_dark.png'
+import Logo from '../assets/logos/logo_white.png'
 import { Link, useLocation } from 'react-router-dom'
 import { TiThMenu } from "react-icons/ti";
 import { FaTimes } from "react-icons/fa";
@@ -36,7 +36,7 @@ const Header2_0 = () => {
     })
 
     return (
-        <div className='fixed top-0 left-0 right-0 z-[1000] shadow-2xl shadow-[#0000005e]'>
+        <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
             <div className='md:h-[90px] h-[70px] bg-main-bg px-4 text-[#fff] flex justify-between relative'>
                 <div className='flex items-center gap-x-10 justify-between w-[70%]'>
                     <div className='flex items-center gap-x-2'>
