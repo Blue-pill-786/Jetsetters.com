@@ -6,6 +6,7 @@ export const createSheetData = async (url,userData) => {
         "receive date": format(new Date(), 'MM/dd/yyyy'),
         "receive time": format(new Date(Date.now()), "h':'m':'s")
     }
+    console.log()
     const data = { ...userData, ...responseTimeAndDate };
     try {
         const res = await axios.post(url,

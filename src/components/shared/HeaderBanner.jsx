@@ -8,7 +8,7 @@ const HeaderBanner = () => {
     const navigate = useNavigate();
     const { pathname } = useLocation()
     return (
-        <div className='bg-main-bg h-[60px] w-full p-2 flex gap-x-3 lg:justify-evenly justify-between items-center fixed shadow-2xl shadow-[#0000007d] z-[1000] top-0 left-0'>
+        <div className='bg-main-bg h-[50px] w-full p-2 flex gap-x-3 lg:justify-evenly justify-between items-center z-[1000]'>
             {pathname === "/" ? ("") : <button
                 className='relative md:p-2 p-1 rounded-full bg-gradient-to-r first:to-[#f5892a] from-[#f99f18] group'
                 onClick={() => navigate(-1)}
@@ -27,7 +27,7 @@ const HeaderBanner = () => {
                     className='h-[35px] lg:h-[45px] w-[35px] lg:w-[45px] object-fill cursor-pointer -mt-2'
                 />
             </Link>
-            <p className='text-[#dde5f1] text-[10px] lg:text-xl sm:text-base overflow-hidden font-medium'>ARC Certified Ticketing Agent for 250+ Airlines and leading Cruise Lines
+            <p className='text-[#dde5f1] text-[10px] lg:text-[18px] sm:text-base overflow-hidden font-medium'>ARC Certified Ticketing Agent for 250+ Airlines and leading Cruise Lines
                 <span
                     className='cursor-pointer md:text-lg font-semibold hover:text-[#FFC100] transition ml-1'
                     onClick={() => navigate('/about')}
@@ -35,10 +35,10 @@ const HeaderBanner = () => {
                     (ARC # 05511704)
                 </span>
             </p>
-            <p className='text-[#fff]cursor-pointer flex items-center lg:gap-x-5 cursor-pointer'>
+            <p className='text-[#fff]cursor-pointer flex items-center lg:gap-x-5 cursor-pointer md:mt-1'>
                 <a href="tel:+14088999705">
                     <FaPhoneVolume
-                        className='text-[#FFC100] lg:text-4xl text-[20px] -rotate-[40deg] -mt-2 call-animate'
+                        className='text-[#FFC100] lg:text-3xl text-[20px] -rotate-[40deg] -mt-2 call-animate'
                     />
                 </a>
                 <a href="tel:+14088999705">

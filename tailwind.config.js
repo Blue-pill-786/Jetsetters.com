@@ -15,9 +15,13 @@ export default {
         "trip-image": "url(https://cf.bstatic.com/xdata/images/xphoto/540x405/292049346.webp?k=ad53f89eb6ed386bcdb6100d5c729e6db510900f74d8891baaab2bf2a2283631&o=)",
         "bg-image-none": "none",
       },
+      dropShadow: {
+        "head-shade": ["3px 2px 1px #59a3e9bb",
+          "0px 0px 20px #1f5da979"]
+      },
       fontFamily: {
-        "heading": "",
-        "content": "",
+        "heading": "Poetsen One",
+        "content": "League Spartan",
       },
       animation: {
         "ping": "ping 2s cubic-bezier(.21,.05,.98,-0.23) infinite"

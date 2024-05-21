@@ -5,7 +5,7 @@ import Header from '../components/Header';
 const CovidFAQ = () => {
     return (
         <div className='bg-[#FFFFFF]'>
-            <Header />
+            {/* <Header /> */}
             <div className='relative border-t-[#3ba2da] border-[0.5px]'>
                 <img
                     src={"https://www.cde.ual.es/wp-content/uploads/2021/06/cover-Covid19-1536x674.png"}

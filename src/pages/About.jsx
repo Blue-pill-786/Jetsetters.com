@@ -22,18 +22,18 @@ const About = () => {
                 <div className='flex items-center lg:gap-x-[20rem] sm:-mt-8 -mt-8 w-full'>
                     {/* <Link to={'/'} */}
 
-                    <img
+                    {/* <img
                         src={Logo}
                         alt="logo"
                         // className='w-full h-full'
                         onClick={() => navigate('/')}
                         className='md:w-[200px] md:h-[250px] w-[200px] object-cover cursor-pointer sm:-ml-[2.5rem] -ml-[3.2rem] sm:-mt-8 -mt-5'
-                    />
+                    /> */}
                     {/* </Link> */}
-                    <h1 className='logo-head block font-bold lg:text-6xl text-3xl text-[#10439F] lg:text-center lg:ml-0'>
+                    {/* <h1 className='logo-head block font-bold lg:text-6xl text-3xl text-[#10439F] lg:text-center lg:ml-0'>
                         JETSETTERS
                         <p className='sm:text-2xl text-xl leading-4'>Jet, Set, Go</p>
-                    </h1>
+                    </h1> */}
                 </div>
             </div>
             <div className='sm:w-[calc(100%-18%)] sm:mx-auto mt-[3rem] sm:px-0 px-5'>

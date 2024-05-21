@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -30,7 +30,31 @@
 
 body {
     font-family: "League Spartan", sans-serif;
-    ;
+}
+
+.nav-menu{
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100%;
+    right: 1.5px;
+    overflow:hidden;
+    z-index: 2000;
+    border-radius: 15px 0px 0px 15px;
+    box-shadow: 5px 10px 10px #365a8895;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.active{
+    visibility: visible;
+    opacity: 100;
+    transform: none;
 }
 
 .logo-head {
@@ -116,4 +140,8 @@ body {
         background-position: center;
         background-size: 100% 100%;
     }
+}
+
+.policy-box:checked{
+    background-color: red;
 }

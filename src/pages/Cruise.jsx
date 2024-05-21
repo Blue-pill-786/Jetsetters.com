@@ -63,8 +63,8 @@ const Cruise = () => {
         <>
             <div className='hero-cruise-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
                 <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
-                    <div className='flex flex-col sm:gap-y-[5rem] sm:-mt-8'>
-                        <div className='flex items-center lg:gap-x-[7rem] sm:mt-0 -mt-8'>
+                    <div className='flex flex-col'>
+                        {/* <div className='flex items-center lg:gap-x-[7rem] sm:mt-0 -mt-8'>
                             <img
                                 src={Logo}
                                 alt="logo"
@@ -75,8 +75,8 @@ const Cruise = () => {
                                 JETSETTERS
                                 <p className='sm:text-2xl text-xl leading-4'>Jet, Set, Go</p>
                             </h1>
-                        </div>
-                        <div className='md:ml-14 sm:ml-7 ml-5 md:mt-[50px] lg:mt-[150] '>
+                        </div> */}
+                        <div className='md:ml-14 sm:ml-7 ml-5 lg:mt-[150] md:mt-[9rem] mt-[2rem]'>
                             <h2 className='text-[#f1f8fc] font-bold lg:text-6xl xl:text-7xl md:text-5xl text-5xl mt-5 drop-shadow-xl shadow-[#000]'>
                                 Explore Our Cheapest Cruise Search
                             </h2>
@@ -84,7 +84,7 @@ const Cruise = () => {
                     </div>
 
                     <form id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-16 bg-gradient-to-r lg:mb-0 mb-10 
-                                    md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1] sm:mt-0 mt-[5rem]'>
+                                    md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1] sm:mt-0 mt-[1rem]'>
                         <div className='flex justify-center gap-x-5 mb-5 overflow-hidden'>
                             <button
                                 type='button'

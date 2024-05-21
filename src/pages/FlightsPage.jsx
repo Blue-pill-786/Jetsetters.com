@@ -38,12 +38,15 @@ const FlightsPage = () => {
     const [openUserbox, setOpenUserbox] = useState(false)
     const [openCalendar, setOpenCalendar] = useState(false);
     const [fromList, setFromList] = useState([]);
+    const [openFrom, setOpenFrom] = useState(false);
+    const [openTo, setOpenTo] = useState(false);
     const [toList, setToList] = useState([]);
     const location = useLocation();
     const navigate = useNavigate();
     const ref = useRef();
     const form = useRef(null);
     const checkRef = useRef();
+    const passengerRef = useRef(null);
     const [check, setChecked] = useState(false);
     const token = sessionStorage.getItem('token') ? sessionStorage.getItem('token') : null;
     // console.log(token)
@@ -72,16 +75,28 @@ const FlightsPage = () => {
     }
 
     useEffect(() => {
+        const close = (e) => {
+            if (!passengerRef.current.contains(e.target)) {
+                setOpenUserbox(false);
+            }
+        }
+        document.addEventListener('mousedown', close, true);
         document.addEventListener('keydown', hideOnEscape, true);
         document.addEventListener('click', hideOnClickOutside, true);
-    }, [])
+
+        return () => {
+            document.removeEventListener('mousedown', close, true);
+            document.addEventListener('keydown', hideOnEscape, true);
+            document.addEventListener('click', hideOnClickOutside, true);
+        }
+    });
 
     const getSearchDataFrom = async (city) => {
-        const aiportList = await getAirportListIataAndCIty(city,token);
+        const aiportList = await getAirportListIataAndCIty(city, token);
         setFromList(aiportList);
     }
     const getSearchDataTo = async (city) => {
-        const aiportList = await getAirportListIataAndCIty(city,token);
+        const aiportList = await getAirportListIataAndCIty(city, token);
         setToList(aiportList);
     }
 
@@ -96,7 +111,7 @@ const FlightsPage = () => {
     useEffect(() => {
         if (data.to !== "") {
             getSearchDataTo(data.to);
-        }else {
+        } else {
             setToList(null);
         }
     }, [data.to]);
@@ -152,8 +167,8 @@ const FlightsPage = () => {
             <div>
                 <div className='hero-flight-image lg:min-h-screen w-[100%] md:pl-10 md:px-0 sm:px-5 px-3'>
                     <div className='w-full flex md:flex-row flex-col gap-y-10 sm:justify-between sm:mb-0 mb-10'>
-                        <div className='flex flex-col gap-y-10 sm:-mt-8'>
-                            <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
+                        <div className=''>
+                            {/* <div className='flex items-center lg:gap-x-[8rem] sm:mt-3'>
                                 <Link to="/" className="cursor-pointer">
                                     <img
                                         src={Logo}
@@ -165,15 +180,15 @@ const FlightsPage = () => {
                                     JETSETTERS
                                     <p className='sm:text-2xl text-xl leading-4'>Jet, Set, Go</p>
                                 </h1>
-                            </div>
-                            <div className='md:ml-14 sm:ml-7 ml-5'>
+                            </div> */}
+                            <div className='md:ml-14 sm:ml-7 ml-5 md:mt-[10rem] mt-[2rem]'>
                                 <h2 className='text-[#302626] font-bold lg:text-6xl xl:text-7xl md:text-5xl text-5xl mt-5'>
                                     Explore Our Cheapest Flight Search
                                 </h2>
                             </div>
                         </div>
 
-                        <form ref={form} id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col gap-y-5 bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
+                        <form ref={form} id='form' onSubmit={sumbitHandle} className='lg:min-w-[450px] lg:w-[60%] md:min-w-[40%] lg:min-h-[calc(100vh-40px)] flex flex-col bg-gradient-to-r md:mt-[1px] lg:mb-0 mb-10 
                                     md:rounded-none md:rounded-l-[50px] rounded-[30px] shadow-2xl shadow-[#6e3a2b86] from-[#e77240] via-[#d56230] to-[#faaa1ff1]'>
 
                             <div className='flex justify-center gap-x-2'>
@@ -205,9 +220,11 @@ const FlightsPage = () => {
                                         placeholder='From*'
                                         required
                                         onChange={onChangeHandler}
+                                        onFocus={() => setOpenFrom(true)}
+                                        onBlur={() => setOpenFrom(false)}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-lg text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
-                                    {fromList && fromList.length > 0 ?
+                                    {openFrom && fromList && fromList.length > 0 ?
                                         (<SearchAutoComplete
                                             data={fromList}
                                             name={'from'}
@@ -227,9 +244,11 @@ const FlightsPage = () => {
                                         placeholder='To*'
                                         required
                                         onChange={onChangeHandler}
+                                        onFocus={() => setOpenTo(true)}
+                                        onBlur={() => setOpenTo(false)}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-lg text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
-                                    {toList && toList.length > 0 ?
+                                    {openTo && toList && toList.length > 0 ?
                                         (<SearchAutoComplete
                                             data={toList}
                                             name={'to'}
@@ -240,7 +259,7 @@ const FlightsPage = () => {
                                         ("")
                                     }
                                 </div>
-                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative cursor-pointer'>
+                                <div ref={ref} className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative cursor-pointer'>
                                     <div className='w-full flex gap-x-5 px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] text-xl font-medium text-[#848383]'
                                         onClick={() => setOpenCalendar(!openCalendar)}
                                     >
@@ -250,7 +269,7 @@ const FlightsPage = () => {
                                         </span> */}
                                         <span className='text-sm sm:text-base py-1'>{format(date[0].startDate, 'MM/dd/yyyy',)} to {format(date[0].endDate, 'MM/dd/yyyy',)}</span>
                                     </div>
-                                    {openCalendar && <div ref={ref} className='absolute flex flex-col top-[50%] lg:translate-x-[10%] translate-y-8 -translate-x-[10%] -left-2 rounded-md p-1 bg-[#ffffff] 
+                                    {openCalendar && <div className='absolute flex flex-col top-[50%] lg:translate-x-[10%] translate-y-8 -translate-x-[10%] -left-2 rounded-md p-1 bg-[#ffffff] 
                                             shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] transition-transform duration-150 z-[500]'>
                                         <DateRange
                                             className='dateRange'
@@ -275,11 +294,11 @@ const FlightsPage = () => {
                                     }
                                 </div>
                                 <div className='w-3/4 p-1 z-[10] relative rounded-[30px] bg-[#ffffff]'>
-                                    <div
+                                    <div ref={passengerRef}
                                         className='w-full flex flex-row gap-2 justify-between items-center px-3 py-1 
                                                     border-[2px] rounded-[30px] border-[#bbab8cad] cursor-pointer 
                                                     outline-none text-xl text-[#BBAB8C]'
-                                        onClick={() => setOpenUserbox(!openUserbox)}
+                                        onClick={() => setOpenUserbox(prev => prev ? false : true)}
                                     >
                                         <span className='flex gap-2'>
                                             <LuUser2 className='text-neutral-500 mb-1 sm:block hidden' size={22} />
@@ -287,44 +306,40 @@ const FlightsPage = () => {
                                         </span>
                                         <RiArrowDropDownLine className='text-neutral-900 self-end' size={36} />
                                     </div>
+                                    <div
+                                        className={`lg:w-[285px] w-[250px] absolute flex flex-col gap-y-2 px-6 py-2 
+                                                    ${openUserbox ? "translate-y-[20px] sm:right-5 visible opacity-100" : "translate-y-0 sm:right-5 invisible opacity-0"} 
+                                                    rounded-md p-1 transition-all duration-300 ease-linear z-[1000] bg-[#ffffff] 
+                                                    text-[#000] shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] 
+                                                    `}
+                                    >
+                                        <div className='w-full flex items-center mt-5 justify-between'>
+                                            <span className='text-base font-medium'>Adults</span>
+                                            <Inc_Dec_Box
+                                                min={1}
+                                                initialValue={passengerData}
+                                                setData={setPassengerData}
+                                                name={"adult"}
+                                            />
+                                        </div>
+                                        <div className='w-full flex items-center justify-between'>
+                                            <span className='text-base font-medium'>Children</span>
+                                            <Inc_Dec_Box
+                                                min={0}
+                                                initialValue={passengerData}
+                                                setData={setPassengerData}
+                                                name={"children"}
+                                            />
+                                        </div>
 
-                                    {
-                                        openUserbox && (
-                                            <div
-                                                className='w-[285px] absolute flex flex-col gap-y-2 px-6 py-2 top-[50%] sm:translate-x-[80%] left-[-1%] translate-x-4 xl:translate-x-[40%] lg:translate-x-[35%] md:translate-x-[5%] md:translate-y-[20%]
-                                                            translate-y-[18%] rounded-md p-1 transition-transform duration-150 z-[1000]
-                                                            bg-[#ffffff] text-[#000] shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] 
-                                                            '
-                                            >
-                                                <div className='w-full flex items-center mt-5 justify-between'>
-                                                    <span className='text-base font-medium'>Adults</span>
-                                                    <Inc_Dec_Box
-                                                        min={1}
-                                                        initialValue={passengerData}
-                                                        setData={setPassengerData}
-                                                        name={"adult"}
-                                                    />
-                                                </div>
-                                                <div className='w-full flex items-center justify-between'>
-                                                    <span className='text-base font-medium'>Children</span>
-                                                    <Inc_Dec_Box
-                                                        min={0}
-                                                        initialValue={passengerData}
-                                                        setData={setPassengerData}
-                                                        name={"children"}
-                                                    />
-                                                </div>
-
-                                                <button
-                                                    className='w-full my-3 text-base text-center px-2 py-1 text-[#006CE4] border border-[#006ae4df] 
+                                        <button
+                                            className='w-full my-3 text-base text-center px-2 py-1 text-[#006CE4] border border-[#006ae4df] 
                                                 rounded-[4px] hover:bg-[#006ae40d] font-medium'
-                                                    onClick={() => setOpenUserbox(false)}
-                                                >
-                                                    Done
-                                                </button>
-                                            </div>
-                                        )
-                                    }
+                                            onClick={() => setOpenUserbox(false)}
+                                        >
+                                            Done
+                                        </button>
+                                    </div>
                                 </div>
                                 <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
                                     <input

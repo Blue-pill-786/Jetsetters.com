@@ -11,9 +11,9 @@ const WrapperLayout = (title, description) => (WrapperComponent) => {
         return (
             <>
                 <Title title={title} description={description} />
-                <HeaderBanner />
-                {/* <Header2_0 /> */}
-                <div className='mt-[60px]'>
+                {/* <HeaderBanner /> */}
+                <Header2_0 />
+                <div className='md:mt-[140px] mt-[120px]'>
                     <HomePhoneIcon />
                     <WrapperComponent {...props} />
                     <Footer />

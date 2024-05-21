@@ -5,7 +5,7 @@ import WrapperLayout from '../components/Layouts/WrapperLayout'
 const TermsConditions = () => {
     return (
         <div className='bg-[#FFF]'>
-            <Header />
+            {/* <Header /> */}
             <div className='bg-[#79afcf41] mt-0 sm:p-0 p-4'>
                 <div className='sm:w-[calc(100%-10%)] mx-auto md:py-10 sm:py-5'>
                     <h2 className='font-semibold text-2xl md:text-3xl text-neutral-900 md:mt-3'><span className='text-heading-text'>Jetsetters</span> Corporation - Terms and Conditions</h2>
