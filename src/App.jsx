@@ -34,7 +34,7 @@ const App = () => {
     window.scrollTo(0, 0)
   }, [pathname]);
   return (
-    <div className='App'>
+    <div className='App overflow-x-hidden'>
       <Suspense fallback={""}>
         <Routes>
           <Route path='/' element={<FlightsPage />} />
@@ -47,7 +47,7 @@ const App = () => {
       </Suspense>
 
       <Suspense fallback={<Loader />} >
-        {firstPop && (
+        {!firstPop && (
           <PopupModal
             setOpen={setOpen}
             open={open}

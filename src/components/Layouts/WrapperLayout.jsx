@@ -13,7 +13,7 @@ const WrapperLayout = (title, description) => (WrapperComponent) => {
             <>
                 <Title title={title} description={description} />
                 {/* <HeaderBanner /> */}
-                <Headroom style={{zIndex:5000}}>
+                <Headroom style={{ zIndex: 3000}}>
                     <Header2_0 />
                 </Headroom>
                 <div className='-mt-[2px]'>

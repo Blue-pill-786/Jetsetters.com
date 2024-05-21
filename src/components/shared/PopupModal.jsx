@@ -4,18 +4,20 @@ import { IoCallSharp, IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import Logo from '../../assets/logos/logo.png';
 import React from 'react'
+import zIndex from '@mui/material/styles/zIndex';
 
 
 const style = {
     position: 'absolute',
-    top: '50%',
+    top: '55%',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -45%)',
     bgcolor: 'background.paper',
     // border: '2px solid #000',
     boxShadow: 24,
     borderRadius: "15px",
     p: 4,
+    zIndex : 5000,
 };
 
 
@@ -33,6 +35,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
+            style={{zIndex: "5000"}}
         >
             <Paper elevation={8}>
                 <Box

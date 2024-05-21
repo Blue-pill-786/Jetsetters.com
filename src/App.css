@@ -50,6 +50,7 @@ body {
 }
 
 .active {
+    /* display: flex; */
     visibility: visible;
     opacity: 100;
     transform: none;
