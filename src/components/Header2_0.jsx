@@ -48,7 +48,10 @@ const Header2_0 = () => {
                             />
                         </Link>
 
-                        <p className='font-heading md:text-4xl text-3xl tracking-wide font-bold capitalize text-[#10439F] drop-shadow-head-shade'>Jetsetters</p>
+                        <div className='font-heading md:text-4xl text-3xl tracking-wide font-bold capitalize text-[#10439F] drop-shadow-head-shade'>
+                            Jetsetters
+                            <p className='md:text-sm text-xs font-normal md:font-medium text-start ml-2 -mt-1'>Jet, Set, Go</p>
+                        </div>
                     </div>
 
                     <div className='md:flex lg:gap-x-6 gap-x-2 hidden w-[40%] justify-between font-content'>
