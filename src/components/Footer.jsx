@@ -143,6 +143,7 @@ const Footer = () => {
             <div className='sm:w-[calc(100%-10%)] sm:mx-auto flex flex-row justify-between items-center mt-4 pb-[3rem] sm:mb-[3rem]'>
                 <div className='flex flex-col w-[45%] gap-y-[4px] text-neutral-100 text-xs px-2'>
                     <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Contact Us</p>
+                    <p className='text-xs sm:text-sm md:text-base text-neutral-200 mb-1'>Office details</p>
                     <a href="tel:+14088999705"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
                     >
