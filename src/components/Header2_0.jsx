@@ -8,7 +8,6 @@ import HeaderBanner from './shared/HeaderBanner'
 const Header2_0 = () => {
     const menuRef = useRef();
     const [open, setOpen] = useState(false);
-    const { pathname } = useLocation();
 
     const showNav = () => {
         if (!menuRef.current.classList.contains("active")) {
@@ -53,36 +52,27 @@ const Header2_0 = () => {
                             <p className='md:text-sm text-xs font-normal md:font-medium text-start ml-2 -mt-1'>Jet, Set, Go</p>
                         </div>
                     </div>
-
                     <div className='md:flex lg:gap-x-6 gap-x-2 hidden w-[40%] justify-between font-content'>
-                        <Link to={'/'}>
-                            <span className={`md:text-lg font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                            }>
-                                Flight
-                            </span>
-                        </Link>
-                        <Link to='/cruise'>
-                            <span className={`md:text-lg font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/cruise' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                            }>
-                                Cruise
-                            </span>
-                        </Link>
-                        <Link to={'/about'}>
-                            <span className={`md:text-lg text-nowrap font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/about' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                            }>
-                                About Us
-                            </span>
-                        </Link>
-                        <Link to={'#'}>
-                            <span className={`md:text-lg text-nowrap font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/contact-us' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                            }>
-                                Contact Us
-                            </span>
-                        </Link>
+                        <NavLink
+                            title={"Flight"}
+                            to={'/'}
+                            style={"md:text-lg"}
+                        />
+                        <NavLink
+                            title={"Cruise"}
+                            to={'/cruise'}
+                            style={"md:text-lg"}
+                        />
+                        <NavLink
+                            title={"About Us"}
+                            to={'/about'}
+                            style={"md:text-lg"}
+                        />
+                        <NavLink
+                            title={"Contact Us"}
+                            to={'#'}
+                            style={"md:text-lg"}
+                        />
                     </div>
                 </div>
                 <div className='flex flex-row items-center gap-x-2 lg:mr-[2rem]'>
@@ -104,36 +94,33 @@ const Header2_0 = () => {
                     <div
                         ref={menuRef}
                         className='nav-menu bg-main-bg'>
-                        <p className='text-white text-xl text-center md:block hidden'>Working on</p>
-                        <div className='md:hidden flex flex-col items-center justify-center gap-y-2 font-content'>
-                            <Link to={'/'}>
-                                <span className={`text-lg font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                                }>
-                                    Flight
-                                </span>
-                            </Link>
-                            <Link to='/cruise'>
-                                <span className={`text-lg font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/cruise' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                                }>
-                                    Cruise
-                                </span>
-                            </Link>
-                            <Link to={'/about'}>
-                                <span className={`text-lg font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/about' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                                }>
-                                    About Us
-                                </span>
-                            </Link>
-                            <Link to={'#'}>
-                                <span className={`text-lg font-semibold hover:underline transition-all duration-150 cursor-pointer
-                                        ${pathname === '/contact-us' ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
-                                }>
-                                    Contact Us
-                                </span>
-                            </Link>
+                        {/* <p className='text-white text-xl text-center md:block hidden'>Working on</p> */}
+                        <div className='flex flex-col items-center justify-center gap-y-2 font-content'>
+                            <NavLink
+                                title={"Flight"}
+                                to={'/'}
+                                style={"text-lg md:hidden"}
+                            />
+                            <NavLink
+                                title={"Cruise"}
+                                to={'/cruise'}
+                                style={"text-lg md:hidden"}
+                            />
+                            <NavLink
+                                title={"About Us"}
+                                to={'/about'}
+                                style={"text-lg md:hidden"}
+                            />
+                            <NavLink
+                                title={"Contact Us"}
+                                to={'#'}
+                                style={"text-lg md:hidden "}
+                            />
+                            <NavLink
+                                title={"Hazz Packages"}
+                                to={'/packages/haz'}
+                                style={"text-lg"}
+                            />
                         </div>
                     </div>
                 </div>
@@ -145,3 +132,17 @@ const Header2_0 = () => {
 }
 
 export default Header2_0
+
+
+const NavLink = ({ title, to, style }) => {
+    const { pathname } = useLocation();
+    return (
+        <Link to={to}>
+            <span className={`${style} font-semibold hover:underline transition-all duration-150 cursor-pointer
+                            ${pathname === to ? "text-heading-text" : "text-[#fff] hover:text-heading-text"}`
+            }>
+                {title}
+            </span>
+        </Link>
+    )
+}

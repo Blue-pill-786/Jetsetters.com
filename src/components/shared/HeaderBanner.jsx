@@ -41,9 +41,9 @@ const HeaderBanner = () => {
                         className='text-[#FFC100] lg:text-3xl text-[20px] -rotate-[40deg] -mt-2 call-animate'
                     />
                 </a>
-                <a href="tel:+1(888)389-3266">
+                <a href="tel:+18883893266">
                     <span className='animate-ping hover:animate-none text-[#FFC100] font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg drop-shadow-md shadow-[#c97156]'>
-                        +1(888)389-3266
+                        +18883893266
                     </span>
                 </a>
             </p>
