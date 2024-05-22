@@ -118,7 +118,7 @@ const Header2_0 = () => {
                             />
                             <NavLink
                                 title={"Hajj Packages"}
-                                to={'/hajj-packages'}
+                                to={'/packages/hajj'}
                                 style={"text-lg"}
                             />
                         </div>
