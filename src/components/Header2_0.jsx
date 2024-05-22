@@ -117,8 +117,8 @@ const Header2_0 = () => {
                                 style={"text-lg md:hidden "}
                             />
                             <NavLink
-                                title={"Hazz Packages"}
-                                to={'/packages/haz'}
+                                title={"Hajj Packages"}
+                                to={'/hajj-packages'}
                                 style={"text-lg"}
                             />
                         </div>
