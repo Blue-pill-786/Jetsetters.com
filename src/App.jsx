@@ -43,7 +43,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/covid-19' element={<CovidFAQ />} />
           <Route path='/terms-conditions' element={<TermsConditions />} />
-          <Route path='/packages/hajj' element={<Haz />} />
+          <Route path='/packages/hajj&umrah' element={<Haz />} />
           <Route path='*' element={<div className='min-h-screen flex justify-center items-center text-5xl font-bold'>404 Not Found</div>} />
         </Routes>
       </Suspense>
