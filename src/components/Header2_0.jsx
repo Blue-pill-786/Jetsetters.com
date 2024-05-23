@@ -117,7 +117,7 @@ const Header2_0 = () => {
                                 style={"text-lg md:hidden "}
                             />
                             <NavLink
-                                title={"Hajj Packages"}
+                                title={"Hajj & Umrah"}
                                 to={'/packages/hajj&umrah'}
                                 style={"text-lg"}
                             />

@@ -5,7 +5,7 @@ import HazImg4 from './haz-tour/haz-4.jpg';
 import HazImg5 from './haz-tour/haz-5.jpg';
 import HazImg6 from './haz-tour/haz-6.jpg';
 import HazImg7 from './haz-tour/haz-7.jpg';
-import HazImg8 from './haz-tour/haz-8.jpeg';
+import HazImg8 from './haz-tour/haz-6.jpeg';
 import Haz_bg from './haz-tour/haz-hero-bg.jpg'; 
 import Haz_Logo from './haz-tour/hazLogo.png'; 
 

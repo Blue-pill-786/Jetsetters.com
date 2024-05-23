@@ -182,6 +182,17 @@ body {
     }
 }
 
+@media only screen and (max-width: 380px){
+    .haz-img{
+        width: 100%;
+        height: 230px;
+    }
+    .haz-img img{
+        object-fit: fill;
+        object-position: center;
+    }
+}
+
 /* .policy-box:checked{
     background-color: red;
 } */
