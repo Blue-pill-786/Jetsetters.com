@@ -140,9 +140,9 @@ const Footer = () => {
                 />
             </div>
 
-            <div className='sm:w-[calc(100%-10%)] sm:mx-auto flex flex-row justify-between items-center mt-4 pb-[3rem] sm:mb-[3rem]'>
-                <div className='flex flex-col w-[45%] gap-y-[4px] text-neutral-100 text-xs px-2'>
-                    <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Contact Us</p>
+            <div className='sm:w-[calc(100%-10%)] sm:mx-auto flex flex-row justify-between items-baseline mt-4 pb-[3rem] sm:mb-[3rem]'>
+                <div className='flex flex-col  gap-y-[4px] text-neutral-100 text-xs px-2'>
+                    {/* <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Contact Us</p> */}
                     <p className='text-xs sm:text-sm md:text-base text-neutral-200 mb-1'>Office details</p>
                     <a href="tel:+14088999705"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
@@ -161,7 +161,7 @@ const Footer = () => {
                     </p>
                 </div>
 
-                <div className='flex flex-col w-[45%] gap-y-[4px] text-neutral-100 text-xs px-2'>
+                <div className='flex flex-col  gap-y-[4px] text-neutral-100 text-xs px-2'>
                     <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Service</p>
                     <Link
                         to='/terms-conditions'
@@ -197,12 +197,28 @@ const Footer = () => {
                 </div>
 
                 <div className='flex flex-col self-start gap-y-[4px] text-neutral-100 text-xs px-2'>
-                    {/* <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>About Us</p> */}
+                    <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Our Work</p>
                     <Link
                         to="/about"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
                     >
                         About
+                    </Link>
+                    <Link
+                        to="#"
+                        className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
+                    >
+                        Contact us
+                    </Link>
+                </div>
+
+                <div className='flex flex-col self-start gap-y-[4px] text-neutral-100 text-xs px-2'>
+                    <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Packages</p>
+                    <Link
+                        to="/packages/hajj&umrah"
+                        className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
+                    >
+                        Hajj & Umrah
                     </Link>
                 </div>
             </div>

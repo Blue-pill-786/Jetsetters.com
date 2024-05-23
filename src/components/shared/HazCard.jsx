@@ -8,7 +8,7 @@ import { IoIosWater } from "react-icons/io";
 const HazCard = ({ img, PackageType, star = 0, historical = false, zamWater = false,price, handler }) => {
     return (
         <div className='flex flex-col md:flex-row items-center rounded-t-[10px] md:rounded-[15px] md:shadow-none shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] bg-[#fff] group overflow-hidden'>
-            <div className='haz-img md:h-[280px] lg:w-[650px] sm:w-[450px] w-[380px] max-w-full overflow-hidden md:rounded-[15px] relative'>
+            <div className='haz-img md:h-[280px] lg:w-[650px] sm:w-[400px] w-full overflow-hidden md:rounded-[15px] relative'>
                 <div className='absolute w-full h-full top-0 -right-[100%] text-[#fff] p-[30px] ]
                             rounded-[15px] group-hover:right-0 transition-all duration-[1s] ease-in-out backdrop-hue-rotate-30 bg-[#1c98fd0f]
                             z-[100]'>
@@ -17,7 +17,7 @@ const HazCard = ({ img, PackageType, star = 0, historical = false, zamWater = fa
                     src={img}
                     alt={PackageType}
                     loading='lazy'
-                    className='w-full h-[300px] md:h-full rounded-t-[10px] md:rounded-[15px] object-cover group-hover:scale-[1.05] transition-transform duration-[1s] ease-in-out z-[10]'
+                    className='w-full h-[300px] sm:w-[800px] sm:h-full rounded-t-[10px] md:rounded-[15px] md:object-cover object-fill group-hover:scale-[1.05] transition-transform duration-[1s] ease-in-out z-[10]'
                 />
             </div>
             <div className='py-2 border-[#10439F] bg-[#fff] border-[2px] px-4 md:px-8 border-t-0 md:border-none w-full h-full md:rounded-[0px_15px_15px_0px]'>
