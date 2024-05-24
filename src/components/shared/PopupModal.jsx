@@ -17,7 +17,7 @@ const style = {
     boxShadow: 24,
     borderRadius: "15px",
     p: 4,
-    zIndex : 5000,
+    zIndex: 5000,
 };
 
 
@@ -35,7 +35,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
-            style={{zIndex: "5000"}}
+            style={{ zIndex: "5000" }}
         >
             <Paper elevation={8}>
                 <Box
@@ -117,8 +117,8 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                             <p className='text-sm text-[10px] font-medium text-[#3c5598cb] text-center'>let's connect you with our team via call or email to get started with your travel plans</p>
                         </div>
                         <Typography variant='h6'>
-                            <a href="tel:+18883893266" className='font-medium sm:text-3xl text-xl sm:ml-2'>
-                                +18883893266
+                            <a href="tel:+14088999705" className='font-medium sm:text-3xl text-xl sm:ml-2'>
+                                +14088999705
                             </a>
                         </Typography>
                         <Typography variant='h6'>
