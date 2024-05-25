@@ -5,6 +5,7 @@ import {
     DubaiImg1, DubaiImg2, DubaiImg3, DubaiLogo
 } from '../assets/packages-img'
 import HazCard from '../components/shared/HazCard'
+import PopupModal from '../components/shared/PopupModal'
 
 const Dubai = () => {
     const [open, setOpen] = useState(false);
@@ -71,7 +72,7 @@ const Dubai = () => {
                 (<PopupModal
                     setOpen={setOpen}
                     open={open}
-                    img={Haz_Logo}
+                    img={DubaiLogo}
                 />)
             }
         </div>
