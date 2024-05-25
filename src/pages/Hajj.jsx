@@ -40,7 +40,7 @@ const Hajj = () => {
                         <h1 className='text-3xl md:text-6xl text-center text-[#e59545] font-bold'>7 Nights Package</h1>
                         <p className='text-lg md:text-xl text-center text-[#000] font-medium'>4 nights in Mecca & 3 nights in Madina</p>
                     </div>
-                    <div className='flex flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-fit md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
+                    <div className='flex flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
                         <HazCard
                             img={HazImg1}
                             star={3}
@@ -76,7 +76,7 @@ const Hajj = () => {
                         <h1 className='text-3xl md:text-6xl hajj-box text-center text-[#e59545] font-bold'>15 Nights Package</h1>
                         <p className='text-lg md:text-xl text-center text-[#000] font-medium'>8 nights in Mecca & 7 nights in Madina</p>
                     </div>
-                    <div className='flex flex-col items-center gap-y-8 md:w-[100%] lg:w-[100%] xl:w-fit mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
+                    <div className='flex flex-col items-center gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
                         <HazCard
                             img={HazImg2}
                             star={3}
