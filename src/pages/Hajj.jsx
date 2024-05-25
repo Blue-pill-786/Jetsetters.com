@@ -76,9 +76,9 @@ const Hajj = () => {
                         <h1 className='text-3xl md:text-6xl hajj-box text-center text-[#e59545] font-bold'>15 Nights Package</h1>
                         <p className='text-lg md:text-xl text-center text-[#000] font-medium'>8 nights in Mecca & 7 nights in Madina</p>
                     </div>
-                    <div className='flex flex-col items-center gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
+                    <div className='flex flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
                         <HazCard
-                            img={HazImg2}
+                            img={HazImg4}
                             star={3}
                             handler={openHandler}
                             transportTitle={"Jeddah - Mecca - Madina - Jeddah"}
@@ -86,7 +86,7 @@ const Hajj = () => {
                             packageName={"Hajj"}
                         />
                         <HazCard
-                            img={HazImg5}
+                            img={HazImg8}
                             PackageType={"Gold"}
                             star={4}
                             transportTitle={"Jeddah - Mecca - Madina - Jeddah"}
@@ -95,13 +95,14 @@ const Hajj = () => {
                             packageName={"Hajj"}
                         />
                         <HazCard
-                            img={HazImg6}
+                            img={HazImg3}
                             transportTitle={"Jeddah - Mecca - Madina - Jeddah"}
                             extra={"Tour of Historical sites:"}
                             handler={openHandler}
                             overload={"10L Zam-zam Water:"}
                             PackageType={"Platinum"}
-                            star={5}packageName={"Hajj"}
+                            star={5}
+                            packageName={"Hajj"}
                         />
                     </div>
                 </div>
