@@ -121,11 +121,18 @@ body {
 }
 
 .haz-hero {
-    background-image: url('./assets/packages-img/haz-tour/haz-hero-bg.jpg');
+    background-image: url('./assets/packages-img/hajj-tour/hajj-hero-bg.jpg');
     background-repeat: no-repeat no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: 100% 100%;
+}
+
+.dubai-hero{
     /* background-size: cover; */
+    background-image: url('./assets/packages-img/dubai/dubai-hero-bg.jpeg');
+    background-repeat: no-repeat no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
 }
 
 .plan-animate {
@@ -174,7 +181,7 @@ body {
         background-size: 100% 100%;
     }
     .haz-hero {
-        background-image: url('./assets/packages-img/haz-tour/haz-hero-mobile.jpg');
+        background-image: url('./assets/packages-img/hajj-tour/hajj-hero-mobile.jpg');
         background-repeat: no-repeat no-repeat;
         background-position: center;
         /* background-size: 100% 100%; */
@@ -182,6 +189,11 @@ body {
     }
     .hajj-box{
         align-items: center;
+    }
+    .dubai-hero{
+        background-size: cover;
+        background-repeat: space;
+        background-position: center;
     }
 }
 

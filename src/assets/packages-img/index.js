@@ -1,13 +1,20 @@
-import HazImg1 from './haz-tour/haz-1.jpg';
-import HazImg2 from './haz-tour/haz-2.jpg';
-import HazImg3 from './haz-tour/haz-3.jpg';
-import HazImg4 from './haz-tour/haz-4.jpg';
-import HazImg5 from './haz-tour/haz-5.jpg';
-import HazImg6 from './haz-tour/haz-6.jpg';
-import HazImg7 from './haz-tour/haz-7.jpg';
-import HazImg8 from './haz-tour/haz-6.jpeg';
-import Haz_bg from './haz-tour/haz-hero-bg.jpg'; 
-import Haz_Logo from './haz-tour/hazLogo.png'; 
+// Hajj & Umrah Page image 
+import HazImg1 from './hajj-tour/hajj-1.jpg';
+import HazImg2 from './hajj-tour/hajj-2.jpg';
+import HazImg3 from './hajj-tour/hajj-3.jpg';
+import HazImg4 from './hajj-tour/hajj-4.jpg';
+import HazImg5 from './hajj-tour/hajj-5.jpg';
+import HazImg6 from './hajj-tour/hajj-6.jpg';
+import HazImg7 from './hajj-tour/hajj-7.jpg';
+import HazImg8 from './hajj-tour/hajj-6.jpeg';
+import Haz_bg from './hajj-tour/hajj-hero-bg.jpg'; 
+import Haz_Logo from './hajj-tour/hajjLogo.png'; 
+
+// Dubai page image 
+import DubaiImg1 from './dubai/dubai-img-1.jpeg'
+import DubaiImg2 from './dubai/dubai-img-2.jpeg'
+import DubaiImg3 from './dubai/dubai-img-3.jpeg'
+import DubaiLogo from './dubai/dubai-logo.png'
 
 export {
     HazImg1,
@@ -19,5 +26,10 @@ export {
     HazImg7,
     HazImg8,
     Haz_bg,
-    Haz_Logo
+    Haz_Logo,
+
+    DubaiImg1,
+    DubaiImg2,
+    DubaiImg3,
+    DubaiLogo
 };

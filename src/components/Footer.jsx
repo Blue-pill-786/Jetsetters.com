@@ -220,6 +220,12 @@ const Footer = () => {
                     >
                         Hajj & Umrah
                     </Link>
+                    <Link
+                        to="/packages/dubai"
+                        className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
+                    >
+                        Dubai
+                    </Link>
                 </div>
             </div>
         </footer >

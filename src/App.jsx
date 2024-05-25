@@ -12,7 +12,8 @@ const Cruise = lazy(() => import('../src/pages/Cruise'));
 const CovidFAQ = lazy(() => import('./pages/CovidFAQ'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const About = lazy(() => import('./pages/About'));
-const Haz = lazy(() => import('./pages/Haz'));
+const Hajj = lazy(() => import('./pages/Hajj'));
+const Dubai = lazy(() => import('./pages/Dubai'));
 
 const setTokenToSession = async () => {
   const token = await getSearchAirportToken();
@@ -32,7 +33,7 @@ const App = () => {
     if (!sessionStorage.getItem('token')) {
       setTokenToSession();
     }
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, [pathname]);
   return (
     <div className='App overflow-x-hidden'>
@@ -43,7 +44,8 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/covid-19' element={<CovidFAQ />} />
           <Route path='/terms-conditions' element={<TermsConditions />} />
-          <Route path='/packages/hajj&umrah' element={<Haz />} />
+          <Route path='/packages/hajj&umrah' element={<Hajj />} />
+          <Route path='/packages/dubai' element={<Dubai />} />
           <Route path='*' element={<div className='min-h-screen flex justify-center items-center text-5xl font-bold'>404 Not Found</div>} />
         </Routes>
       </Suspense>
