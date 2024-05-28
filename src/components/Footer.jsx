@@ -83,8 +83,9 @@ const Footer = () => {
                         />
                     </Link>
                     <Link
-                        to={'https://www.linkedin.com/in/jetsetters-corporation-b97847309/'}
-                        target='_blank'
+                        // to={'https://www.linkedin.com/in/jetsetters-corporation-b97847309/'}
+                        to={'#'}
+                        // target='_blank'
                         className='border border-[#fff] px-1 md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
                         <FaLinkedinIn
@@ -214,24 +215,28 @@ const Footer = () => {
 
                 <div className='flex flex-col self-start gap-y-[4px] text-neutral-100 text-xs px-2'>
                     <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Packages</p>
-                    <Link
-                        to="/packages/hajj&umrah"
-                        className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
-                    >
-                        Hajj & Umrah
-                    </Link>
+                    <div className='flex items-center md:gap-x-2 gap-1'>
+                        <Link
+                            to="/packages/ram-mandir-tour"
+                            className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
+                        >
+                            Ram Mandir Tour
+                        </Link>
+                        <span className='font-extrabold text-heading-text sm:block hidden'>|</span>
+                        <Link
+                            to="/packages/hajj&umrah"
+                            className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
+                        >
+                            Hajj & Umrah
+                        </Link>
+                    </div>
                     <Link
                         to="/packages/dubai"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
                     >
                         Dubai
                     </Link>
-                    <Link
-                        to="/packages/ram-mandir-tour"
-                        className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
-                    >
-                        Ram Mandir Tour
-                    </Link>
+
                 </div>
             </div>
         </footer >

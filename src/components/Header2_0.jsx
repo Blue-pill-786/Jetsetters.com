@@ -116,19 +116,22 @@ const Header2_0 = () => {
                                 to={'#'}
                                 style={"text-lg md:hidden "}
                             />
-                            <NavLink
-                                title={"Hajj & Umrah"}
-                                to={'/packages/hajj&umrah'}
-                                style={"text-lg"}
-                            />
+                            <div className='flex items-center gap-x-2'>
+                                <NavLink
+                                    title={"Ram Mandir Tour"}
+                                    to={'/packages/ram-mandir-tour'}
+                                    style={"text-lg"}
+                                />
+                                <span className='font-extrabold text-heading-text'>|</span>
+                                <NavLink
+                                    title={"Hajj & Umrah"}
+                                    to={'/packages/hajj&umrah'}
+                                    style={"text-lg"}
+                                />
+                            </div>
                             <NavLink
                                 title={"Dubai"}
                                 to={'/packages/dubai'}
-                                style={"text-lg"}
-                            />
-                            <NavLink
-                                title={"Ram Mandir Tour"}
-                                to={'/packages/ram-mandir-tour'}
                                 style={"text-lg"}
                             />
                         </div>
