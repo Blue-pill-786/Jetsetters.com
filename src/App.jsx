@@ -14,6 +14,7 @@ const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const About = lazy(() => import('./pages/About'));
 const Hajj = lazy(() => import('./pages/Hajj'));
 const Dubai = lazy(() => import('./pages/Dubai'));
+const RamMandir = lazy(() => import('./pages/RamMandir'));
 
 const setTokenToSession = async () => {
   const token = await getSearchAirportToken();
@@ -46,6 +47,7 @@ const App = () => {
           <Route path='/terms-conditions' element={<TermsConditions />} />
           <Route path='/packages/hajj&umrah' element={<Hajj />} />
           <Route path='/packages/dubai' element={<Dubai />} />
+          <Route path='/packages/ram-mandir-tour' element={<RamMandir />} />
           <Route path='*' element={<div className='min-h-screen flex justify-center items-center text-5xl font-bold'>404 Not Found</div>} />
         </Routes>
       </Suspense>

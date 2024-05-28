@@ -70,10 +70,10 @@ const HazCard = ({ img, transportTitle, PackageType, star = 0, extra, overload, 
                         {overload && (<div className='flex gap-x-2'>
                             <p className='flex gap-x-2'>
                                 
-                                {packageName === "Hajj" ?
-                                        (<IoIosWater className='text-[#10439F] md:text-[20px]' />)
-                                        :
+                                {!packageName === "Hajj" ?
                                         (<LuDessert className='text-[#10439F] md:text-[20px]'/>)
+                                        :
+                                        (<IoIosWater className='text-[#10439F] md:text-[20px]' />)
                                     }
                                 <span className='text-base md:text-xl font-semibold'>{overload} </span>
                             </p>

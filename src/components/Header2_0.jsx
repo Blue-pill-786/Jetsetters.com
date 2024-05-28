@@ -126,6 +126,11 @@ const Header2_0 = () => {
                                 to={'/packages/dubai'}
                                 style={"text-lg"}
                             />
+                            <NavLink
+                                title={"Ram Mandir Tour"}
+                                to={'/packages/ram-mandir-tour'}
+                                style={"text-lg"}
+                            />
                         </div>
                     </div>
                 </div>

@@ -16,6 +16,12 @@ import DubaiImg2 from './dubai/dubai-img-2.jpeg'
 import DubaiImg3 from './dubai/dubai-img-3.jpeg'
 import DubaiLogo from './dubai/dubai-logo.png'
 
+// Ram Mandir Tour Image 
+import RamImg1 from './ram-mandir/ram-img-1.jpeg'
+import RamImg2 from './ram-mandir/ram-img-2.jpeg'
+import RamImg3 from './ram-mandir/ram-img-3.jpeg'
+import RamLogo from './ram-mandir/ram-logo.png'
+
 export {
     HazImg1,
     HazImg2,
@@ -31,5 +37,10 @@ export {
     DubaiImg1,
     DubaiImg2,
     DubaiImg3,
-    DubaiLogo
+    DubaiLogo,
+
+    RamImg1,
+    RamImg2,
+    RamImg3,
+    RamLogo,
 };
