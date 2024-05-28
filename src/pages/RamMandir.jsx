@@ -44,7 +44,7 @@ const RamMandir = () => {
                             packageName={"Ram Mandir Tour"}
                         />
                         <HazCard
-                            img={RamImg2}
+                            img={RamImg3}
                             transportTitle={"Delhi-Ayodya-Varanasi-Vrindawan-Delhi"}
                             // extra={"Ganga Snan"}
                             PackageType={"Gold"}
@@ -53,7 +53,7 @@ const RamMandir = () => {
                             packageName={"Ram Mandir Tour"}
                         />
                         <HazCard
-                            img={RamImg3}
+                            img={RamImg2}
                             transportTitle={"Delhi-Ayodya-Varanasi-Vrindawan-Delhi"}
                             overload={"Ganga Snan"}
                             // extra={""}
