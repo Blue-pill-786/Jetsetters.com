@@ -64,15 +64,15 @@ const Footer = () => {
                             className='text-[#fff] text-center text-[18px] md:text-xl group-hover:text-[#318acf] transition-all duration-200'
                         />
                     </Link>
-                    {/* <Link
-                        to={'https://www.facebook.com/'}
+                    <Link
+                        to={'https://youtube.com/@jetsettersmedia?si=OO6-9dFI25rahjUu'}
                         target='_blank'
                         className='border border-[#fff] px-[5px] md:px-[7px] py-1 rounded-md text-[#fff] hover:border-heading-text hover:bg-white group transition-all duration-200'
                     >
                         <FaYoutube
                             className='text-[#fff] text-center text-[18px] md:text-xl group-hover:text-[#318acf] transition-all duration-200'
                         />
-                    </Link> */}
+                    </Link>
                     <Link
                         to={"https://twitter.com/Jetsetterscorp"}
                         target='_blank'
