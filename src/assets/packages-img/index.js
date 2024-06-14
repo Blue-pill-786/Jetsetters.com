@@ -22,6 +22,23 @@ import RamImg2 from './ram-mandir/ram-img-2.jpeg'
 import RamImg3 from './ram-mandir/ram-img-3.jpeg'
 import RamLogo from './ram-mandir/ram-logo.png'
 
+// Europe Tour Image
+
+// Italy 
+import ItalyImg1 from './europe/italy-img-1.jpeg'
+import ItalyImg2 from './europe/italy-img-2.jpeg'
+import ItalyImg3 from './europe/italy-img-3.jpeg'
+
+// London 
+import LondonImg1 from './europe/london-img-1.jpeg'
+import LondonImg2 from './europe/london-img-2.jpeg'
+import LondonImg3 from './europe/london-img-3.jpeg'
+
+// Paris 
+import ParisImg1 from './europe/paris-img-1.jpeg'
+import ParisImg2 from './europe/paris-img-2.jpeg'
+import ParisImg3 from './europe/paris-img-3.jpeg'
+
 export {
     HazImg1,
     HazImg2,
@@ -43,4 +60,14 @@ export {
     RamImg2,
     RamImg3,
     RamLogo,
+
+    ItalyImg1,
+    ItalyImg2,
+    ItalyImg3,
+    ParisImg1,
+    ParisImg2,
+    ParisImg3,
+    LondonImg1,
+    LondonImg2,
+    LondonImg3
 };

@@ -127,7 +127,7 @@ body {
     background-size: 100% 100%;
 }
 
-.dubai-hero{
+.dubai-hero {
     /* background-size: cover; */
     background-image: url('./assets/packages-img/dubai/dubai-hero-bg.jpeg');
     background-repeat: no-repeat no-repeat;
@@ -135,9 +135,16 @@ body {
     background-size: 100% 100%;
 }
 
-.ram-hero{
+.ram-hero {
     /* background-size: cover; */
     background-image: url('./assets/packages-img/ram-mandir/ram-hero-bg.jpeg');
+    background-repeat: no-repeat no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.europe-hero {
+    background-image: url('./assets/packages-img/europe//europe-bg.jpeg');
     background-repeat: no-repeat no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -188,6 +195,7 @@ body {
         background-position: center;
         background-size: 100% 100%;
     }
+
     .haz-hero {
         background-image: url('./assets/packages-img/hajj-tour/hajj-hero-mobile.jpg');
         background-repeat: no-repeat no-repeat;
@@ -195,27 +203,37 @@ body {
         /* background-size: 100% 100%; */
         background-size: cover;
     }
-    .hajj-box{
+
+    .hajj-box {
         align-items: center;
     }
-    .dubai-hero{
+
+    .dubai-hero {
         background-size: cover;
         background-repeat: space;
         background-position: center;
     }
-    .ram-hero{
+
+    .ram-hero {
+        background-size: cover;
+        background-repeat: space;
+        background-position: center;
+    }
+
+    .europe-hero {
         background-size: cover;
         background-repeat: space;
         background-position: center;
     }
 }
 
-@media only screen and (max-width: 380px){
-    .haz-img{
+@media only screen and (max-width: 380px) {
+    .haz-img {
         width: 100%;
         height: 230px;
     }
-    .haz-img img{
+
+    .haz-img img {
         object-fit: fill;
         object-position: center;
     }
@@ -224,3 +242,32 @@ body {
 /* .policy-box:checked{
     background-color: red;
 } */
+
+
+.up-animate {
+    animation: up 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation-fill-mode: forwards;
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(60%);
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.1;
+    }
+    50%{
+        opacity: 0.4;
+    }
+    75%{
+        opacity: 0.6;
+    }
+    95%{
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

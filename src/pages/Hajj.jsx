@@ -22,7 +22,7 @@ const Hajj = () => {
     return (
         <div className=''>
             <div className='haz-hero min-h-[calc(100vh-60px)] h-full w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10'>
+                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10 up-animate'>
                     <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md shadow-black lg:leading-[3rem] leading-[2.4rem] lg:w-11/12'>Hajj & Umrah packages 2024</h1>
                     <p className='sm:text-2xl text-lg  text-[#ffffffdc] font-content md:font-semibold drop-shadow-md shadow-black mt-2 md:w-1/2 w-4/5'>Browse our special hajj packages designed to suit your budget!</p>
                 </div>
