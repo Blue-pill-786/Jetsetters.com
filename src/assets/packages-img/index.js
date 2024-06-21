@@ -39,6 +39,8 @@ import ParisImg1 from './europe/paris-img-1.jpeg'
 import ParisImg2 from './europe/paris-img-2.jpeg'
 import ParisImg3 from './europe/paris-img-3.jpeg'
 
+import EuropeLogo from './europe/europe-logo.png'
+
 export {
     HazImg1,
     HazImg2,
@@ -69,5 +71,6 @@ export {
     ParisImg3,
     LondonImg1,
     LondonImg2,
-    LondonImg3
+    LondonImg3,
+    EuropeLogo
 };

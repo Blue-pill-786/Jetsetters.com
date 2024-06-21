@@ -5,7 +5,8 @@ import HazCard from '../components/shared/HazCard';
 import {
     ItalyImg1, ItalyImg2, ItalyImg3,
     ParisImg1, ParisImg2, ParisImg3,
-    LondonImg1, LondonImg2, LondonImg3
+    LondonImg1, LondonImg2, LondonImg3,
+    EuropeLogo
 } from '../assets/packages-img'
 
 const Europe = () => {
@@ -16,17 +17,17 @@ const Europe = () => {
     return (
         <div>
             <div className='europe-hero min-h-[calc(100vh-60px)] h-full w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10 up-animate'>
-                    <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md shadow-black md:leading-[2.4rem] lg:leading-[3rem] leading-[2rem] lg:w-11/12'>Experience Europe like never before exclusive packages available.</h1>
-                    <p className='sm:text-2xl text-lg sm:text-[#ffffffdc] text-[#fff] font-content md:font-semibold drop-shadow-md shadow-black mt-2 md:w-1/2 w-4/5'>Luxury, Adventure, Culture – Your European Dream Vacation</p>
+                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10'>
+                    <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md shadow-black md:leading-[2.4rem] lg:leading-[3rem] leading-[2rem] lg:w-11/12 up-animate-head'>Experience Europe like never before exclusive packages available.</h1>
+                    <p className='sm:text-2xl text-lg sm:text-[#ffffffdc] text-[#fff] font-content md:font-semibold drop-shadow-md shadow-black mt-2 md:w-1/2 w-4/5 up-animate-para'>Luxury, Adventure, Culture – Your European Dream Vacation</p>
                 </div>
             </div>
 
-            <div className='w-full bg-[#fff] backdrop-blur-sm bg-gradient-to-b to-[#95c9fd02] via-[#39577b47] from-[#39577bbd] py-5'>
+            <div className='w-full bg-[#fff] backdrop-blur-sm bg-gradient-to-b to-[#95c9fd02] via-[#39577b47] from-[#39577bbd] py-5 relative'>
                 <img
-                    src={"https://www.europetourpackage.net/Images/europe_logo.png"}
+                    src={EuropeLogo}
                     alt="dubai_logo"
-                    className='w-[200px] mx-auto  object-center object-fill'
+                    className='w-[300px] mx-auto  object-center object-fill bg-transparent'
                 />
             </div>
 

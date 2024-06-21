@@ -15,9 +15,9 @@ const Dubai = () => {
     return (
         <div>
             <div className='dubai-hero min-h-[calc(100vh-60px)] h-full w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10 up-animate'>
-                    <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md shadow-black md:leading-[2.4rem] lg:leading-[3rem] leading-[2rem] lg:w-11/12'>Discover the magic of Dubai with our exclusive travel packages.</h1>
-                    <p className='sm:text-2xl text-lg sm:text-[#ffffffdc] text-[#fff] font-content md:font-semibold drop-shadow-md shadow-black mt-2 md:w-1/2 w-4/5'>Experience Unparalleled Luxury and Adventure in the Heart of the UAE</p>
+                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10 '>
+                    <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md shadow-black md:leading-[2.4rem] up-animate-head lg:leading-[3rem] leading-[2rem] lg:w-11/12'>Discover the magic of Dubai with our exclusive travel packages.</h1>
+                    <p className='sm:text-2xl text-lg sm:text-[#ffffffdc] text-[#fff] font-content md:font-semibold drop-shadow-md shadow-black up-animate-para mt-2 md:w-1/2 w-4/5'>Experience Unparalleled Luxury and Adventure in the Heart of the UAE</p>
                 </div>
             </div>
 

@@ -244,30 +244,23 @@ body {
 } */
 
 
-.up-animate {
-    animation: up 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.up-animate-head,.up-animate-para {
+    filter: blur(20px);
+    animation: up 0.5s 1s linear 1 forwards;
     animation-fill-mode: forwards;
+    transform: translateY(50px);
+    opacity: 0;
 }
 
-@keyframes up {
-    0% {
-        transform: translateY(60%);
-        opacity: 0;
-    }
-    25%{
-        opacity: 0.1;
-    }
-    50%{
-        opacity: 0.4;
-    }
-    75%{
-        opacity: 0.6;
-    }
-    95%{
-        opacity: 0.8;
-    }
-    100% {
+@keyframes up{
+    to {
         transform: translateY(0);
         opacity: 1;
+        filter: blur(0);
+        opacity: 1;
     }
+}
+
+.up-animate-para{
+    animation-delay: 1.2s !important;
 }
