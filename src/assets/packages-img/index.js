@@ -83,6 +83,7 @@ export {
     LondonImg2,
     LondonImg3,
     EuropeLogo,
+    
     KashmirImg1,
     KashmirImg2,
     KashmirImg3,

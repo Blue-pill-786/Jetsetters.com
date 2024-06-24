@@ -36,7 +36,7 @@ const Header2_0 = () => {
 
     return (
         <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
-            <div className='md:h-[90px] h-[70px] bg-main-bg px-4 text-[#fff] flex justify-between relative'>
+            <div className='bg-main-bg px-4 text-[#fff] flex justify-between relative'>
                 <div className='flex items-center gap-x-10 justify-between w-[70%]'>
                     <div className='flex items-center gap-x-2'>
                         <Link to={'/'} >
@@ -137,6 +137,11 @@ const Header2_0 = () => {
                             <NavLink
                                 title={"Europe"}
                                 to={'/packages/europe'}
+                                style={"text-lg"}
+                            />
+                            <NavLink
+                                title={"Kashmir"}
+                                to={'/packages/kashmir'}
                                 style={"text-lg"}
                             />
                         </div>
