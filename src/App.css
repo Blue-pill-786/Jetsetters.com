@@ -150,6 +150,13 @@ body {
     background-size: 100% 100%;
 }
 
+.kashmir-hero {
+    background-image: url('./assets/packages-img/kashmir/kashmir-bg.jpg');
+    background-repeat: no-repeat no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
 .plan-animate {
     animation: plan 2.5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
 }
@@ -225,6 +232,12 @@ body {
         background-repeat: space;
         background-position: center;
     }
+
+    .kashmir-hero {
+        background-size: cover;
+        background-repeat: space;
+        background-position: center;
+    }
 }
 
 @media only screen and (max-width: 380px) {
@@ -244,7 +257,8 @@ body {
 } */
 
 
-.up-animate-head,.up-animate-para {
+.up-animate-head,
+.up-animate-para {
     filter: blur(20px);
     animation: up 0.5s 1s linear 1 forwards;
     animation-fill-mode: forwards;
@@ -252,7 +266,7 @@ body {
     opacity: 0;
 }
 
-@keyframes up{
+@keyframes up {
     to {
         transform: translateY(0);
         opacity: 1;
@@ -261,6 +275,6 @@ body {
     }
 }
 
-.up-animate-para{
+.up-animate-para {
     animation-delay: 1.2s !important;
 }

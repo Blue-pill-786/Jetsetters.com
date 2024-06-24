@@ -7,8 +7,8 @@ import HazImg5 from './hajj-tour/hajj-5.jpg';
 import HazImg6 from './hajj-tour/hajj-6.jpg';
 import HazImg7 from './hajj-tour/hajj-7.jpg';
 import HazImg8 from './hajj-tour/hajj-6.jpeg';
-import Haz_bg from './hajj-tour/hajj-hero-bg.jpg'; 
-import Haz_Logo from './hajj-tour/hajjLogo.png'; 
+import Haz_bg from './hajj-tour/hajj-hero-bg.jpg';
+import Haz_Logo from './hajj-tour/hajjLogo.png';
 
 // Dubai page image 
 import DubaiImg1 from './dubai/dubai-img-1.jpeg'
@@ -41,6 +41,16 @@ import ParisImg3 from './europe/paris-img-3.jpeg'
 
 import EuropeLogo from './europe/europe-logo.png'
 
+// Kashmir 
+
+import KashmirImg2 from './kashmir/kashmir-img-2.jpg'
+import KashmirImg3 from './kashmir/kashmir-img-3.jpg'
+import KashmirImg4 from './kashmir/kashmir-img-4.jpg'
+import KashmirImg5 from './kashmir/kashmir-img-5.jpg'
+import KashmirImg6 from './kashmir/kashmir-img-6.jpg'
+import KashmirImg1 from './kashmir/kashmir-img-1.jpg'
+import KashmirImg7 from './kashmir/kashmir-img-7.jpg'
+import KashmirBg from './kashmir/kashmir-bg.jpg'
 export {
     HazImg1,
     HazImg2,
@@ -72,5 +82,13 @@ export {
     LondonImg1,
     LondonImg2,
     LondonImg3,
-    EuropeLogo
+    EuropeLogo,
+    KashmirImg1,
+    KashmirImg2,
+    KashmirImg3,
+    KashmirImg4,
+    KashmirImg5,
+    KashmirImg6,
+    KashmirImg7,
+    KashmirBg,
 };
