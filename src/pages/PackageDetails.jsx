@@ -185,6 +185,7 @@ const PackageDetails = () => {
                                 </div>
 
                                 <button
+                                    type='button'
                                     className='w-full my-3 text-base text-center px-2 py-1 text-[#006CE4] border border-[#006ae4df] 
                                                 rounded-[4px] hover:bg-[#006ae40d] font-medium'
                                     onClick={() => setOpenUserbox(false)}
@@ -265,9 +266,10 @@ const PackageDetails = () => {
                                 />
                             </div>
                             <button
+                                type='button'
                                 className='w-full my-3 text-base text-center px-2 py-1 text-[#006CE4] border border-[#006ae4df] 
                                                 rounded-[4px] hover:bg-[#006ae40d] font-medium'
-                                onClick={() => setOpenUserbox(false)}
+                                onClick={() => setRoom(false)}
                             >
                                 Done
                             </button>

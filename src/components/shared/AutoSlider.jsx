@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/thumbs';
 
-const AutoSlider = ({ data }) => {
+const AutoSlider = ({ data,delay}) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <div className='w-full'>
@@ -21,7 +21,7 @@ const AutoSlider = ({ data }) => {
                 onSwiper={(swiper) => "console.log(swiper)"}
                 onSlideChange={() => "console.log('slide change')"}
                 autoplay={{
-                    delay: 2000,
+                    delay: delay,
                     disableOnInteraction: false,
                     waitForTransition: true,
                     pauseOnMouseEnter: true

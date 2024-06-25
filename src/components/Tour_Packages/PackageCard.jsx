@@ -5,12 +5,13 @@ import { GiMeal } from "react-icons/gi";
 import AutoSlider from '../shared/AutoSlider';
 import { useNavigate } from 'react-router-dom';
 
-const PackageCard = ({ imageData, level, packageName, hotel, transportation, meals, extra, AddOn, redirectPage, price, handler }) => {
+const PackageCard = ({ imageData, level, packageName, hotel, transportation, meals, extra, AddOn, redirectPage, price, handler, delay}) => {
     const navigate = useNavigate();
     return (
         <div className='flex flex-col md:flex-row md:h-[350px] sm:w-full w-[350px] rounded-t-[10px] md:rounded-[15px] md:shadow-none shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] bg-[#fff] group overflow-hidden'>
             <div className='lg:w-[40%] md:h-full h-[280px] w-full overflow-hidden md:rounded-[15px] relative'>
                 <AutoSlider
+                    delay={delay}
                     data={imageData}
                 />
             </div>
