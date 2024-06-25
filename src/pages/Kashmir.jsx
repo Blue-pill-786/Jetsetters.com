@@ -53,7 +53,7 @@ const Kashmir = () => {
                             imageData={[KashmirImg4,KashmirImg6]}
                             level={"Gold"}
                             transportation={"All transfers and sightseeing as itinerary"}
-                            hotel={2}
+                            hotel={3}
                             meals={"Daily Breakfast and Dinner"}
                             handler={openHandler}
                             packageName={"kashmir"}
@@ -65,7 +65,7 @@ const Kashmir = () => {
                             imageData={[KashmirImg5,KashmirImg3,KashmirImg7]}
                             level={"Platinum"}
                             transportation={"All transfers and sightseeing as itinerary"}
-                            hotel={2}
+                            hotel={4}
                             meals={"Daily Breakfast and Dinner"}
                             handler={openHandler}
                             packageName={"kashmir"}

@@ -51,6 +51,8 @@ import KashmirImg6 from './kashmir/kashmir-img-6.jpg'
 import KashmirImg1 from './kashmir/kashmir-img-1.jpg'
 import KashmirImg7 from './kashmir/kashmir-img-7.jpg'
 import KashmirBg from './kashmir/kashmir-bg.jpg'
+import KashmirAllCity from './kashmir/kashmir-all-city.png'
+
 export {
     HazImg1,
     HazImg2,
@@ -92,4 +94,5 @@ export {
     KashmirImg6,
     KashmirImg7,
     KashmirBg,
+    KashmirAllCity,
 };
