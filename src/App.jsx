@@ -65,7 +65,7 @@ const App = () => {
             open={open}
             firstPop={firstPop}
             setFirstPop={setFirstPop}
-            title={pathname === '/' ? "Flights" : "Cruise"}
+            title={pathname === '/flight' ? "Flights" : "/" ? "Cruise" : "best Packages"}
             img={pathname === '/' ? Plane : Ship}
           />
         )}

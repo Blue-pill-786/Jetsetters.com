@@ -24,7 +24,7 @@ const HomePhoneIcon = () => {
             {open && <PopupModal
                 setOpen={setOpen}
                 open={open}
-                title={pathname === '/' ? "Flights" : "Cruise"}
+                title={pathname === '/flight' ? "Flights" : "/" ? "Cruise" : "best Packages"}
                 img={pathname === '/' ? Plane : Ship}
             />}
         </>

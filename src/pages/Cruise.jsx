@@ -20,11 +20,19 @@ const initialData = {
     email: "",
 }
 
+const errors = {
+    from: "",
+    to: "",
+    phone: "",
+    email: "",
+}
+
 const url = import.meta.env.VITE_SHEET_URL
 
 const Cruise = () => {
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(initialData);
+    const [formError, setFormError] = useState(errors);
     const location = useLocation();
     const navigate = useNavigate();
     const checkRef = useRef();
@@ -47,16 +55,80 @@ const Cruise = () => {
         }
     }
 
+    function checkvalidation(str, type) {
+
+        function checkEmail(email) {
+            if (email.includes("@gmail.com") || email.includes("@yahoo.com")) {
+                return false
+            }
+            return true;
+        }
+
+        // if (type === "string") {
+        //     if (!str || str == " ") {
+        //         return true;
+        //     }
+        // }
+        if (type === "number") {
+            console.log(str);
+            if (!str || str == " " || str.length - 1 < 10) {
+                return true;
+            }
+        }
+        else if (type === "email") {
+            if (!str || str === " " || checkEmail(str)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function handleError(name, value) {
+        setFormError(prev => ({ ...prev, [name]: value }));
+        console.log(formError);
+    }
+
+    function checkFields(field, name, value, type) {
+        if (checkvalidation(field, type)) {
+            handleError(name, value);
+            return true;
+        } else {
+            handleError(name, "");
+            return false;
+        }
+    }
+
+    const formValidation = (data) => {
+        let error = false;
+        // if (checkFields(data.from, "from", "This field is required", "string")) {
+        //     error = true;
+        // }
+        // if (checkFields(data.to, "to", "This field is required", "string")) {
+        //     error = true;
+        // }
+        if (checkFields(data.email, "email", "Enter valid email", "email")) {
+            error = true;
+        }
+        if (checkFields(data.phone, "phone", "enter valid number", "number")) {
+            console.log("hello");
+            error = true;
+        }
+        return error;
+    }
+
     const sumbitHandle = async (e) => {
         e.preventDefault();
-        setOpen(true);
-        await sendEmailHandler("send from the cruise user", data);
+        if (!formValidation(data)) {
+            setOpen(true);
+            await sendEmailHandler("send from the cruise user", data);
 
-        const userData = {
-            ...data,
-            "query for": "Cruise"
+            const userData = {
+                ...data,
+                "query for": "Cruise"
+            }
+            await createSheetData(url, userData);
         }
-        await createSheetData(url, userData);
     }
 
     return (
@@ -103,20 +175,23 @@ const Cruise = () => {
                                 Cruise
                             </button>
                         </div>
-                        <div className='flex flex-col justify-between gap-7 items-center'>
-                            <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
+                        <div className='flex flex-col justify-between gap-7 items-center'>x
+                            <div className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.email ? "mb-3" : "mb-0"}`}>
                                 <input
                                     type="email"
                                     name='email'
                                     id='email'
                                     value={data.email}
                                     placeholder='Email*'
-                                    required
+                                    // required
                                     onChange={onChangeHandler}
                                     className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383] placeholder:font-normal'
                                 />
+                                {formError.email && (
+                                    <span className='text-[#ffffff] absolute left-[5%] top-[100%] translate-y-1 text-sm'>{formError.email}<strong className='text-red-600'>*</strong></span>
+                                )}
                             </div>
-                            <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative '>
+                            <div className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.phone ? "mb-3" : "mb-0"}`}>
                                 <PhoneInput
                                     country={'us'}
                                     value={data.phone}
@@ -146,6 +221,9 @@ const Cruise = () => {
                                         padding: "10px",
                                     }}
                                 />
+                                {formError.phone && (
+                                    <span className='text-[#ffffff] absolute left-[5%] top-[100%] translate-y-1 text-sm'>{formError.phone}<strong className='text-red-600'>*</strong></span>
+                                )}
                             </div>
                             <div className='flex gap-5 px-8'>
                                 <input
