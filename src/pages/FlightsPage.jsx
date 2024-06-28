@@ -30,11 +30,19 @@ const initialData = {
     email: "",
 }
 
+const errors = {
+    from: "",
+    to: "",
+    phone: "",
+    email: "",
+}
+
 const url = import.meta.env.VITE_SHEET_URL;
 
 const FlightsPage = () => {
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(initialData);
+    const [formError, setFormError] = useState(errors);
     const [openUserbox, setOpenUserbox] = useState(false)
     const [openCalendar, setOpenCalendar] = useState(false);
     const [fromList, setFromList] = useState([]);
@@ -46,6 +54,8 @@ const FlightsPage = () => {
     const ref = useRef();
     const form = useRef(null);
     const checkRef = useRef();
+    const fromRef = useRef();
+    const toRef = useRef();
     const passengerRef = useRef(null);
     const [check, setChecked] = useState(false);
     const token = sessionStorage.getItem('token') ? sessionStorage.getItem('token') : null;
@@ -79,7 +89,16 @@ const FlightsPage = () => {
             if (!passengerRef.current.contains(e.target)) {
                 setOpenUserbox(false);
             }
+
+            if (!fromRef.current.contains(e.target)) {
+                setOpenFrom(false);
+            }
+
+            if (!toRef.current.contains(e.target)) {
+                setOpenTo(false);
+            }
         }
+
         document.addEventListener('mousedown', close, true);
         document.addEventListener('keydown', hideOnEscape, true);
         document.addEventListener('click', hideOnClickOutside, true);
@@ -98,6 +117,68 @@ const FlightsPage = () => {
     const getSearchDataTo = async (city) => {
         const aiportList = await getAirportListIataAndCIty(city, token);
         setToList(aiportList);
+    }
+
+    function checkvalidation(str, type) {
+
+        function checkEmail(email) {
+            if (email.includes("@gmail.com") || email.includes("@yahoo.com")) {
+                return false
+            }
+            return true;
+        }
+
+        if (type === "string") {
+            if (!str || str == " ") {
+                return true;
+            }
+        }
+        else if (type === "number") {
+            console.log(str);
+            if (!str || str == " " || str.length - 1 < 10) {
+                return true;
+            }
+        }
+        else if (type === "email") {
+            if (!str || str === " " || checkEmail(str)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function handleError(name, value) {
+        setFormError(prev => ({ ...prev, [name]: value }));
+        console.log(formError);
+    }
+
+    function checkFields(field, name, value, type) {
+        if (checkvalidation(field, type)) {
+            handleError(name, value);
+            return true;
+        } else {
+            handleError(name, "");
+            return false;
+        }
+    }
+
+    const formValidation = (data) => {
+        let error = false;
+        if (checkFields(data.from, "from", "This field is required", "string")) {
+            error = true;
+        }
+        if (checkFields(data.to, "to", "This field is required", "string")) {
+            error = true;
+        }
+        if (checkFields(data.email, "email", "Enter valid email", "email")) {
+            error = true;
+        }
+        if (checkFields(data.phone, "phone", "enter valid number", "number")) {
+            console.log("hello");
+            error = true;
+        }
+        return error;
     }
 
     useEffect(() => {
@@ -134,32 +215,38 @@ const FlightsPage = () => {
         setData((prev) => ({ ...prev, [name]: value }));
     }
 
+    // console.log(formError);
+
     const sumbitHandle = async (e) => {
         e.preventDefault();
-        setOpen(true);
-        await sendEmailHandler(
-            "Send from the flight user",
-            {
-                data,
-                passengerData,
-                date: {
-                    "From Date": format(date[0].startDate, 'MM/dd/yyyy'),
-                    "To Date": format(date[0].endDate, 'MM/dd/yyyy')
-                }
-            });
+        console.log(formValidation(data));
+        if (!formValidation(data)) {
+            setOpen(true);
+            await sendEmailHandler(
+                "Send from the flight user",
+                {
+                    data,
+                    passengerData,
+                    date: {
+                        "From Date": format(date[0].startDate, 'MM/dd/yyyy'),
+                        "To Date": format(date[0].endDate, 'MM/dd/yyyy')
+                    }
+                });
 
-        const userData = {
-            email: data.email,
-            phone: data.phone,
-            from: data.from,
-            to: data.to,
-            passenger: `adult ${passengerData.adult}, children ${passengerData.children}`,
-            date: `${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`,
-            "query for": "Flight"
+            const userData = {
+                email: data.email,
+                phone: data.phone,
+                from: data.from,
+                to: data.to,
+                passenger: `adult ${passengerData.adult}, children ${passengerData.children}`,
+                date: `${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(date[0].endDate, 'MM/dd/yyyy')}`,
+                "query for": "Flight"
+            }
+
+            await createSheetData(url, userData);
         }
-
-        await createSheetData(url, userData);
         // setData(initialData);
+        console.log(formError);
     }
 
     return (
@@ -194,9 +281,9 @@ const FlightsPage = () => {
                             <div className='flex justify-center gap-x-2'>
                                 <button
                                     type='button'
-                                    className={`${location.pathname === '/' ? "bg-white" : "bg-[#00000057] text-[#ffffffac] hover:bg-white hover:text-[#000]"}  text-center font-bold sm:text-3xl text-2xl sm:w-[150px]
+                                    className={`${location.pathname === '/flight' ? "bg-white" : "bg-[#00000057] text-[#ffffffac] hover:bg-white hover:text-[#000]"}  text-center font-bold sm:text-3xl text-2xl sm:w-[150px]
                                                 sm:rounded-b-[20px] rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
-                                    onClick={() => navigate('/')}
+                                    onClick={() => navigate('/flight')}
                                 >
                                     Flights
                                 </button>
@@ -204,26 +291,29 @@ const FlightsPage = () => {
                                     type='button'
                                     className={`${location.pathname === '/cruise' ? "bg-white text-[#000]" : "bg-[#00000057] text-[#ffffffac] hover:bg-white hover:text-[#000]"} text-center font-bold sm:text-3xl text-2xl sm:w-[150px] sm:rounded-b-[20px]
                                             rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
-                                    onClick={() => navigate('/cruise')}
+                                    onClick={() => navigate('/')}
                                 >
                                     Cruise
                                 </button>
                             </div>
 
                             <div className='flex flex-col justify-between gap-4 sm:gap-5 items-center'>
-                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
+                                <div ref={fromRef} className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.from ? "mb-3" : "mb-0"}`}>
                                     <input
                                         type="search"
                                         name='from'
                                         id='from'
                                         value={data.from}
                                         placeholder='From*'
-                                        required
+                                        // required
                                         onChange={onChangeHandler}
                                         onFocus={() => setOpenFrom(true)}
-                                        onBlur={() => setOpenFrom(false)}
+                                        // onBlur={() => setOpenFrom(false)}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-lg text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
+                                    {formError.from && (
+                                        <span className='text-[#ffffff] absolute left-[5%] top-[100%] translate-y-1 text-sm'>{formError.from}<strong className='text-red-600'>*</strong></span>
+                                    )}
                                     {openFrom && fromList && fromList.length > 0 ?
                                         (<SearchAutoComplete
                                             data={fromList}
@@ -235,19 +325,22 @@ const FlightsPage = () => {
                                         ("")
                                     }
                                 </div>
-                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
+                                <div ref={toRef} className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.to ? "mb-3" : "mb-0"}`}>
                                     <input
                                         type="search"
                                         name='to'
                                         id='to'
                                         value={data.to}
                                         placeholder='To*'
-                                        required
+                                        // required
                                         onChange={onChangeHandler}
                                         onFocus={() => setOpenTo(true)}
-                                        onBlur={() => setOpenTo(false)}
+                                        // onBlur={() => setOpenTo(false)}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-lg text-[#000000b4] font-medium placeholder:text-[#848383]'
                                     />
+                                    {formError.to && (
+                                        <span className='text-[#ffffff] absolute left-[5%] top-[100%] translate-y-1 text-sm'>{formError.to}<strong className='text-red-600'>*</strong></span>
+                                    )}
                                     {openTo && toList && toList.length > 0 ?
                                         (<SearchAutoComplete
                                             data={toList}
@@ -293,8 +386,8 @@ const FlightsPage = () => {
                                     </div>
                                     }
                                 </div>
-                                <div className='w-3/4 p-1 z-[10] relative rounded-[30px] bg-[#ffffff]'>
-                                    <div ref={passengerRef}
+                                <div ref={passengerRef} className='w-3/4 p-1 z-[10] relative rounded-[30px] bg-[#ffffff]'>
+                                    <div
                                         className='w-full flex flex-row gap-2 justify-between items-center px-3 py-1 
                                                     border-[2px] rounded-[30px] border-[#bbab8cad] cursor-pointer 
                                                     outline-none text-xl text-[#BBAB8C]'
@@ -341,19 +434,22 @@ const FlightsPage = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative'>
+                                <div className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.from ? "mb-3" : "mb-0"}`}>
                                     <input
                                         type="email"
                                         name='email'
                                         id='email'
                                         value={data.email}
                                         placeholder='Email*'
-                                        required
+                                        // required
                                         onChange={onChangeHandler}
                                         className='w-full px-3 py-2 border-[2px] rounded-[30px] border-[#bbab8cad] outline-none text-xl text-[#000000b4] font-medium placeholder:text-[#848383] placeholder:font-normal'
                                     />
+                                    {formError.email && (
+                                        <span className='text-[#ffffff] absolute left-[5%] top-[100%] translate-y-1 text-sm'>{formError.email}<strong className='text-red-600'>*</strong></span>
+                                    )}
                                 </div>
-                                <div className='w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative '>
+                                <div className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.phone ? "mb-3" : "mb-0"}`}>
                                     <PhoneInput
                                         country={'us'}
                                         value={data.phone}
@@ -383,6 +479,9 @@ const FlightsPage = () => {
                                             padding: "10px",
                                         }}
                                     />
+                                    {formError.phone && (
+                                        <span className='text-[#ffffff] absolute left-[5%] top-[100%] translate-y-1 text-sm'>{formError.phone}<strong className='text-red-600'>*</strong></span>
+                                    )}
                                 </div>
 
                                 <div className='flex gap-5 px-8'>

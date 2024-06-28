@@ -88,17 +88,17 @@ const Cruise = () => {
                         <div className='flex justify-center gap-x-5 mb-5 overflow-hidden'>
                             <button
                                 type='button'
-                                className={`${location.pathname === '/' ? "bg-[#fff]" : "bg-[#00000057] text-[#ffffffac] hover:bg-[#fff] hover:text-[#000]"}  text-center font-bold sm:text-3xl text-2xl sm:w-[150px]
+                                className={`${location.pathname === '/flight' ? "bg-[#fff]" : "bg-[#00000057] text-[#ffffffac] hover:bg-[#fff] hover:text-[#000]"}  text-center font-bold sm:text-3xl text-2xl sm:w-[150px]
                                                 sm:rounded-b-[20px] rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
-                                onClick={() => navigate('/')}
+                                onClick={() => navigate('/flight')}
                             >
                                 Flights
                             </button>
                             <button
                                 type='button'
-                                className={`${location.pathname === '/cruise' ? "bg-[#fff] text-[#000]" : "bg-[#00000057] text-[#ffffffac] hover:bg-[#fff] hover:text-[#000]"} text-center font-bold sm:text-3xl text-2xl sm:w-[150px] sm:rounded-b-[20px]
+                                className={`${location.pathname === '/' ? "bg-[#fff] text-[#000]" : "bg-[#00000057] text-[#ffffffac] hover:bg-[#fff] hover:text-[#000]"} text-center font-bold sm:text-3xl text-2xl sm:w-[150px] sm:rounded-b-[20px]
                                             rounded-b-[22px] sm:px-1 px-8 sm:py-[10px] py-3 mb-5 transition duration-500`}
-                                onClick={() => navigate('/cruise')}
+                                onClick={() => navigate('/')}
                             >
                                 Cruise
                             </button>

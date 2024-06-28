@@ -3,6 +3,7 @@ import { IoAirplane } from "react-icons/io5";
 
 const SearchAutoComplete = ({ data, name, handler, setList }) => {
     const clickHanlder = (info) => {
+        console.log("hello");
         handler((prev) => ({ ...prev, [name]: `${info?.iataCode} ${info.name}, ${info?.address?.cityName}` }));
         setList("");
     }
