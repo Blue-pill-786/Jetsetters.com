@@ -54,13 +54,13 @@ const Header2_0 = () => {
                     </div>
                     <div className='md:flex lg:gap-x-6 gap-x-2 hidden w-[40%] justify-between font-content'>
                         <NavLink
-                            title={"Flight"}
+                            title={"Cruise"}
                             to={'/'}
                             style={"md:text-lg"}
                         />
                         <NavLink
-                            title={"Cruise"}
-                            to={'/cruise'}
+                            title={"Flight"}
+                            to={'/flight'}
                             style={"md:text-lg"}
                         />
                         <NavLink

@@ -183,10 +183,10 @@ const Footer = () => {
                                     : ""
                     } */}
                     {
-                        <FooterLink title={"Flights"} to={'/'} />
+                        <FooterLink title={"Cruise"} to={'/'} />
                     }
                     {
-                        <FooterLink title={"Cruise"} to={'/cruise'} />
+                        <FooterLink title={"Flights"} to={'/flight'} />
                     }
                     {/* {
                         location.pathname === "/cruise" ? <FooterLink title={"Flights"} to={'/'} />
