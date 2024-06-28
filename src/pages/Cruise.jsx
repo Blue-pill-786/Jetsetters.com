@@ -175,7 +175,7 @@ const Cruise = () => {
                                 Cruise
                             </button>
                         </div>
-                        <div className='flex flex-col justify-between gap-7 items-center'>x
+                        <div className='flex flex-col justify-between gap-7 items-center'>
                             <div className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.email ? "mb-3" : "mb-0"}`}>
                                 <input
                                     type="email"

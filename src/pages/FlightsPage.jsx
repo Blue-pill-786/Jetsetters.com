@@ -434,7 +434,7 @@ const FlightsPage = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.from ? "mb-3" : "mb-0"}`}>
+                                <div className={`w-3/4 p-1 rounded-[30px] bg-[#ffffff] relative ${formError.email ? "mb-3" : "mb-0"}`}>
                                     <input
                                         type="email"
                                         name='email'
