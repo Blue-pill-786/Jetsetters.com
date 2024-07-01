@@ -97,13 +97,13 @@ const Header2_0 = () => {
                         {/* <p className='text-white text-xl text-center md:block hidden'>Working on</p> */}
                         <div className='flex flex-col items-center justify-center gap-y-2 font-content'>
                             <NavLink
-                                title={"Flight"}
+                                title={"Cruise"}
                                 to={'/'}
                                 style={"text-lg md:hidden"}
                             />
                             <NavLink
-                                title={"Cruise"}
-                                to={'/cruise'}
+                                title={"Flight"}
+                                to={'/flight'}
                                 style={"text-lg md:hidden"}
                             />
                             <NavLink
