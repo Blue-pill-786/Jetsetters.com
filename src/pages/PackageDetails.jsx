@@ -542,7 +542,7 @@ const PackageDetails = () => {
                         <p className='text-sm mt-2 font-normal text-neutral-500font-content'>Most Popular choices for travelers from Kashmir India</p>
                     </div>
                     <div className='my-5'>
-                        <div className='w-full flex flex-col md:flex-row md:gap-x-5 gap-y-5 justify-between'>
+                        <div className='w-full flex flex-col md:flex-row lg:gap-x-2 sm:gap-x-3 gap-y-5'>
                             <Picture
                                 title={"Sonmarg"}
                                 url={KashmirImg10}
