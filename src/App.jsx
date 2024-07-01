@@ -41,7 +41,7 @@ const App = () => {
   }, [pathname]);
   return (
     <div className='App overflow-x-hidden'>
-      <Suspense fallback={""}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path='/' element={<Cruise />} />
           <Route path='/flight' element={<FlightsPage />} />

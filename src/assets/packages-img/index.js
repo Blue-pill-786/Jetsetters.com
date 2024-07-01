@@ -43,13 +43,23 @@ import EuropeLogo from './europe/europe-logo.png'
 
 // Kashmir 
 
+import KashmirImg1 from './kashmir/kashmir-img-1.jpg'
 import KashmirImg2 from './kashmir/kashmir-img-2.jpg'
 import KashmirImg3 from './kashmir/kashmir-img-3.jpg'
 import KashmirImg4 from './kashmir/kashmir-img-4.jpg'
 import KashmirImg5 from './kashmir/kashmir-img-5.jpg'
 import KashmirImg6 from './kashmir/kashmir-img-6.jpg'
-import KashmirImg1 from './kashmir/kashmir-img-1.jpg'
 import KashmirImg7 from './kashmir/kashmir-img-7.jpg'
+import KashmirImg8 from './kashmir/kashmir-img-8.jpeg'
+import KashmirImg9 from './kashmir/kashmir-img-9.jpeg'
+import KashmirImg10 from './kashmir/kashmir-img-10.jpeg'
+import KashmirImg11 from './kashmir/kashmir-img-11.jpeg'
+import KashmirImg12 from './kashmir/kashmir-img-12.jpeg'
+import KashmirImg13 from './kashmir/kashmir-img-13.jpeg'
+import KashmirImg14 from './kashmir/kashmir-img-14.jpeg'
+import KashmirImg15 from './kashmir/kashmir-img-15.jpeg'
+import KashmirImg16 from './kashmir/kashmir-img-16.jpg'
+import KashmirSponserLogo from './kashmir/kashmir-sponser-logo.png'
 import KashmirBg from './kashmir/kashmir-bg.jpg'
 import KashmirAllCity from './kashmir/kashmir-all-city.png'
 
@@ -85,7 +95,7 @@ export {
     LondonImg2,
     LondonImg3,
     EuropeLogo,
-    
+
     KashmirImg1,
     KashmirImg2,
     KashmirImg3,
@@ -93,6 +103,16 @@ export {
     KashmirImg5,
     KashmirImg6,
     KashmirImg7,
+    KashmirImg8,
+    KashmirImg9,
+    KashmirImg10,
+    KashmirImg11,
+    KashmirImg12,
+    KashmirImg13,
+    KashmirImg14,
+    KashmirImg15,
+    KashmirImg16,
+    KashmirSponserLogo,
     KashmirBg,
     KashmirAllCity,
 };

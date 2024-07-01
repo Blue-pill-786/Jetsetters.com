@@ -4,13 +4,17 @@ import WrapperLayout from '../components/Layouts/WrapperLayout';
 
 import {
     KashmirImg1, KashmirImg2, KashmirImg3,
-    KashmirImg4, KashmirImg5, KashmirImg6, KashmirImg7, KashmirAllCity
+    KashmirImg4, KashmirImg5, KashmirImg6, KashmirImg7,
+    KashmirImg8, KashmirImg9, KashmirImg10, KashmirImg11,
+    KashmirImg12, KashmirImg13, KashmirImg14, KashmirImg15,
+    KashmirImg16, KashmirSponserLogo, KashmirAllCity
 } from '../assets/packages-img'
 import { DateRange } from 'react-date-range';
-import { MdDinnerDining, MdFlight, MdHotel, MdOutlineCalendarMonth } from 'react-icons/md';
+import { MdDinnerDining, MdFlight, MdHotel, MdOutlineCalendarMonth, MdHouseboat } from 'react-icons/md';
 import { addDays, format } from 'date-fns';
 import { LuUser2 } from 'react-icons/lu';
 import { RiArrowDropDownLine } from 'react-icons/ri';
+import { FaCar } from "react-icons/fa";
 import { FiMinus, FiPlus } from 'react-icons/fi';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
@@ -26,27 +30,39 @@ const silver = {
     meals: "Daily Breakfast and Dinner",
     packageName: "kashmir",
     extra: "Sanitised service",
-    AddOn: ["Shikara ride"],
+    sideImg: KashmirImg16,
+    sideTitle : "Beauty of kashmir",
+    sideImgStyle : "max-w-[650px] h-[350px]"
+    // AddOn: ["Shikara ride"],
 }
 const gold = {
     img: KashmirImg2,
     title: "Gold",
     transportation: "All transfers and sightseeing as itinerary",
     hotel: 3,
+    extraLiving: "House boat night",
     meals: "Daily Breakfast and Dinner",
     packageName: "kashmir",
     extra: "Sanitised service",
-    AddOn: ["Shikara ride", "Welcome drink on arrival"],
+    AddOn: ["Shikara ride complementary", "Welcome drink on arrival"],
+    sideImg : "https://www.picnicwale.com/assets/adventure/shikara-ride-in-kashmir-banner.jpg",
+    sideTitle : "Shikara Ride",
+    sideImgStyle : "max-w-[650px] h-[400px]"
 }
 const platinum = {
     img: KashmirImg3,
     title: "Platinum",
     transportation: "All transfers and sightseeing as itinerary",
     hotel: 4,
+    extraLiving: "House boat night",
     meals: "Daily Breakfast and Dinner",
     packageName: "kashmir",
     extra: "Sanitised service",
-    AddOn: ["Shikara ride", "Welcome drink on arrival", "Assistance at Srinagar/Jammu airport"],
+    cabService: "Union cabs in SONAMARG and PAHALGAM",
+    AddOn: ["Shikara ride complementary", "Traditional welcome shawl and beverage", "Assistance at Srinagar/Jammu airport"],
+    sideImg: KashmirImg15,
+    sideTitle: "House Boating",
+    sideImgStyle : "w-[650px] h-[440px]"
 }
 
 const inc = [
@@ -62,6 +78,7 @@ const inc = [
 
 const exc = [
     " Flight/Bus/Train",
+    "Union cabs in SONAMARG and PAHALGAM",
     " Travel Insurance.",
     " Entrance tickets,pony ride,or any other extra curriculum activity of any point during sightseeing.",
     " GST 5%",
@@ -109,11 +126,11 @@ const PackageDetails = () => {
         }
     });
 
-    const submitHandler = (e) => {
-        e.preventDefault();
-        console.log(data);
-        setOpen(true);
-    }
+    // const submitHandler = (e) => {
+    //     e.preventDefault();
+    //     console.log(data);
+
+    // }
 
 
     const location = useLocation();
@@ -131,7 +148,7 @@ const PackageDetails = () => {
                     className='w-full h-full object-cover object-center'
                 />
             </div>
-            <div className='w-[100%] sm:px-5 px-3 bg-[#9f8eff44] backdrop-blur-sm'>
+            {/* <div className='w-[100%] sm:px-5 px-3 bg-[#9f8eff44] backdrop-blur-sm'>
                 <form
                     onSubmit={submitHandler}
                     className='relative grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 pt-8 md:px-[80px]'>
@@ -291,63 +308,118 @@ const PackageDetails = () => {
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> */}
             <div className='sm:w-[calc(100%-10%)] mx-2 sm:mx-auto mt-10'>
-                <div className='mt-8'>
-                    <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 md:w-[80%] font-content'>Kashmir Tour {data.title} Package</h1>
-                </div>
-                <div>
-                    <div className='flex flex-col'>
-                        <div>
-                            <div className='flex gap-x-3 md:gap-x-5'>
-                                <p className='flex gap-x-3 items-center'>
-                                    <MdHotel className='text-[#10439F] md:text-[30px] text-[25px] mb-1' />
-                                    <span className='text-lg md:text-2xl font-semibold'>Hotel: </span>
-                                </p>
-                                <p className='flex gap-x-1 mt-[2px] md:mt-0 md:text-[20px]'>
-                                    {
-                                        Array(data.hotel).fill('.').map((_, index) => (
-                                            <FaStar
-                                                key={index}
-                                                className='text-[#FFF455] text-[30px]'
-                                            />
-                                        ))
-                                    }
-                                </p>
-                            </div>
-                            <div className='flex gap-x-3 md:gap-x-5 items-start justify-start'>
-                                <p className='flex gap-x-3'>
-                                    <MdFlight className='text-[#10439F] md:text-[30px] text-[25px] rotate-45' />
-                                    <span className='text-lg md:text-2xl font-semibold'> Transportation: </span>
-                                </p>
-                                <p className='text-lg md:text-2xl font-normal text-[#10439F] md:text-ellipsis md:text-nowrap'>{data.transportation}</p>
-                            </div>
-                            <div className='flex gap-x-3 md:gap-x-5'>
-                                <p className='flex gap-x-3'>
-                                    <GiMeal className='text-[#10439F] md:text-[30px] text-[25px]' />
-                                    <span className='text-lg md:text-2xl font-semibold'>Meals: </span>
-                                </p>
-                                <span className='text-lg md:text-2xl font-normal text-[#10439F]'>{data.meals}</span>
-                            </div >
-                            {data.extra && (<div className='flex gap-x-3 md:gap-x-5'>
-                                <p className='flex gap-x-3'>
-                                    <MdDinnerDining className='text-[#10439F] md:text-[30px] text-[25px]' />
-                                    <span className='text-lg md:text-2xl font-semibold text-nowrap'>{data.extra} </span>
-                                </p>
-                                <span className='text-lg md:text-2xl font-normal text-[#10439F]'>Included</span>
-                            </div>)}
-                            <ul className='gap-x-2 list-inside list-disc flex flex-col pl-[5px]'>
-                                {
-                                    data.AddOn.map((item, index) => (
-                                        <li key={index} className='text-lg md:text-xl font-normal text-[#10439F]'>{item}</li>
-                                    ))
-                                }
-                            </ul>
+                <div className='flex gap-x-5 items-center'>
+                    <div>
+                        <div className='mt-8'>
+                            <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 md:w-[80%] font-content'>Kashmir Tour {data.title} Package</h1>
                         </div>
+                        <div className='flex flex-col'>
+                            <div>
+                                <div className='flex gap-x-3 md:gap-x-5'>
+                                    <p className='flex gap-x-3 items-center'>
+                                        <MdHotel className='text-[#10439F] md:text-[30px] text-[25px] mb-1' />
+                                        <span className='text-lg md:text-2xl font-semibold'>Hotel: </span>
+                                    </p>
+                                    <p className='flex gap-x-1 mt-[2px] md:mt-0 md:text-[20px]'>
+                                        {
+                                            Array(data.hotel).fill('.').map((_, index) => (
+                                                <FaStar
+                                                    key={index}
+                                                    className='text-[#FFF455] text-[30px]'
+                                                />
+                                            ))
+                                        }
+                                    </p>
+                                </div>
+                                {data?.extraLiving && (<div className='flex gap-x-3 md:gap-x-5'>
+                                    <p className='flex gap-x-3'>
+                                        <MdHouseboat className='text-[#10439F] md:text-[30px] text-[25px]' />
+                                        <span className='text-lg md:text-2xl font-semibold text-nowrap'>{data.extraLiving} </span>
+                                    </p>
+                                    <p className='flex gap-x-[1px] mt-[2px] md:mt-0 md:text-[20px]'>
+                                        {
+                                            Array(data.hotel).fill('.').map((_, index) => (
+                                                <FaStar
+                                                    key={index}
+                                                    className='text-[#FFF455] text-[30px]'
+                                                />
+                                            ))
+                                        }
+                                    </p>
+                                </div>)}
+                                <div className='flex gap-x-3 md:gap-x-5 items-start justify-start'>
+                                    <p className='flex gap-x-3'>
+                                        <MdFlight className='text-[#10439F] md:text-[30px] text-[25px] rotate-45' />
+                                        <span className='text-lg md:text-2xl font-semibold'> Transportation: </span>
+                                    </p>
+                                    <p className='text-lg md:text-2xl font-normal text-[#10439F] md:text-ellipsis md:text-nowrap'>{data.transportation}</p>
+                                </div>
+                                <div className='flex gap-x-3 md:gap-x-5'>
+                                    <p className='flex gap-x-3'>
+                                        <GiMeal className='text-[#10439F] md:text-[30px] text-[25px]' />
+                                        <span className='text-lg md:text-2xl font-semibold'>Meals: </span>
+                                    </p>
+                                    <span className='text-lg md:text-2xl font-normal text-[#10439F]'>{data.meals}</span>
+                                </div >
+                                {data?.cabService && <div className='flex gap-x-3 md:gap-x-5'>
+                                    <p className='flex gap-x-3'>
+                                        <FaCar className='text-[#10439F] md:text-[30px] text-[25px]' />
+                                        <span className='text-lg md:text-2xl font-semibold'>{data?.cabService}:</span>
+                                    </p>
+                                    <span className='text-lg md:text-2xl font-normal text-[#10439F]'>Included</span>
+                                </div>}
+                                {data.extra && (<div className='flex gap-x-3 md:gap-x-5'>
+                                    <p className='flex gap-x-3'>
+                                        <MdDinnerDining className='text-[#10439F] md:text-[30px] text-[25px]' />
+                                        <span className='text-lg md:text-2xl font-semibold text-nowrap'>{data.extra} </span>
+                                    </p>
+                                    <span className='text-lg md:text-2xl font-normal text-[#10439F]'>Included</span>
+                                </div>)}
+                                {
+                                    data?.AddOn &&
+                                    <ul className='gap-x-2 list-inside list-disc flex flex-col pl-[5px]'>
+                                        {
+                                            data.AddOn.map((item, index) => (
+                                                <li key={index} className='text-lg md:text-xl font-normal text-[#10439F]'>{item}</li>
+                                            ))
+                                        }
+                                    </ul>
+                                }
+                            </div>
+                        </div>
+
+                        <div className='flex md:justify-start justify-center items-center w-full mx-auto gap-x-5 md:col-span-2 my-5'>
+                            <button
+                                type="submit"
+                                onClick={() => setOpen(true)}
+                                className='text-center text-xl font-content font-semibold text-white px-5 py-2 rounded-md bg-heading-text
+                                        hover:bg-[#0d3f8f] flex items-center justify-center tracking-wider'
+                            >
+                                Book Now
+                            </button>
+
+                            <div className='flex gap-x-3 items-center text-lg font-medium tracking-wider text-heading-text'>
+                                <span>Price :</span>
+                                <span>$ 0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='md:w-1/2 w-0 md:mt-8 hidden md:block'>
+                        <Picture
+                            url={data.sideImg}
+                            style={data.sideImgStyle}
+                            title={data.sideTitle}
+                        />
                     </div>
                 </div>
 
-                <div className='flex flex-col gap-y-4 md:block my-[5rem]'>
+                <div className='flex flex-col gap-y-4 md:block mb-[5rem] mt-10'>
+                    <div className='text-center mb-5 px-1 py-[2px] border-b-black border-b w-max mx-auto border-dashed'>
+                        <h4 className='text-3xl text-neutral-900 font-semibold tracking-wider text-center'>Days Details</h4>
+                    </div>
                     <DetailDayBox
                         day={1}
                         title={"ARRIVAL:"}
@@ -464,23 +536,73 @@ const PackageDetails = () => {
                         </ul>
                     </div>
                 </div>
+                <div className='mt-10 mb-5'>
+                    <div>
+                        <h2 className='text-2xl font-bold font-content'>Trending destinations</h2>
+                        <p className='text-sm mt-2 font-normal text-neutral-500font-content'>Most Popular choices for travelers from Kashmir India</p>
+                    </div>
+                    <div className='my-5'>
+                        <div className='w-full flex flex-col md:flex-row md:gap-x-5 gap-y-5 justify-between'>
+                            <Picture
+                                title={"Sonmarg"}
+                                url={KashmirImg10}
+                                style={"w-[650px] h-[250px]"}
+                            />
+                            <Picture
+                                title={"Pehelgam"}
+                                url={KashmirImg8}
+                                style={"w-[650px] h-[250px]"}
+                            />
+                        </div>
 
-                <div className='my-8 md:w-[calc(100vw-280px)] mx-auto h-[580px]'>
-                    <img
-                        src={KashmirAllCity}
-                        alt="kashmir"
-                        className='w-full object-center md:object-contain h-full'
-                    />
+                        <div className='flex justify-between gap-x-2 mt-3'>
+                            <Picture
+                                url={KashmirImg13}
+                                title={"Gulmarg"}
+                                style={"xl:w-[450px] w-[350px] h-[250px]"}
+                                responsiveStyle={""}
+                            />
+                            <Picture
+                                url={KashmirImg12}
+                                title={"Srinagar"}
+                                style={"xl:w-[450px] w-[330px] h-[250px]"}
+                                responsiveStyle={true}
+                            />
+                            <Picture
+                                url={KashmirImg14}
+                                title={"Mughal Garden"}
+                                style={"xl:w-[450px] w-[330px] h-[250px]"}
+                                responsiveStyle={true}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className='bg-[#5072a3] -mb-11'>
+                <div className='sm:w-[calc(100%-10%)] mx-2 sm:mx-auto mt-10'>
+                    <div className='flex items-center sm:justify-center justify-between md:p-2'>
+                        <img
+                            src={KashmirSponserLogo}
+                            alt='Sponser'
+                            className='w-[150px] h-[120px] object-cover -ml-6 md:ml-0'
+                        />
+                        <p className='text-xl text-[#fff] font-medium'>
+                            In affiliation with Innline Tour & Travels
+                        </p>
+                    </div>
                 </div>
             </div>
 
 
             {
-                open && <PopupModal open={open} setOpen={setOpen} title={"Kashmir Package"}/>
+                open && <PopupModal open={open} setOpen={setOpen} title={"Kashmir Package"} />
             }
         </div >
     )
 }
+
+// In affiliation with Innline Tour & Travels
 
 export default WrapperLayout()(PackageDetails)
 
@@ -562,6 +684,27 @@ const DetailDayBox = ({ day, title, description, width, height, color }) => {
                 <h4 className='text-xl font-bold text-neutral-800 text-center my-3 md:my-0 md:text-start'>{title}</h4>
                 <p className='text-base font-content text-neutral-700'>{description}</p>
             </div>
+        </div>
+    )
+}
+
+const Picture = ({ url, title, style, responsiveStyle }) => {
+    return (
+        <div className='relative rounded-lg'>
+            <div className={`absolute top-0 left-0 px-5 py-3 w-full flex items-center gap-x-3 bg-gradient-to-b from-[#000000e2] to-[#ffffff06] rounded-t-lg ${responsiveStyle}`}>
+                <span className={`sm:text-2xl text-lg font-bold text-white drop-shadow-xl shadow-black ${responsiveStyle}`}>{title}</span>
+                {/* <img
+                    src={IndiaIcon}
+                    alt="India"
+                    width={responsiveStyle ? 20 : 25}
+                    className='mt-[5px]'
+                /> */}
+            </div>
+            <img
+                src={url}
+                alt={title}
+                className={`${style} rounded-md object-cover bg-contain`}
+            />
         </div>
     )
 }

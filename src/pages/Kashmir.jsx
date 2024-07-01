@@ -35,6 +35,7 @@ const Kashmir = () => {
                     <div className='mb-5 md:mb-7'>
                         <h1 className='text-3xl md:text-6xl text-center text-[#e59545] font-bold'>Our Packages</h1>
                         <p className='text-lg md:text-xl text-center text-[#000] font-medium'>Book now for unforgettable adventures.</p>
+                        <p className='text-lg md:text-xl text-center text-[#000] font-medium'>6 Days and 5 Nights</p>
                     </div>
                     <div className='flex flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
                         <PackageCard
@@ -46,33 +47,36 @@ const Kashmir = () => {
                             handler={openHandler}
                             packageName={"kashmir"}
                             extra={"Sanitised service"}
-                            AddOn={["Shikara ride"]}
+                            // AddOn={["Shikara ride"]}
                             redirectPage={"/silver-details"}
                             delay={1500}
                         />
                         <PackageCard
-                            imageData={[KashmirImg4,KashmirImg6]}
+                            imageData={[KashmirImg4, KashmirImg6]}
+                            extraLiving={"House boat night"}
                             level={"Gold"}
                             transportation={"All transfers and sightseeing as itinerary"}
                             hotel={3}
                             meals={"Daily Breakfast and Dinner"}
                             handler={openHandler}
                             packageName={"kashmir"}
-                            extra={"Sanitised service"}
-                            AddOn={["Shikara ride","Welcome drink on arrival"]}
+                            extra={"Sanitised service "}
+                            AddOn={["Shikara ride complementary","Welcome drink on arrival"]}
                             redirectPage={"/gold-details"}
                             delay={2000}
                         />
                         <PackageCard
                             imageData={[KashmirImg5,KashmirImg3,KashmirImg7]}
                             level={"Platinum"}
+                            extraLiving={"House boat night"}
                             transportation={"All transfers and sightseeing as itinerary"}
                             hotel={4}
                             meals={"Daily Breakfast and Dinner"}
                             handler={openHandler}
                             packageName={"kashmir"}
+                            cabService={"Union cabs in SONAMARG and PAHALGAM"}
                             extra={"Sanitised service"}
-                            AddOn={["Shikara ride","Welcome drink on arrival","Assistance at Srinagar/Jammu airport"]}
+                            AddOn={["Shikara ride complementary","Traditional welcome shawl and beverage","Assistance at Srinagar/Jammu airport"]}
                             redirectPage={"/platinum-details"}
                             delay={2500}
                         />
