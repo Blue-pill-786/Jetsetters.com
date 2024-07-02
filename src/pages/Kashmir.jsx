@@ -50,6 +50,7 @@ const Kashmir = () => {
                             // AddOn={["Shikara ride"]}
                             redirectPage={"/silver-details"}
                             delay={1500}
+                            price={"543 + flight Bookings"}
                         />
                         <PackageCard
                             imageData={[KashmirImg4, KashmirImg6]}
@@ -64,6 +65,7 @@ const Kashmir = () => {
                             AddOn={["Shikara ride complementary","Welcome drink on arrival"]}
                             redirectPage={"/gold-details"}
                             delay={2000}
+                            price={"750 + flight bookings"}
                         />
                         <PackageCard
                             imageData={[KashmirImg5,KashmirImg3,KashmirImg7]}
@@ -79,6 +81,7 @@ const Kashmir = () => {
                             AddOn={["Shikara ride complementary","Traditional welcome shawl and beverage","Assistance at Srinagar/Jammu airport"]}
                             redirectPage={"/platinum-details"}
                             delay={2500}
+                            price={"1515 + flight bookings"}
                         />
                     </div>
                 </div>

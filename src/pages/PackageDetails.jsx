@@ -32,7 +32,8 @@ const silver = {
     extra: "Sanitised service",
     sideImg: KashmirImg16,
     sideTitle : "Beauty of kashmir",
-    sideImgStyle : "w-full h-[350px]"
+    sideImgStyle: "w-full h-[350px]",
+    price : "543 + flight Bookings"
     // AddOn: ["Shikara ride"],
 }
 const gold = {
@@ -47,7 +48,8 @@ const gold = {
     AddOn: ["Shikara ride complementary", "Welcome drink on arrival"],
     sideImg : "https://www.picnicwale.com/assets/adventure/shikara-ride-in-kashmir-banner.jpg",
     sideTitle : "Shikara Ride",
-    sideImgStyle : "w-full h-[400px]"
+    sideImgStyle: "w-full h-[400px]",
+    price : "750 + flight bookings"
 }
 const platinum = {
     img: KashmirImg3,
@@ -62,7 +64,8 @@ const platinum = {
     AddOn: ["Shikara ride complementary", "Traditional welcome shawl and beverage", "Assistance at Srinagar/Jammu airport"],
     sideImg: KashmirImg15,
     sideTitle: "House Boating",
-    sideImgStyle : "w-full h-[440px]"
+    sideImgStyle: "w-full h-[440px]",
+    price : "1515 + flight bookings"
 }
 
 const inc = [
@@ -402,7 +405,7 @@ const PackageDetails = () => {
 
                             <div className='flex gap-x-3 items-center text-lg font-medium tracking-wider text-heading-text'>
                                 <span>Price :</span>
-                                <span>$ 0</span>
+                                <span className='capitalize'>${data.price}/Per Person</span>
                             </div>
                         </div>
                     </div>

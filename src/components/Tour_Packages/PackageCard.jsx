@@ -97,7 +97,7 @@ const PackageCard = ({ imageData, level, packageName, cabService, extraLiving, h
                     </div>
 
                     <div className={`w-full flex px-2 md:mb-8 mb:mt-0 mt-5 mb-2 items-center gap-x-5 md:justify-end`}>
-                        <p className='text-base md:text-xl text-[#10439F] font-medium'>$ {price}</p>
+                        <p className='text-base capitalize md:text-xl text-[#10439F] font-medium'>${price}</p>
                         <button
                             onClick={() => navigate("/packages/kashmir" + redirectPage)}
                             className='px-5 py-1 text-lg font-medium border-[#144cb5] border-2 outline-none hover:bg-[#0d3f8f] rounded-[5px] text-[#144cb5] hover:text-[#fff] cursor-pointer'>
