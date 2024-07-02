@@ -32,7 +32,7 @@ const silver = {
     extra: "Sanitised service",
     sideImg: KashmirImg16,
     sideTitle : "Beauty of kashmir",
-    sideImgStyle : "max-w-[650px] h-[350px]"
+    sideImgStyle : "w-full h-[350px]"
     // AddOn: ["Shikara ride"],
 }
 const gold = {
@@ -47,7 +47,7 @@ const gold = {
     AddOn: ["Shikara ride complementary", "Welcome drink on arrival"],
     sideImg : "https://www.picnicwale.com/assets/adventure/shikara-ride-in-kashmir-banner.jpg",
     sideTitle : "Shikara Ride",
-    sideImgStyle : "max-w-[650px] h-[400px]"
+    sideImgStyle : "w-full h-[400px]"
 }
 const platinum = {
     img: KashmirImg3,
@@ -62,7 +62,7 @@ const platinum = {
     AddOn: ["Shikara ride complementary", "Traditional welcome shawl and beverage", "Assistance at Srinagar/Jammu airport"],
     sideImg: KashmirImg15,
     sideTitle: "House Boating",
-    sideImgStyle : "w-[650px] h-[440px]"
+    sideImgStyle : "w-full h-[440px]"
 }
 
 const inc = [
@@ -407,7 +407,7 @@ const PackageDetails = () => {
                         </div>
                     </div>
 
-                    <div className='md:w-1/2 w-0 md:mt-8 hidden md:block'>
+                    <div className='md:w-full w-0 md:mt-8 hidden md:block'>
                         <Picture
                             url={data.sideImg}
                             style={data.sideImgStyle}
@@ -542,16 +542,16 @@ const PackageDetails = () => {
                         <p className='text-sm mt-2 font-normal text-neutral-500font-content'>Most Popular choices for travelers from Kashmir India</p>
                     </div>
                     <div className='my-5'>
-                        <div className='w-full flex flex-col md:flex-row lg:gap-x-2 sm:gap-x-3 gap-y-5'>
+                        <div className='w-full flex flex-col md:flex-row lg:gap-x-2 sm:gap-x-3 gap-y-5 justify-between'>
                             <Picture
                                 title={"Sonmarg"}
                                 url={KashmirImg10}
-                                style={"w-[650px] h-[250px]"}
+                                style={"w-[670px] h-[280px]"}
                             />
                             <Picture
                                 title={"Pehelgam"}
                                 url={KashmirImg8}
-                                style={"w-[650px] h-[250px]"}
+                                style={"w-[670px] h-[280px]"}
                             />
                         </div>
 
