@@ -68,7 +68,7 @@ const NorthEast = () => {
                             handler={openHandler}
                             packageName={"North East"}
                             // cabService={"Union cabs in SONAMARG and PAHALGAM"}
-                            extra={"Sikkim Adventures with Darjeeling"}
+                            extra={"Wonders of Meghalaya & Assam "}
                             AddOn={["4 Nights","DESTINATIONS COVERED: 3N Shillong, 1N Guwahati"]}
                             delay={2000}
                             price={"669 + flight bookings"}
@@ -85,7 +85,7 @@ const NorthEast = () => {
                             handler={openHandler}
                             packageName={"North East"}
                             // cabService={"Union cabs in SONAMARG and PAHALGAM"}
-                            extra={"Sikkim Adventures with Darjeeling"}
+                            extra={"Breathtaking Journey through Bhutan"}
                             AddOn={["6 Nights","DESTINATIONS COVERED : 1N Phuentsholing, 2N Thimphu, 1N Punakha, 2N Paro, 1N Jaldapara"]}
                             delay={2500}
                             price={"869 + flight bookings"}
