@@ -7,10 +7,11 @@ import 'swiper/css/thumbs';
 const AutoSlider = ({ data,delay}) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
-        <div className='w-full'>
+        <div className='w-full h-full'>
             <Swiper
                 style={{
                     width: "100%",
+                    height : "100%"
                 }}
                 modules={[Scrollbar, A11y, Autoplay, Thumbs]}
                 spaceBetween={32}
@@ -29,8 +30,8 @@ const AutoSlider = ({ data,delay}) => {
             >
                 {
                     data.map((img, index) => (
-                        <SwiperSlide key={index} style={{ borderRadius: "15px" }}>
-                            <img src={img}/>
+                        <SwiperSlide key={index} style={{ borderRadius: "15px", height : "100%" }}>
+                            <img src={img} className='w-full h-full'/>
                         </SwiperSlide>
                     ))
                 }

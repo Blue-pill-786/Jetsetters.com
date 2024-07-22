@@ -48,7 +48,7 @@ const Kashmir = () => {
                             packageName={"kashmir"}
                             extra={"Sanitised service"}
                             // AddOn={["Shikara ride"]}
-                            redirectPage={"/silver-details"}
+                            redirectPage={"/kashmir/silver-details"}
                             delay={1500}
                             price={"543 + flight Bookings"}
                         />
@@ -63,7 +63,7 @@ const Kashmir = () => {
                             packageName={"kashmir"}
                             extra={"Sanitised service "}
                             AddOn={["Shikara ride complementary","Welcome drink on arrival"]}
-                            redirectPage={"/gold-details"}
+                            redirectPage={"/kashmir/gold-details"}
                             delay={2000}
                             price={"750 + flight bookings"}
                         />
@@ -79,7 +79,7 @@ const Kashmir = () => {
                             cabService={"Union cabs in SONAMARG and PAHALGAM"}
                             extra={"Sanitised service"}
                             AddOn={["Shikara ride complementary","Traditional welcome shawl and beverage","Assistance at Srinagar/Jammu airport"]}
-                            redirectPage={"/platinum-details"}
+                            redirectPage={"/kashmir/platinum-details"}
                             delay={2500}
                             price={"1515 + flight bookings"}
                         />

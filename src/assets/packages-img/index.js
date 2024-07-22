@@ -63,6 +63,22 @@ import KashmirSponserLogo from './kashmir/kashmir-sponser-logo.png'
 import KashmirBg from './kashmir/kashmir-bg.jpg'
 import KashmirAllCity from './kashmir/kashmir-all-city.png'
 
+// North East
+
+// Darjeeling
+import NorthDarjeeling from './north-east/northDarjeeling.jpeg'
+// Sikkim 
+import NorthSikkim from './north-east/northSikkam.jpeg'
+
+// Meghalaya
+import NorthMeghalaya from './north-east/northMeghalaya.jpeg'
+// Assam
+import NorthAssam from './north-east/northAssam.jpeg'
+
+// Bhutan
+import NorthBhutan1 from './north-east/northBhutan1.jpeg'
+import NorthBhutan2 from './north-east/northBhutan2.jpeg'
+
 export {
     HazImg1,
     HazImg2,
@@ -115,4 +131,11 @@ export {
     KashmirSponserLogo,
     KashmirBg,
     KashmirAllCity,
+
+    NorthDarjeeling,
+    NorthSikkim,
+    NorthMeghalaya,
+    NorthAssam,
+    NorthBhutan1,
+    NorthBhutan2,
 };

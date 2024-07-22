@@ -95,7 +95,7 @@ const Header2_0 = () => {
                         ref={menuRef}
                         className='nav-menu bg-main-bg'>
                         {/* <p className='text-white text-xl text-center md:block hidden'>Working on</p> */}
-                        <div className='flex flex-col items-center justify-center gap-y-2 font-content'>
+                        <div className='flex flex-col items-center justify-center gap-y-2 font-content pb-1'>
                             <NavLink
                                 title={"Cruise"}
                                 to={'/'}
@@ -142,6 +142,11 @@ const Header2_0 = () => {
                             <NavLink
                                 title={"Kashmir"}
                                 to={'/packages/kashmir'}
+                                style={"text-lg"}
+                            />
+                            <NavLink
+                                title={"North East & Bhutan"}
+                                to={'/packages/north-east'}
                                 style={"text-lg"}
                             />
                         </div>

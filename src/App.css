@@ -157,6 +157,13 @@ body {
     background-size: 100% 100%;
 }
 
+.north-east-hero{
+    background-image: url('./assets/packages-img/north-east/bg-1.jpg');
+    background-repeat: no-repeat no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
 .plan-animate {
     animation: plan 2.5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
 }
@@ -234,6 +241,12 @@ body {
     }
 
     .kashmir-hero {
+        background-size: cover;
+        background-repeat: space;
+        background-position: center;
+    }
+
+    .north-east-hero{
         background-size: cover;
         background-repeat: space;
         background-position: center;

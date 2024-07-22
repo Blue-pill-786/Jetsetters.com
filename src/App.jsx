@@ -17,6 +17,8 @@ const Dubai = lazy(() => import('./pages/Dubai'));
 const RamMandir = lazy(() => import('./pages/RamMandir'));
 const Europe = lazy(() => import('./pages/Europe'));
 const Kashmir = lazy(() => import('./pages/Kashmir'));
+const NorthEast = lazy(() => import('./pages/NorthEast'));
+const DarjeelingSikkimDetailPage = lazy(() => import('./pages/DarjeelingSikkimDetailPage'));
 const PackageDetails = lazy(() => import('./pages/PackageDetails'));
 
 const setTokenToSession = async () => {
@@ -53,6 +55,8 @@ const App = () => {
           <Route path='/packages/ram-mandir-tour' element={<RamMandir />} />
           <Route path='/packages/europe' element={<Europe />} />
           <Route path='/packages/kashmir' element={<Kashmir />} />
+          <Route path='/packages/north-east' element={<NorthEast />} />
+          <Route path='packages/north-east/darjeeling-sikkim' element={<DarjeelingSikkimDetailPage />} />
           <Route path='/packages/kashmir/:package' element={<PackageDetails />} />
           <Route path='*' element={<div className='min-h-screen flex justify-center items-center text-5xl font-bold'>404 Not Found</div>} />
         </Routes>

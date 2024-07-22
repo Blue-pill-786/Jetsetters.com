@@ -250,6 +250,13 @@ const Footer = () => {
                         Kashmir
                     </Link>
 
+                    <Link
+                        to="/packages/north-east"
+                        className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
+                    >
+                        North East & Bhutan
+                    </Link>
+
                 </div>
             </div>
         </footer >
