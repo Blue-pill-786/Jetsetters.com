@@ -38,11 +38,10 @@ const NorthEast = () => {
                         {/* <p className='text-lg md:text-xl text-center text-[#000] font-medium'>Book now for unforgettable adventures.</p> */}
                     </div>
                     <div className='mb-5'>
-                        <h1 className='text-2xl md:text-4xl opacity-70 text-center text-[#000e] font-bold'>North East India</h1>
-                        <p className='text-lg md:text-2xl text-center text-[#000] opacity-90 font-semibold font-content' >Darjeeling and Sikkim</p>
+                        <h1 className='text-2xl md:text-4xl opacity-80 text-center text-[#000e] font-bold drop-shadow-md shadow-black'>North East India</h1>
                     </div>
 
-                    <div className='flex mb-[1rem] flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
+                    <div className='flex mb-[2rem] flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
                         <PackageCard
                             imageData={[NorthDarjeeling,NorthSikkim]}
                             level={"Darjeeling and Sikkim"}
@@ -59,10 +58,6 @@ const NorthEast = () => {
                             delay={1500}
                             price={"479 + flight bookings"}
                         />
-                    </div>
-
-                    <div className='mb-5'>
-                        <p className='text-lg md:text-2xl text-center text-[#000] opacity-90 font-semibold font-content' >Meghalaya and Assam</p>
                     </div>
 
                     <div className='flex mb-[3rem] flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
@@ -84,7 +79,7 @@ const NorthEast = () => {
                     </div>
 
                     <div className='mb-5 pt-8 md:pt-10'>
-                        <h1 className='text-2xl md:text-4xl opacity-70 text-center text-[#000e] font-bold'>Bhutan</h1>
+                        <h1 className='text-2xl md:text-4xl opacity-80 text-center text-[#000e] font-bold drop-shadow-md shadow-black'>Bhutan</h1>
                     </div>
 
                     <div className='flex flex-col hajj-box gap-y-8 md:w-[100%] lg:w-[100%] xl:w-11/12 md:mx-auto md:gap-y-2 md:p-2 md:bg-[#6192d655] md:rounded-[15px]'>
