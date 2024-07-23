@@ -39,7 +39,7 @@ const App = () => {
     if (!sessionStorage.getItem('token')) {
       setTokenToSession();
     }
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, [pathname]);
   return (
     <div className='App overflow-x-hidden'>
