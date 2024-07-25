@@ -36,14 +36,14 @@ const HeaderBanner = () => {
                 </span>
             </p>
             <p className='text-[#fff]cursor-pointer flex items-center lg:gap-x-5 cursor-pointer md:mt-1'>
-                <a href="tel:+14088999705">
+                <a href="tel:+18885813028">
                     <FaPhoneVolume
                         className='text-[#FFC100] lg:text-3xl text-[20px] -rotate-[40deg] -mt-2 call-animate'
                     />
                 </a>
-                <a href="tel:+14088999705">
+                <a href="tel:+18885813028">
                     <span className='animate-ping hover:animate-none text-[#FFC100] font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg drop-shadow-md shadow-[#c97156]'>
-                        +14088999705
+                        +18885813028
                     </span>
                 </a>
             </p>

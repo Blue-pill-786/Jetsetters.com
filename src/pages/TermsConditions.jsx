@@ -173,10 +173,10 @@ const TermsConditions = () => {
                         Should you have any inquiries or concerns regarding these Terms or our services, please do not
                         hesitate to reach out to us at
                         <a
-                            href="tel:+14088999705"
+                            href="tel:+18885813028"
                             className='mx-1 text-heading-text hover:underline'
                         >
-                            +14088999705
+                            +18885813028
                         </a>
                         or
                         <a

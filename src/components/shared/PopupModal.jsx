@@ -80,7 +80,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                         </div>
                     </div>
                     <div className='flex mt-5 gap-x-3 items-center justify-between sm:pl-5'>
-                        <a href="tel:+1(888)389-3266">
+                        <a href="tel:+18885813028">
                             <IconButton
                                 size='large'
                                 aria-label='Call'
@@ -117,8 +117,8 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                             <p className='text-sm text-[10px] font-medium text-[#3c5598cb] text-center'>let's connect you with our team via call or email to get started with your travel plans</p>
                         </div>
                         <Typography variant='h6'>
-                            <a href="tel:+14088999705" className='font-medium sm:text-3xl text-xl sm:ml-2'>
-                                +14088999705
+                            <a href="tel:+18885813028" className='font-medium sm:text-3xl text-xl sm:ml-2'>
+                                +18885813028
                             </a>
                         </Typography>
                         <Typography variant='h6'>

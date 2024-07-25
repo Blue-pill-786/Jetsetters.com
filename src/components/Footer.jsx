@@ -145,10 +145,10 @@ const Footer = () => {
                 <div className='flex flex-col  gap-y-[4px] text-neutral-100 text-xs px-2'>
                     {/* <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Contact Us</p> */}
                     <p className='text-xs sm:text-sm md:text-base text-neutral-200 mb-1'>Office details</p>
-                    <a href="tel:+14088999705"
+                    <a href="tel:+18885813028"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
                     >
-                        +14088999705
+                        +18885813028
                     </a>
                     <a href="mailto: bookings@jetsetterss.com"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'

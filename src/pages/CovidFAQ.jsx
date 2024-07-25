@@ -6,12 +6,12 @@ const CovidFAQ = () => {
         <div className='bg-[#FFFFFF]'>
             <div className='relative border-t-[#3ba2da] border-[0.5px]'>
                 <img
-                    src={"https://www.cde.ual.es/wp-content/uploads/2021/06/cover-Covid19-1536x674.png"}
+                    src={"https://hms.harvard.edu/sites/default/files/media/COVIDHA850_0.jpg"}
                     alt="covid-19"
-                    className='w-full h-[530px] object-center'
+                    className='w-full h-[300px] object-center blur-[3px] contrast-100 '
                     loading='eager'
                 />
-                <p className='absolute sm:text-5xl text-4xl font-bold md:top-[40%] top-[20%] left-[10%] lg:w-[60%] w-[50%] bg-gradient-to-b bg-clip-text text-transparent sm:to-heading-text to-[#4289d4]  from-[#7ea6f7ea]'>
+                <p className='absolute sm:text-6xl text-4xl font-bold md:top-[40%] top-[20%] left-[10%] lg:w-[60%] w-[50%] bg-gradient-to-b bg-clip-text text-transparent sm:to-heading-text to-[#0d2b8b]  from-[#2376dbea]'>
                     Corona virus restrictions and requirements
                 </p>
             </div>
@@ -27,7 +27,7 @@ const CovidFAQ = () => {
                     </p>
                 </div>
             </div>
-            <div className='sm:w-[calc(100%-10%)] mx-auto my-5 sm:p-0 p-3'>
+            <div className='sm:w-[calc(100%-10%)] mx-auto my- 5 sm:p-0 p-3'>
                 <div className='mt-10'>
                     <h2 className='text-xl md:text-3xl leading-5 font-semibold text-neutral-950 mb-3'>Government travel restrictions and advisories</h2>
                     <p className='text-sm sm:text-base md:text-lg md:leading-[1.3rem] leading-[0.9rem] text-neutral-900'>
