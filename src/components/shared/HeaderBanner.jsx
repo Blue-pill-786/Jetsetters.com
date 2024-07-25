@@ -8,7 +8,7 @@ const HeaderBanner = () => {
     const navigate = useNavigate();
     const { pathname } = useLocation()
     return (
-        <div className='bg-main-bg h-[50px] w-full p-2 flex gap-x-3 lg:justify-evenly justify-between items-center z-[1000]'>
+        <div className='bg-main-bg h-[50px] w-full p-2 flex md:gap-x-3 gap-2 lg:justify-evenly justify-between items-center z-[1000]'>
             {pathname === "/" ? ("") : <button
                 className='relative md:p-2 p-1 rounded-full bg-gradient-to-r first:to-[#f5892a] from-[#f99f18] group'
                 onClick={() => navigate(-1)}
@@ -27,7 +27,7 @@ const HeaderBanner = () => {
                     className='h-[35px] lg:h-[45px] w-[35px] lg:w-[45px] object-fill cursor-pointer -mt-2'
                 />
             </Link>
-            <p className='text-[#dde5f1] text-[10px] lg:text-[18px] sm:text-base overflow-hidden font-medium'>ARC Certified Ticketing Agent for 250+ Airlines and leading Cruise Lines
+            <p className='lg:block hidden text-[#dde5f1] text-[10px] lg:text-[18px] sm:text-base overflow-hidden font-medium'>ARC Certified Ticketing Agent for 250+ Airlines and leading Cruise Lines
                 <span
                     className='cursor-pointer md:text-lg font-semibold hover:text-[#FFC100] transition ml-1'
                     onClick={() => navigate('/about')}
@@ -36,14 +36,14 @@ const HeaderBanner = () => {
                 </span>
             </p>
             <p className='text-[#fff]cursor-pointer flex items-center lg:gap-x-5 cursor-pointer md:mt-1'>
-                <a href="tel:+18885813028">
+                <a href="tel:+18885813028" className='lg:block hidden'>
                     <FaPhoneVolume
                         className='text-[#FFC100] lg:text-3xl text-[20px] -rotate-[40deg] -mt-2 call-animate'
                     />
                 </a>
                 <a href="tel:+18885813028">
-                    <span className='animate-ping hover:animate-none text-[#FFC100] font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg drop-shadow-md shadow-[#c97156]'>
-                        +18885813028
+                    <span className='animate-ping hover:animate-none text-[#FFC100] font-bold xl:text-5xl lg:text-3xl sm:text-5xl text-4xl drop-shadow-md shadow-[#c97156]'>
+                        +1-888-581-3028
                     </span>
                 </a>
             </p>

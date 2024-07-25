@@ -118,7 +118,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                         </div>
                         <Typography variant='h6'>
                             <a href="tel:+18885813028" className='font-medium sm:text-3xl text-xl sm:ml-2'>
-                                +18885813028
+                                +1-888-581-3028
                             </a>
                         </Typography>
                         <Typography variant='h6'>

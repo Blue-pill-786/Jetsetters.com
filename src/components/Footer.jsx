@@ -148,7 +148,7 @@ const Footer = () => {
                     <a href="tel:+18885813028"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
                     >
-                        +18885813028
+                        +1-888-581-3028
                     </a>
                     <a href="mailto: bookings@jetsetterss.com"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
