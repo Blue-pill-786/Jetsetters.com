@@ -31,7 +31,7 @@ const AutoSlider = ({ data,delay}) => {
                 {
                     data.map((img, index) => (
                         <SwiperSlide key={index} style={{ borderRadius: "15px", height : "100%" }}>
-                            <img src={img} className='w-full h-full'/>
+                            <img src={img} loading='lazy' className='w-full h-full'/>
                         </SwiperSlide>
                     ))
                 }

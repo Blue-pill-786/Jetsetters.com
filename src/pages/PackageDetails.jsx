@@ -706,6 +706,7 @@ const Picture = ({ url, title, style, responsiveStyle }) => {
             <img
                 src={url}
                 alt={title}
+                loading='lazy'
                 className={`${style} rounded-md object-cover bg-contain`}
             />
         </div>

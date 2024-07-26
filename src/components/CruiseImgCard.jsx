@@ -9,6 +9,7 @@ const CruiseImgCard = ({ data }) => {
             <img
                 src={data.img}
                 alt="card"
+                loading='lazy'
                 className='w-full h-full object-cover rounded-[15px]'
             />
             <div className='absolute flex sm:flex-col flex-row justify-between sm:items-start items-center sm:justify-center w-full sm:h-full h-[40%] sm:top-0 bottom-0 sm:-right-[100%] text-[#fff] p-[30px] 

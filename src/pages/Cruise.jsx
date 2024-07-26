@@ -296,6 +296,7 @@ const Cruise = () => {
                                     <img
                                         src={data.img}
                                         alt={data.title}
+                                        loading='lazy'
                                         className='w-full h-full object-cover rounded-sm group-hover:border-[5px] border-[#1f3d4759]'
                                     />
 

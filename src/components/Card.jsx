@@ -7,6 +7,7 @@ const Card = ({ data, price }) => {
             <img
                 src={data.img}
                 alt={data?.title}
+                loading='lazy'
                 className='rounded-xl relative h-full w-full object-cover z-[0] group-hover:scale-[1.1] transition-transform duration-300'
             />
             <div className='absolute p-4 flex w-full bottom-0 justify-between z-[100] bg-gradient-to-t to-[#ffffff07] via-[#00000098] from-[#000000dc] rounded-b-xl'>

@@ -116,6 +116,7 @@ const ImageLayout = ({ image, title, to }) => {
                 <img
                     src={image}
                     alt={title}
+                    loading='lazy'
                     className='w-full h-[95%] object-fill rounded-t-lg z-[10]'
                 />
                 <div className='hidden absolute sm:flex justify-center items-center w-full h-full top-0 right-0 opacity-0 bottom-0 left-0 text-[#fff] p-[30px] 
