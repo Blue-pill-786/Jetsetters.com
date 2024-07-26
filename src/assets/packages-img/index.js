@@ -15,12 +15,14 @@ import DubaiImg1 from './dubai/dubai-img-1.jpeg'
 import DubaiImg2 from './dubai/dubai-img-2.jpeg'
 import DubaiImg3 from './dubai/dubai-img-3.jpeg'
 import DubaiLogo from './dubai/dubai-logo.png'
+import DubaiBg from './dubai/dubai-hero-bg.jpeg'
 
 // Ram Mandir Tour Image 
 import RamImg1 from './ram-mandir/ram-img-1.jpeg'
 import RamImg2 from './ram-mandir/ram-img-2.jpeg'
 import RamImg3 from './ram-mandir/ram-img-3.jpeg'
 import RamLogo from './ram-mandir/ram-logo.png'
+import RamBg from './ram-mandir/ram-hero-bg.jpeg'
 
 // Europe Tour Image
 
@@ -40,6 +42,7 @@ import ParisImg2 from './europe/paris-img-2.jpeg'
 import ParisImg3 from './europe/paris-img-3.jpeg'
 
 import EuropeLogo from './europe/europe-logo.png'
+import EuropeBg from './europe/europe-bg.jpeg'
 
 // Kashmir 
 
@@ -79,6 +82,8 @@ import NorthAssam from './north-east/northAssam.jpeg'
 import NorthBhutan1 from './north-east/northBhutan1.jpeg'
 import NorthBhutan2 from './north-east/northBhutan2.jpeg'
 
+import NorthBg from './north-east/bg-1.jpg';
+
 export {
     HazImg1,
     HazImg2,
@@ -95,11 +100,13 @@ export {
     DubaiImg2,
     DubaiImg3,
     DubaiLogo,
+    DubaiBg,
 
     RamImg1,
     RamImg2,
     RamImg3,
     RamLogo,
+    RamBg,
 
     ItalyImg1,
     ItalyImg2,
@@ -111,6 +118,7 @@ export {
     LondonImg2,
     LondonImg3,
     EuropeLogo,
+    EuropeBg,
 
     KashmirImg1,
     KashmirImg2,
@@ -138,4 +146,5 @@ export {
     NorthAssam,
     NorthBhutan1,
     NorthBhutan2,
+    NorthBg,
 };

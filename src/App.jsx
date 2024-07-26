@@ -7,11 +7,13 @@ import Plane from './assets/gif/trip.gif';
 import Ship from './assets/gif/ship2.gif';
 import { getSearchAirportToken } from './utils/GetAirport';
 
+
 const FlightsPage = lazy(() => import('./pages/FlightsPage'));
 const Cruise = lazy(() => import('../src/pages/Cruise'));
 const CovidFAQ = lazy(() => import('./pages/CovidFAQ'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const About = lazy(() => import('./pages/About'));
+const Packages = lazy(() => import('./pages/Packages'));
 const Hajj = lazy(() => import('./pages/Hajj'));
 const Dubai = lazy(() => import('./pages/Dubai'));
 const RamMandir = lazy(() => import('./pages/RamMandir'));
@@ -39,7 +41,7 @@ const App = () => {
     if (!sessionStorage.getItem('token')) {
       setTokenToSession();
     }
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, [pathname]);
   return (
     <div className='App overflow-x-hidden'>
@@ -50,6 +52,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/covid-19' element={<CovidFAQ />} />
           <Route path='/terms-conditions' element={<TermsConditions />} />
+          <Route path='/packages' element={<Packages />} />
           <Route path='/packages/hajj&umrah' element={<Hajj />} />
           <Route path='/packages/dubai' element={<Dubai />} />
           <Route path='/packages/ram-mandir-tour' element={<RamMandir />} />

@@ -7,9 +7,9 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { DateRangePicker } from 'react-date-range'
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
-import Button from '../components/Button';
-import { IndiaIcon } from '../assets/headerIcons';
-import Carousel from '../components/Carousel';
+// import Button from '../components/Button';
+// import { IndiaIcon } from '../assets/headerIcons';
+// import Carousel from '../components/Carousel';
 import { explore_India, browseImg, plannerImg } from '../data';
 
 const Home = () => {

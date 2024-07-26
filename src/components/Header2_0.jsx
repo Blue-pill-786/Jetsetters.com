@@ -52,7 +52,7 @@ const Header2_0 = () => {
                             <p className='md:text-sm text-xs font-normal md:font-medium text-start ml-2 -mt-1'>Jet, Set, Go</p>
                         </div>
                     </div>
-                    <div className='md:flex lg:gap-x-6 gap-x-2 hidden w-[40%] justify-between font-content'>
+                    <div className='md:flex lg:gap-x-6 gap-x-2 hidden w-[55%] justify-between font-content'>
                         <NavLink
                             title={"Cruise"}
                             to={'/'}
@@ -61,6 +61,11 @@ const Header2_0 = () => {
                         <NavLink
                             title={"Flight"}
                             to={'/flight'}
+                            style={"md:text-lg"}
+                        />
+                        <NavLink
+                            title={"Packages"}
+                            to={'/packages'}
                             style={"md:text-lg"}
                         />
                         <NavLink
@@ -104,6 +109,11 @@ const Header2_0 = () => {
                             <NavLink
                                 title={"Flight"}
                                 to={'/flight'}
+                                style={"text-lg md:hidden"}
+                            />
+                            <NavLink
+                                title={"Packages"}
+                                to={'/packages'}
                                 style={"text-lg md:hidden"}
                             />
                             <NavLink
