@@ -31,7 +31,7 @@ const Packages = () => {
                 </div> */}
 
                 <div className='my-10'>
-                    <div className='flex flex-row justify-between gap-x-8 w-full items-center'>
+                    <div className='flex flex-row md:gap-x-5 gap-x-2 w-full items-center'>
                         <div className='w-[50%]'>
                             <div>
                                 <h2 className='md:text-4xl text-2xl font-bold'>Ram Mandir Packages</h2>

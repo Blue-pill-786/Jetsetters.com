@@ -75,7 +75,7 @@ const Header2_0 = () => {
                         />
                         <NavLink
                             title={"Contact Us"}
-                            to={'#'}
+                            to={'/contact-us'}
                             style={"md:text-lg"}
                         />
                     </div>
@@ -123,7 +123,7 @@ const Header2_0 = () => {
                             />
                             <NavLink
                                 title={"Contact Us"}
-                                to={'#'}
+                                to={'/contact-us'}
                                 style={"text-lg md:hidden "}
                             />
                             <div className='flex items-center gap-x-2'>

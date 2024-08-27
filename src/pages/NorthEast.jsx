@@ -118,6 +118,7 @@ const NorthEast = () => {
                 (<PopupModal
                     setOpen={setOpen}
                     open={open}
+                    title={"North East Packages"}
                     img={"https://www.europetourpackage.net/Images/europe_logo.png"}
                 />)
             }

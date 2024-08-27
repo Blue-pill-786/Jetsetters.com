@@ -25,7 +25,8 @@ const Dubai = () => {
                 <img
                     src={DubaiLogo}
                     alt="dubai_logo"
-                    className='w-[200px] mx-auto  object-center object-fill'
+                    loading='lazy'
+                    className='w-[200px] mx-auto object-center object-fill'
                 />
             </div>
 
@@ -43,6 +44,7 @@ const Dubai = () => {
                             star={3}
                             handler={openHandler}
                             packageName={"Dubai"}
+                            price={"499/per person"}
                         />
                         <HazCard
                             img={DubaiImg2}
@@ -52,6 +54,7 @@ const Dubai = () => {
                             star={4}
                             handler={openHandler}
                             packageName={"Dubai"}
+                            price={"699/per person"}
                         />
                         <HazCard
                             img={DubaiImg3}
@@ -62,6 +65,7 @@ const Dubai = () => {
                             star={5}
                             handler={openHandler}
                             packageName={"Dubai"}
+                            price={"899/per person"}
                         />
                     </div>
                 </div>
@@ -73,6 +77,7 @@ const Dubai = () => {
                     setOpen={setOpen}
                     open={open}
                     img={DubaiLogo}
+                    title={"Dubai tour Packages"}
                 />)
             }
         </div>

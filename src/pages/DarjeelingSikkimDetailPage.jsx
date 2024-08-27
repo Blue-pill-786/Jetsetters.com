@@ -23,6 +23,7 @@ const DarjeelingSikkimDetailPage = () => {
                 <img
                     src={data.img}
                     alt="truck"
+                    loading='lazy'
                     className='w-full h-full object-cover object-center'
                 />
             </div>
@@ -264,6 +265,7 @@ const Picture = ({ url, title, style, responsiveStyle }) => {
             <img
                 src={url}
                 alt={title}
+                loading='lazy'
                 className={`${style} rounded-md object-cover bg-contain`}
             />
         </div>

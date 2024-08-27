@@ -52,6 +52,7 @@ const PopupModal = ({ open, setOpen, firstPop, setFirstPop, title, img }) => {
                             <img
                                 src={Logo}
                                 alt="logo"
+                                loading='lazy'
                                 className='w-[50px] h-[50px] -mt-3'
                             />
                             <Typography

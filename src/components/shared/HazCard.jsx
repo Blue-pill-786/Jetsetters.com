@@ -6,7 +6,7 @@ import { IoIosWater } from "react-icons/io";
 import { LuDessert } from "react-icons/lu";
 
 
-const HazCard = ({ img, transportTitle, PackageType, star = 0, extra, overload, price, packageName, handler }) => {
+const HazCard = ({ img, transportTitle,redirectPage, PackageType, star = 0, extra, overload, price, packageName, handler }) => {
     return (
         <div className='flex flex-col md:flex-row items-center rounded-t-[10px] md:rounded-[15px] md:shadow-none shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] bg-[#fff] group overflow-hidden'>
             <div className='haz-img md:h-[280px] lg:w-[650px] sm:w-[400px] w-full overflow-hidden md:rounded-[15px] relative'>
@@ -82,13 +82,19 @@ const HazCard = ({ img, transportTitle, PackageType, star = 0, extra, overload, 
                     </div>
                 </div>
 
-                <div className={`w-full flex justify-end px-2 mt-5`}>
-                    <button
-                        onClick={handler}
-                        className='px-4 py-1 text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
-                        Book now
-                    </button>
-                </div>
+                <div className={`w-full flex px-2 md:mb-8 mb:mt-0 mt-5 mb-2 items-center gap-x-5 md:justify-end`}>
+                        {price && <p className='text-base capitalize md:text-xl text-[#10439F] font-bold'>${price}</p>}
+                        {redirectPage && <button
+                            onClick={() => navigate("/packages" + redirectPage)}
+                            className='px-5 py-1 text-lg font-medium border-[#144cb5] border-2 outline-none hover:bg-[#0d3f8f] rounded-[5px] text-[#144cb5] hover:text-[#fff] cursor-pointer'>
+                            Details
+                        </button>}
+                        <button
+                            onClick={handler}
+                            className='px-4 py-1 text-lg font-medium border-2 border-[#144cb5] bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
+                            Book now
+                        </button>
+                    </div>
             </div>
         </div>
         </div >

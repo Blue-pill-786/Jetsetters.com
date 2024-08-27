@@ -212,7 +212,7 @@ const Footer = () => {
                         About
                     </Link>
                     <Link
-                        to="#"
+                        to="/contact-us"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
                     >
                         Contact us

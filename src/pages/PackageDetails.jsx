@@ -696,12 +696,6 @@ const Picture = ({ url, title, style, responsiveStyle }) => {
         <div className='relative rounded-lg'>
             <div className={`absolute top-0 left-0 px-5 py-3 w-full flex items-center gap-x-3 bg-gradient-to-b from-[#000000e2] to-[#ffffff06] rounded-t-lg ${responsiveStyle}`}>
                 <span className={`sm:text-2xl text-lg font-bold text-white drop-shadow-xl shadow-black ${responsiveStyle}`}>{title}</span>
-                {/* <img
-                    src={IndiaIcon}
-                    alt="India"
-                    width={responsiveStyle ? 20 : 25}
-                    className='mt-[5px]'
-                /> */}
             </div>
             <img
                 src={url}

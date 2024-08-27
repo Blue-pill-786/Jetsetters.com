@@ -13,6 +13,7 @@ const Cruise = lazy(() => import('../src/pages/Cruise'));
 const CovidFAQ = lazy(() => import('./pages/CovidFAQ'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
 const Packages = lazy(() => import('./pages/Packages'));
 const Hajj = lazy(() => import('./pages/Hajj'));
 const Dubai = lazy(() => import('./pages/Dubai'));
@@ -50,6 +51,7 @@ const App = () => {
           <Route path='/' element={<Cruise />} />
           <Route path='/flight' element={<FlightsPage />} />
           <Route path='/about' element={<About />} />
+          <Route path='/contact-us' element={<Contact />} />
           <Route path='/covid-19' element={<CovidFAQ />} />
           <Route path='/terms-conditions' element={<TermsConditions />} />
           <Route path='/packages' element={<Packages />} />

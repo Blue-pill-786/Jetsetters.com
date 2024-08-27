@@ -24,6 +24,7 @@ const RamMandir = () => {
                 <img
                     src={RamLogo}
                     alt="Ram_logo"
+                    loading='lazy'
                     className='w-[200px] mx-auto  object-center object-fill'
                 />
             </div>
@@ -71,7 +72,7 @@ const RamMandir = () => {
                 (<PopupModal
                     setOpen={setOpen}
                     open={open}
-                    img={DubaiLogo}
+                    img={RamLogo}
                 />)
             }
         </div>
