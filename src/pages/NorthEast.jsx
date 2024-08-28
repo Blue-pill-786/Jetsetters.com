@@ -6,6 +6,8 @@ import {
 } from '../assets/packages-img'
 import PackageCard from '../components/Tour_Packages/PackageCard';
 import WrapperLayout from '../components/Layouts/WrapperLayout';
+import PackageLogoCard from '../components/Tour_Packages/PackageLogoCard';
+import PackageHeroSection from '../components/Tour_Packages/PackageHeroSection';
 
 const NorthEast = () => {
     const [open, setOpen] = useState(false);
@@ -15,25 +17,21 @@ const NorthEast = () => {
 
     return (
         <div>
-            <div className='north-east-hero min-h-[calc(100vh-150px)] h-full w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10'>
-                    <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md shadow-black md:leading-[2.4rem] lg:leading-[3rem] leading-[2rem] lg:w-11/12 up-animate-head'>Discover the Untouched Beauty Explore North East India and Bhutan</h1>
-                    <p className='sm:text-2xl text-lg text-[#ffffffaf] font-content md:font-semibold drop-shadow-md shadow-black mt-2 md:w-1/2 w-4/5 up-animate-para'>Journey Through Mystical Landscapes, Rich Cultures, and Hidden Gems</p>
-                </div>
-
-            </div>
-
-            {/* <div className='w-full bg-[#fff] backdrop-blur-sm bg-gradient-to-b to-[#ffffff73] via-[#fa9d0841] from-[#01a11954] py-5 relative'>
-                    <img
-                        src={"https://packtokashmir.com/wp-content/uploads/2023/03/logo_final1.png"}
-                        alt="dubai_logo"
-                        className='w-[200px] mx-auto object-center object-fill bg-transparent'
-                    />
-                </div> */}
+            <PackageHeroSection
+                packageClass={"north-east-hero"}
+                headText={"Discover the Untouched Beauty Explore North East India and Bhutan"}
+                subHeadText={"Journey Through Mystical Landscapes, Rich Cultures, and Hidden Gems"}
+                subHeadColor='text-[#ffffffaf]'
+            />
+            <PackageLogoCard
+                gradientStyle={"bg-gradient-to-b to-[#a1a1a10a] via-[#3c3e1841] from-[#49a10154]"}
+                name={"bhutan-logo"}
+                logo={"https://sharondavisdesign.com/newsite/wp-content/uploads/2021/06/Logo-Kingdom-of-Bhutan.png"}
+            />
 
             <div className='sm:w-[calc(100%-10%)] sm:mx-auto mb-10 sm:p-0 p-4'>
-                <div className='mt-5 mb-[5rem]'>
-                    <div className='mb-5'>
+                <div className='mb-[5rem]'>
+                    <div className='mb-10'>
                         <h1 className='text-3xl md:text-6xl text-center text-[#e59545] font-bold'>Our Packages</h1>
                         {/* <p className='text-lg md:text-xl text-center text-[#000] font-medium'>Book now for unforgettable adventures.</p> */}
                     </div>
@@ -102,24 +100,13 @@ const NorthEast = () => {
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
             {
                 open &&
                 (<PopupModal
                     setOpen={setOpen}
                     open={open}
                     title={"North East Packages"}
-                    img={"https://www.europetourpackage.net/Images/europe_logo.png"}
+                    img={"https://sharondavisdesign.com/newsite/wp-content/uploads/2021/06/Logo-Kingdom-of-Bhutan.png"}
                 />)
             }
         </div >

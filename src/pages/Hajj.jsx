@@ -13,6 +13,8 @@ import {
     Haz_Logo
 } from '../assets/packages-img'
 import PopupModal from '../components/shared/PopupModal';
+import PackageHeroSection from '../components/Tour_Packages/PackageHeroSection';
+import PackageLogoCard from '../components/Tour_Packages/PackageLogoCard';
 
 const Hajj = () => {
     const [open, setOpen] = useState(false);
@@ -21,19 +23,17 @@ const Hajj = () => {
     }
     return (
         <div className=''>
-            <div className='haz-hero min-h-[calc(100vh-60px)] h-full w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10'>
-                    <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md up-animate-head shadow-black lg:leading-[3rem] leading-[2.4rem] lg:w-11/12'>Hajj & Umrah packages 2024</h1>
-                    <p className='sm:text-2xl text-lg  text-[#ffffffdc] font-content md:font-semibold drop-shadow-md shadow-black up-animate-para mt-2 md:w-1/2 w-4/5'>Browse our special hajj packages designed to suit your budget!</p>
-                </div>
-            </div>
-            <div className='w-full py-5 backdrop-blur-sm bg-gradient-to-b to-[#95c9fd02] via-[#00fb1d18] from-[#e1ffc29b]'>
-                <img
-                    src={Haz_Logo}
-                    alt="hajj"
-                    className='w-[200px] mx-auto '
-                />
-            </div>
+            <PackageHeroSection
+                packageClass={"haz-hero"}
+                headText={"Hajj & Umrah packages 2024"}
+                subHeadText={"Browse our special hajj packages designed to suit your budget!"}
+                subHeadColor='text-[#ffffffdc]'
+            />
+            <PackageLogoCard
+                gradientStyle={"bg-gradient-to-b to-[#95c9fd02] via-[#00fb1d18] from-[#e1ffc29b]"}
+                logo={Haz_Logo}
+                name={"hajj-logo"}
+            />
             <div className='sm:w-[calc(100%-10%)] sm:mx-auto mb-10 sm:p-0 p-4'>
                 <div className='mt-5'>
                     <div className='mb-5 md:mb-7'>
@@ -151,6 +151,7 @@ const Hajj = () => {
                     setOpen={setOpen}
                     open={open}
                     img={Haz_Logo}
+                    title={"Hajj & Umrah packages"}
                 />)
             }
         </div>

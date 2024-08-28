@@ -5,6 +5,8 @@ import {
 } from '../assets/packages-img'
 import HazCard from '../components/shared/HazCard'
 import PopupModal from '../components/shared/PopupModal'
+import PackageLogoCard from '../components/Tour_Packages/PackageLogoCard'
+import PackageHeroSection from '../components/Tour_Packages/PackageHeroSection'
 
 const RamMandir = () => {
     const [open, setOpen] = useState(false);
@@ -13,21 +15,19 @@ const RamMandir = () => {
     }
     return (
         <div>
-            <div className='ram-hero min-h-[calc(100vh-60px)] h-full w-[100%] md:pl-10 md:px-0 sm:px-5 px-3 overflow-hidden'>
-                <div className='w-full h-full flex flex-col justify-center lg:mt-[5rem] mt-[10rem] md:mt-[4rem] sm:p-10'>
-                    <h1 className='lg:text-6xl md:text-5xl text-4xl text-[#FFFFFF] font-content font-bold drop-shadow-md up-animate-head shadow-black md:leading-[2.6rem] lg:leading-[3.5rem] leading-[2rem] lg:w-11/12'>Our spiritual pilgrimage begins here visit Ram Mandir</h1>
-                    <p className='sm:text-2xl text-lg sm:text-[#ffffffdc] text-[#fff] font-content md:font-semibold drop-shadow-md up-animate-para shadow-black mt-2 md:w-1/2 w-4/5'>Packages for visiting ram mandir and more.</p>
-                </div>
-            </div>
+            <PackageHeroSection
+                packageClass={"ram-hero"}
+                headText={"Our spiritual pilgrimage begins here visit Ram Mandir"}
+                subHeadText={"Packages for visiting ram mandir and more."}
+                headColor='text-[#FFFFFF]'
+                subHeadColor='sm:text-[#ffffffdc] text-[#fff]'
+            />
 
-            <div className='w-full backdrop-blur-sm bg-gradient-to-b to-[#95c9fd02] via-[#ffa60118] from-[#f2be949b] py-5'>
-                <img
-                    src={RamLogo}
-                    alt="Ram_logo"
-                    loading='lazy'
-                    className='w-[200px] mx-auto  object-center object-fill'
-                />
-            </div>
+            <PackageLogoCard
+                logo={RamLogo}
+                name={"Ram_logo"}
+                gradientStyle={"bg-gradient-to-b to-[#95c9fd02] via-[#ffa60118] from-[#f2be949b]"}
+            />
 
             <div className='sm:w-[calc(100%-10%)] sm:mx-auto mb-10 sm:p-0 p-4'>
                 <div className='mt-5 mb-[5rem]'>

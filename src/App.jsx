@@ -54,7 +54,7 @@ const App = () => {
           <Route path='/contact-us' element={<Contact />} />
           <Route path='/covid-19' element={<CovidFAQ />} />
           <Route path='/terms-conditions' element={<TermsConditions />} />
-          <Route path='/packages' element={<Packages />} />
+          {/* <Route path='/packages' element={<Packages />} /> */}
           <Route path='/packages/hajj&umrah' element={<Hajj />} />
           <Route path='/packages/dubai' element={<Dubai />} />
           <Route path='/packages/ram-mandir-tour' element={<RamMandir />} />

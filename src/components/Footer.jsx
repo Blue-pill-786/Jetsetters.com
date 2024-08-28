@@ -199,12 +199,12 @@ const Footer = () => {
 
                 <div className='flex flex-col self-start gap-y-[4px] text-neutral-100 text-xs px-2'>
                     <p className='text-xs sm:text-sm md:text-base text-neutral-100 mb-1'>Our Work</p>
-                    <Link
+                    {/* <Link
                         to="/packages"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
                     >
                         Packages
-                    </Link>
+                    </Link> */}
                     <Link
                         to="/about"
                         className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
