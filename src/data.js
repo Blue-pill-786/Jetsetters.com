@@ -436,7 +436,7 @@ export const cruiseServiceCardData = [
     },
 ]
 
-export const countinentspricedata = [
+export const countinentsPricedata = [
     {
         region: "US Domestic",
         price: "110",
