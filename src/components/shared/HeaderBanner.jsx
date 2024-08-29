@@ -42,7 +42,7 @@ const HeaderBanner = () => {
                     />
                 </a>
                 <a href="tel:+18885813028">
-                    <span className='animate-ping hover:animate-none text-[#FFC100] font-bold xl:text-5xl lg:text-3xl sm:text-5xl text-4xl drop-shadow-md shadow-[#c97156]'>
+                    <span className='animate-ping hover:animate-none text-[#FFC100] font-bold xl:text-5xl lg:text-3xl sm:text-5xl text-[28px] max-[300px]:text-xl max-[240px]:text-base drop-shadow-md shadow-[#c97156]'>
                         +1-888-581-3028
                     </span>
                 </a>

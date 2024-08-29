@@ -11,6 +11,7 @@ import {
 } from '../assets/packages-img'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
+import { FaPhone } from 'react-icons/fa6'
 
 const Packages = () => {
     return (
@@ -45,8 +46,15 @@ const Packages = () => {
                                 />
                             </div>
                             <div className='relative'>
-                                <div className='p-2 flex flex-col gap-y-5 items-center justify-center'>
-                                <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$0 <span className='font-medium'>to</span> $0</span></p>                                    <Link to={'/packages/ram-mandir-tour'} className='group'>
+                                <div className='p-2 flex sm:flex-row flex-col sm:gap-5 gap-2 items-center justify-center'>
+                                    {/* <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$0 <span className='font-medium'>to</span> $0</span></p> */}
+                                    <Link to={"tel:+18885813028"} className='group'>
+                                        <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium border-[#144cb5] border rounded-[5px] text-[#144cb5] cursor-pointer'>
+                                            Call us
+                                            <FaPhone className='text-[16px] group-hover:-rotate-[110deg] transition group-hover:scale-105 -rotate-90 mb-1' />
+                                        </button>
+                                    </Link>
+                                    <Link to={'/packages/ram-mandir-tour'} className='group'>
                                         <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
                                             Details
                                             <FaArrowRight className='text-[12px] group-hover:translate-x-2 transition group-hover:scale-105' />
@@ -68,8 +76,15 @@ const Packages = () => {
                                 />
                             </div>
                             <div className='relative'>
-                                <div className='p-2 flex flex-col gap-y-5 items-center justify-center'>
-                                <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$0 <span className='font-medium'>to</span> $0</span></p>                                    <Link to={'/packages/hajj&umrah'} className='group'>
+                                <div className='p-2 flex sm:flex-row flex-col sm:gap-5 gap-2 items-center justify-center'>
+                                    {/* <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$0 <span className='font-medium'>to</span> $0</span></p> */}
+                                    <Link to={"tel:+18885813028"} className='group'>
+                                        <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium border border-[#144cb5] rounded-[5px] text-[#144cb5] cursor-pointer'>
+                                            Call us
+                                            <FaPhone className='text-[16px] group-hover:-rotate-[110deg] transition group-hover:scale-105 -rotate-90 mb-1' />
+                                        </button>
+                                    </Link>
+                                    <Link to={'/packages/hajj&umrah'} className='group'>
                                         <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
                                             Details
                                             <FaArrowRight className='text-[12px] group-hover:translate-x-2 transition group-hover:scale-105' />
@@ -154,7 +169,14 @@ const Packages = () => {
                                 />
                                 <div className='relative flex items-center justify-center xl:w-[400px] w-[300px] h-[250px]'>
                                     <div className='p-5 flex flex-col gap-y-5 items-center justify-center'>
-                                    <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$0 <span className='font-medium'>to</span> $0</span></p>                                        <Link to={'/packages/europe'} className='group'>
+                                        {/* <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$0 <span className='font-medium'>to</span> $0</span></p> */}
+                                        <Link to={"tel:+18885813028"} className='group'>
+                                            <button className='inline-flex items-center gap-x-2 md:px-6 px-5 py-2 md:text-xl text-lg font-medium border-[#144cb5] border rounded-[5px] text-[#144cb5] cursor-pointer'>
+                                                Call us
+                                                <FaPhone className='text-[16px] group-hover:-rotate-[110deg] transition group-hover:scale-105 -rotate-90 mb-1' />
+                                            </button>
+                                        </Link>
+                                        <Link to={'/packages/europe'} className='group'>
                                             <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
                                                 Details
                                                 <FaArrowRight className='text-[12px] group-hover:translate-x-2 transition group-hover:scale-105' />
@@ -203,7 +225,8 @@ const Packages = () => {
                                 />
                                 <div className='relative flex items-center justify-center xl:w-[400px] w-[300px] h-[250px]'>
                                     <div className='p-5 flex flex-col gap-y-5 items-center justify-center'>
-                                        <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$543 <span className='font-medium'>to</span> $1515</span></p>                                        <Link to={'/packages/kashmir'} className='group'>
+                                        <p className='text-lg font-medium text-heading-text'>Price :
+                                            <span className='font-bold inline-block'>$543 <span className='font-medium'>to</span> $1515</span></p>                                        <Link to={'/packages/kashmir'} className='group'>
                                             <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
                                                 Details
                                                 <FaArrowRight className='text-[12px] group-hover:translate-x-2 transition group-hover:scale-105' />
@@ -243,7 +266,8 @@ const Packages = () => {
                                 />
                                 <div className='relative flex md:ustify-end'>
                                     <div className='p-2 flex flex-col gap-y-5 md:self-end'>
-                                        <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$479 <span className='font-medium'>to</span> $869</span></p>
+                                        <p className='text-lg font-medium text-heading-text'>Price :
+                                            <span className='font-bold block'>$479 <span className='font-medium'>to</span> $869</span></p>
                                         <Link to={'/packages/north-east'} className='group'>
                                             <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
                                                 Details
