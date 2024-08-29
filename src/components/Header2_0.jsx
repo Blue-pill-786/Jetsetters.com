@@ -47,12 +47,12 @@ const Header2_0 = () => {
                             />
                         </Link>
 
-                        <div className='font-heading md:text-4xl text-3xl tracking-wide font-bold capitalize text-[#10439F] drop-shadow-head-shade'>
+                        <div className='font-heading lg:text-4xl md:text-2xl text-3xl tracking-wide font-bold capitalize text-[#10439F] drop-shadow-head-shade'>
                             Jetsetters
                             <p className='md:text-sm text-xs font-normal md:font-medium text-start ml-2 -mt-1'>Jet, Set, Go</p>
                         </div>
                     </div>
-                    <div className='md:flex lg:gap-x-6 gap-x-2 hidden w-[40%] justify-between font-content'>
+                    <div className='md:flex lg:gap-x-6 gap-x-2 hidden lg:w-[55%] w-full justify-between font-content'>
                         <NavLink
                             title={"Cruise"}
                             to={'/'}
@@ -63,11 +63,11 @@ const Header2_0 = () => {
                             to={'/flight'}
                             style={"md:text-lg"}
                         />
-                        {/* <NavLink
+                        <NavLink
                             title={"Packages"}
                             to={'/packages'}
                             style={"md:text-lg"}
-                        /> */}
+                        />
                         <NavLink
                             title={"About Us"}
                             to={'/about'}
@@ -111,11 +111,11 @@ const Header2_0 = () => {
                                 to={'/flight'}
                                 style={"text-lg md:hidden"}
                             />
-                            {/* <NavLink
+                            <NavLink
                                 title={"Packages"}
                                 to={'/packages'}
                                 style={"text-lg md:hidden"}
-                            /> */}
+                            />
                             <NavLink
                                 title={"About Us"}
                                 to={'/about'}

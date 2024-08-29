@@ -8,6 +8,7 @@ import HazCard from '../components/shared/HazCard'
 import PopupModal from '../components/shared/PopupModal'
 import PackageLogoCard from '../components/Tour_Packages/PackageLogoCard'
 import PackageHeroSection from '../components/Tour_Packages/PackageHeroSection'
+import { Link } from 'react-router-dom'
 
 const Dubai = () => {
     const [open, setOpen] = useState(false);
@@ -73,6 +74,14 @@ const Dubai = () => {
                             packageName={"Dubai"}
                             price={"899/per person"}
                         />
+                    </div>
+
+                    <div className='mx-auto text-center mt-10'>
+                        <Link to={'/packages/dubai/activities'}
+                            className='cursor-pointer text-2xl text-center font-semibold group text-[#FFF] px-8 py-3 border-2 border-[#144cb5] bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px]'
+                        >
+                            <span className='inline-block group-hover:-translate-y-[2px] group-hover:scale-[1.01] transition'> Details </span>
+                        </Link>
                     </div>
                 </div>
             </div>

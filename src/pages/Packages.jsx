@@ -103,7 +103,8 @@ const Packages = () => {
                                 </div>
                                 <div className='relative flex md:ustify-end'>
                                     <div className='p-2 flex flex-col gap-y-5 md:self-end'>
-                                    <p className='text-lg font-medium text-heading-text'>Price : <span className='font-bold'>$0 <span className='font-medium'>to</span> $0</span></p>                                        <Link to={'/packages/dubai'} className='group'>
+                                        <p className='text-lg font-medium text-heading-text'>Price :
+                                            <span className='font-bold block'>$499<span className='font-medium'> to</span> $899</span></p>                                        <Link to={'/packages/dubai'} className='group'>
                                             <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
                                                 Details
                                                 <FaArrowRight className='text-[12px] group-hover:translate-x-2 transition group-hover:scale-105' />
@@ -125,7 +126,7 @@ const Packages = () => {
 
                     <div className='my-5'>
                         <div>
-                            <div className='w-full flex flex-col md:flex-row md:gap-x-5 gap-y-5 justify-between'>
+                            <div className='w-full flex flex-col md:flex-row md:gap-x-5 gap-y-5'>
                                 <Picture
                                     title={"Europe"}
                                     url={EuropeBg}
@@ -138,7 +139,7 @@ const Packages = () => {
                                 />
                             </div>
 
-                            <div className='flex justify-between gap-x-2 mt-3'>
+                            <div className='flex gap-x-2 md:gap-x-4 xl:gap-x-6 mt-3'>
                                 <Picture
                                     url={ItalyImg1}
                                     title={"Italy"}
@@ -174,7 +175,7 @@ const Packages = () => {
 
                     <div className='my-5'>
                         <div>
-                            <div className='w-full flex flex-col md:flex-row md:gap-x-5 gap-y-5 justify-between'>
+                            <div className='w-full flex flex-col md:flex-row md:gap-x-5 gap-y-5'>
                                 <Picture
                                     title={"Mughal Garden"}
                                     url={KashmirImg4}
@@ -187,7 +188,7 @@ const Packages = () => {
                                 />
                             </div>
 
-                            <div className='flex justify-between gap-x-2 mt-3'>
+                            <div className='flex gap-x-2 md:gap-x-4 xl:gap-x-6 mt-3'>
                                 <Picture
                                     url={KashmirImg11}
                                     title={"Srinagar"}
@@ -226,19 +227,19 @@ const Packages = () => {
                                 <Picture
                                     title={"Darjeeling"}
                                     url={NorthDarjeeling}
-                                    style={"md:w-[350px] w-full h-[330px]"}
+                                    style={"md:w-[350px] xl:w-[100%] w-full h-[330px]"}
                                 />
                                 <div className='md:block hidden'>
                                     <Picture
                                         title={"Meghalaya"}
                                         url={NorthMeghalaya}
-                                        style={"w-[350px] h-[330px]"}
+                                        style={"w-[350px] h-[330px] xl:w-[100%]"}
                                     />
                                 </div>
                                 <Picture
                                     title={"Bhutan"}
                                     url={NorthBhutan2}
-                                    style={"md:w-[350px] w-full h-[330px]"}
+                                    style={"md:w-[350px] w-full h-[330px] xl:w-[100%]"}
                                 />
                                 <div className='relative flex md:ustify-end'>
                                     <div className='p-2 flex flex-col gap-y-5 md:self-end'>

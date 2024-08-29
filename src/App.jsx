@@ -17,6 +17,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Packages = lazy(() => import('./pages/Packages'));
 const Hajj = lazy(() => import('./pages/Hajj'));
 const Dubai = lazy(() => import('./pages/Dubai'));
+const DubaiActivities = lazy(() => import('./pages/DubaiActivities'));
 const RamMandir = lazy(() => import('./pages/RamMandir'));
 const Europe = lazy(() => import('./pages/Europe'));
 const Kashmir = lazy(() => import('./pages/Kashmir'));
@@ -54,9 +55,10 @@ const App = () => {
           <Route path='/contact-us' element={<Contact />} />
           <Route path='/covid-19' element={<CovidFAQ />} />
           <Route path='/terms-conditions' element={<TermsConditions />} />
-          {/* <Route path='/packages' element={<Packages />} /> */}
+          <Route path='/packages' element={<Packages />} />
           <Route path='/packages/hajj&umrah' element={<Hajj />} />
           <Route path='/packages/dubai' element={<Dubai />} />
+          <Route path='/packages/dubai/activities' element={<DubaiActivities />} />
           <Route path='/packages/ram-mandir-tour' element={<RamMandir />} />
           <Route path='/packages/europe' element={<Europe />} />
           <Route path='/packages/kashmir' element={<Kashmir />} />
