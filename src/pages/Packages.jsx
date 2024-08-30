@@ -6,7 +6,8 @@ import {
     DubaiBg, DubaiImg3,
     ItalyImg1, LondonImg1, ParisImg1, EuropeBg,
     KashmirImg11, KashmirImg13, KashmirImg16, KashmirImg4,
-    NorthAssam, NorthDarjeeling, NorthBhutan2, NorthMeghalaya, NorthSikkim
+    NorthDarjeeling, NorthBhutan2, NorthMeghalaya,
+    GeorgiaImg6,GeorgiaImg5,GeorgiaImg4,
 
 } from '../assets/packages-img'
 import { Link } from 'react-router-dom'
@@ -269,6 +270,52 @@ const Packages = () => {
                                         <p className='text-lg font-medium text-heading-text'>Price :
                                             <span className='font-bold block'>$479 <span className='font-medium'>to</span> $869</span></p>
                                         <Link to={'/packages/north-east'} className='group'>
+                                            <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
+                                                Details
+                                                <FaArrowRight className='text-[12px] group-hover:translate-x-2 transition group-hover:scale-105' />
+                                            </button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className='mt-10 mb-[4rem]'>
+                    <div>
+                        <h2 className='text-4xl font-bold'>Georgia Packages</h2>
+                        <p className='text-base font-normal text-neutral-500'>Myth and Mystery Sacred Sites and Legends of Georgia</p>
+                    </div>
+                    <div className='my-5'>
+                        <div>
+                            <div className='w-full flex flex-col md:flex-row md:gap-x-5 gap-y-5 justify-between'>
+                                <Picture
+                                    title={"Ananuri Fortress"}
+                                    url={GeorgiaImg6}
+                                    style={"md:w-[350px] xl:w-[100%] w-full h-[330px]"}
+                                />
+                                <div className='md:block hidden'>
+                                    <Picture
+                                        title={"Tbilisi"}
+                                        url={GeorgiaImg5}
+                                        style={"w-[350px] h-[330px] xl:w-[100%]"}
+                                    />
+                                </div>
+                                <Picture
+                                    title={"Rike Park"}
+                                    url={GeorgiaImg4}
+                                    style={"md:w-[350px] w-full h-[330px] xl:w-[100%]"}
+                                />
+                                <div className='relative flex md:ustify-end'>
+                                    <div className='p-2 flex flex-col gap-y-5 md:self-end'>
+                                        <p className='text-lg font-medium text-heading-text'>Price :
+                                            <span className='font-bold block'>$499<span className='font-medium'> to</span> $899</span>
+                                                <span className='text-xs lg:text-sm -mt-1 block'>+ Discount rates</span>
+                                        </p>
+                                        <Link to={'/packages/georgia'} className='group'>
                                             <button className='inline-flex items-center gap-x-2 px-6 py-2 md:text-xl text-lg font-medium bg-[#144cb5] hover:bg-[#0d3f8f] rounded-[5px] text-[#fff] cursor-pointer'>
                                                 Details
                                                 <FaArrowRight className='text-[12px] group-hover:translate-x-2 transition group-hover:scale-105' />

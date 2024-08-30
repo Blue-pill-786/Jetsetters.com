@@ -55,7 +55,7 @@ const Georgia = () => {
                             AddOn={["Water - 2 bottles/day"]}
                             delay={1500}
                             price={"499"}
-                            discount={"+ discount rates on Air fare"}
+                            discount={"+ Discount rates on Air fare"}
                         />
                         <PackageCard
                             imageData={[GeorgiaImg3, GeorgiaImg4]}
@@ -69,7 +69,7 @@ const Georgia = () => {
                             AddOn={["Water - 2 bottles/day"]}
                             delay={2000}
                             price={"599"}
-                            discount={"+ discount rates on Air fare"}
+                            discount={"+ Discount rates on Air fare"}
                         />
                         <PackageCard
                             imageData={[GeorgiaImg5, GeorgiaImg8]}
@@ -83,7 +83,7 @@ const Georgia = () => {
                             AddOn={["Water - 2 bottles/day"]}
                             delay={2500}
                             price={"899"}
-                            discount={"+ discount rates on Air fare"}
+                            discount={"+ Discount rates on Air fare"}
                         />
                     </div>
                 </div>
