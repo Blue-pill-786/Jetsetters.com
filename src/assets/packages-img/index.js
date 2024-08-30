@@ -84,6 +84,17 @@ import NorthBhutan2 from './north-east/northBhutan2.jpeg'
 
 import NorthBg from './north-east/bg-1.jpg';
 
+// Georgia 
+import GeorgiaImg1 from './georgia/georgiaImg-1.jpg'
+import GeorgiaImg2 from './georgia/georgiaImg-2.jpg'
+import GeorgiaImg3 from './georgia/georgiaImg-3.jpg'
+import GeorgiaImg4 from './georgia/georgiaImg-4.jpg'
+import GeorgiaImg5 from './georgia/georgiaImg-5.jpg'
+import GeorgiaImg6 from './georgia/georgiaImg-6.jpg'
+import GeorgiaImg7 from './georgia/georgiaImg-7.jpg'
+import GeorgiaImg8 from './georgia/georgiaImg-8.jpg'
+import GeorgiaLogo from './georgia/georgia-logo.png'
+
 export {
     HazImg1,
     HazImg2,
@@ -147,4 +158,14 @@ export {
     NorthBhutan1,
     NorthBhutan2,
     NorthBg,
+
+    GeorgiaImg1,
+    GeorgiaImg2,
+    GeorgiaImg3,
+    GeorgiaImg4,
+    GeorgiaImg5,
+    GeorgiaImg6,
+    GeorgiaImg7,
+    GeorgiaImg8,
+    GeorgiaLogo,
 };

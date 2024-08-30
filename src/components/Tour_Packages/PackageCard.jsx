@@ -6,7 +6,7 @@ import { FaCar } from "react-icons/fa";
 import AutoSlider from '../shared/AutoSlider';
 import { useNavigate } from 'react-router-dom';
 
-const PackageCard = ({ imageData, level, packageName, cabService, extraLiving, hotel, transportation, meals, extra, AddOn, redirectPage, price = 0, handler, delay }) => {
+const PackageCard = ({ imageData, level, packageName, cabService, extraLiving, hotel, transportation, meals, extra, AddOn, redirectPage, price = 0, handler, delay,discount }) => {
     const navigate = useNavigate();
     return (
         <div className='flex flex-col md:flex-row md:h-[400px] sm:w-full w-[350px] rounded-t-[10px] md:rounded-[15px] md:shadow-none shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] bg-[#fff] group overflow-hidden'>
@@ -97,7 +97,10 @@ const PackageCard = ({ imageData, level, packageName, cabService, extraLiving, h
                     </div>
 
                     <div className={`w-full flex px-2 md:mb-8 mb:mt-0 mt-5 mb-2 items-center gap-x-5 md:justify-end`}>
-                        <p className='text-base capitalize md:text-xl text-[#10439F] font-bold leading-[18px]'>${price}</p>
+                        <p className='text-base capitalize md:text-xl text-[#10439F] font-bold leading-[18px] mt-2 text-right'>
+                            ${price}
+                            {discount && <span className='block text-xs'>{discount}</span>}
+                        </p>
                         {redirectPage && <button
                             onClick={() => navigate("/packages" + redirectPage)}
                             className='px-5 py-1 text-lg font-medium border-[#144cb5] border-2 outline-none hover:bg-[#0d3f8f] rounded-[5px] text-[#144cb5] hover:text-[#fff] cursor-pointer'>

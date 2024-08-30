@@ -262,6 +262,12 @@ const Footer = () => {
                     >
                         North East & Bhutan
                     </Link>
+                    <Link
+                        to="/packages/georgia"
+                        className='text-xs sm:text-sm md:text-base text-neutral-100 font-light hover:underline'
+                    >
+                        Georgia
+                    </Link>
 
                 </div>
             </div>

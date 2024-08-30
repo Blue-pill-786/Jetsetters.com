@@ -22,6 +22,7 @@ const RamMandir = lazy(() => import('./pages/RamMandir'));
 const Europe = lazy(() => import('./pages/Europe'));
 const Kashmir = lazy(() => import('./pages/Kashmir'));
 const NorthEast = lazy(() => import('./pages/NorthEast'));
+const Georgia = lazy(() => import('./pages/Georgia'));
 const DarjeelingSikkimDetailPage = lazy(() => import('./pages/DarjeelingSikkimDetailPage'));
 const PackageDetails = lazy(() => import('./pages/PackageDetails'));
 
@@ -63,6 +64,7 @@ const App = () => {
           <Route path='/packages/europe' element={<Europe />} />
           <Route path='/packages/kashmir' element={<Kashmir />} />
           <Route path='/packages/north-east' element={<NorthEast />} />
+          <Route path='/packages/georgia' element={<Georgia />} />
           <Route path='packages/north-east/darjeeling-sikkim' element={<DarjeelingSikkimDetailPage />} />
           <Route path='/packages/kashmir/:package' element={<PackageDetails />} />
           <Route path='*' element={<div className='min-h-screen flex justify-center items-center text-5xl font-bold'>404 Not Found</div>} />

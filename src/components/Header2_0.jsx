@@ -159,6 +159,11 @@ const Header2_0 = () => {
                                 to={'/packages/north-east'}
                                 style={"text-lg"}
                             />
+                            <NavLink
+                                title={"Georgia"}
+                                to={'/packages/georgia'}
+                                style={"text-lg"}
+                            />
                         </div>
                     </div>
                 </div>

@@ -14,9 +14,10 @@ const AutoSlider = ({ data,delay}) => {
                     height : "100%"
                 }}
                 modules={[Scrollbar, A11y, Autoplay, Thumbs]}
-                spaceBetween={32}
+                spaceBetween={0}
                 slidesPerView={1}
                 grabCursor={true}
+                loop={true}
                 scrollbar={{ draggable: true }}
                 thumbs={{ swiper: thumbsSwiper }}
                 onSwiper={(swiper) => "console.log(swiper)"}
