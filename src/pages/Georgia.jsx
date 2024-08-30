@@ -25,7 +25,7 @@ const Georgia = () => {
         <div>
             <PackageHeroSection
                 packageClass={"georgia-hero"}
-                headText={"Book customized georgia holiday packages with exciting deals & offers."}
+                headText={"Book customized Georgia holiday packages with exciting deals & offers."}
                 headColor='text-[#FFFFFF]'
             />
 
