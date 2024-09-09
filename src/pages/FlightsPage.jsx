@@ -183,7 +183,7 @@ const FlightsPage = () => {
 
     useEffect(() => {
         if (data.from !== "") {
-            // getSearchDataFrom(data.from)
+            getSearchDataFrom(data.from)
         } else {
             setFromList(null);
         }
@@ -191,7 +191,7 @@ const FlightsPage = () => {
 
     useEffect(() => {
         if (data.to !== "") {
-            // getSearchDataTo(data.to);
+            getSearchDataTo(data.to);
         } else {
             setToList(null);
         }
