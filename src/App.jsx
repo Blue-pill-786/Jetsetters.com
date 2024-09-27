@@ -71,7 +71,7 @@ const App = () => {
         </Routes>
       </Suspense>
 
-      <Suspense fallback={<Loader />} >
+      {/* <Suspense fallback={<Loader />} >
         {firstPop && (
           <PopupModal
             setOpen={setOpen}
@@ -82,7 +82,7 @@ const App = () => {
             img={pathname === '/' ? Plane : Ship}
           />
         )}
-      </Suspense>
+      </Suspense> */}
     </div>
   )
 }
