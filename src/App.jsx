@@ -50,7 +50,7 @@ const App = () => {
     <div className='App overflow-x-hidden'>
       <Suspense fallback={<Loader />}>
         <Routes>
-          {/* <Route path='/' element={<Cruise />} />
+          <Route path='/' element={<Cruise />} />
           <Route path='/flight' element={<FlightsPage />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact-us' element={<Contact />} />
